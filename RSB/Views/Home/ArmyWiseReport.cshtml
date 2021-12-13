@@ -1,0 +1,54 @@
+﻿@model Rajya_Sanik_Board.Models.Generalform
+@{
+    ViewBag.Title = "Report";
+    Layout = "~/Views/Shared/_Report.cshtml";
+}
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 w3-container w3-border city">
+    <div class="col-lg-3 col-md-5 col-sm-6 col-xs-12  mobile-pull army-no form-group">
+        <label for="army-no">Army No. <span class="red">*</span></label>
+        @Html.TextBoxFor(model => model.Army_No, new { @class = "inputform", @maxlength = "12" })
+
+            <input type="button" value="Submit" id="btnSubmit" class="btn btn-primary next-step cus-armyno-submit">
+    </div>
+</div>
+<script>
+    $("#btnSubmit").click(function () {
+
+        $.ajax({
+            url: "@Url.Action("ArmyReport", "Home")",
+            data: { Army_No: $("#Army_No").val() },
+            type: "Post",
+            cache: false,
+            async: false,
+            success: function (data) {
+                var r = data.res;
+
+                window.location.href = '@Url.Action("ReturnArmyReport", "Home")';
+
+            },
+            error: function () {
+
+                alert("Failed! Please try again.");
+            }
+        });
+    });
+    $("#btnlogout").click(function (event) {
+
+        $("#btnlogout").hide();
+        event.preventDefault();
+        var url = '@Url.Action("Logout", "Home")';
+        window.location.href = url;
+    });
+    $("#btnhome").click(function (event) {
+
+
+        event.preventDefault();
+        var url = '@Url.Action("Index", "Home")';
+        window.location.href = url;
+        $("#btnhome").hide();
+     });
+</script>
+
+
+

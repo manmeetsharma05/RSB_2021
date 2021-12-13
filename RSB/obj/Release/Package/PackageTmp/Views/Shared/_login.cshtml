@@ -1,0 +1,379 @@
+
+
+<!DOCTYPE html>
+@model Rajya_Sanik_Board.Models.Generalform
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+       
+    
+      <noscript>
+         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 col-lg-offset-2 col-md-offset-2 col-sm-offset-2 cus-white-background">
+  <p style="border: 1px solid rgb(0, 0, 0); box-shadow: 1px 1px 1px 0px; height: 150px; z-index: 4; position: absolute; background: transparent url(&quot;Content/Rajya_Sanik_Board/img/gal/flasherr.png&quot;) repeat scroll 0% 0%; width: 100%; margin-top: 204px;"><p style="color: red;
+    font-size: 30px;
+    margin-top: 219px;
+    padding: 49px;
+    position: absolute;
+    z-index: 4;">Please Enable Javascript for this Site to Function Properly</p>
+</div>
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 1px; width: 100%; z-index: 9999; height: 100%; opacity: 0.55; background-color: rgb(0, 0, 0); position: fixed;"></div>
+
+ </noscript>
+     @if (Session["userid"] != null)
+   {
+       
+       <script>
+
+           window.location = '/Home/Index'</script>
+
+   }  
+   
+ 
+
+    @* end *@
+    <link href="~/Content/Rajya_Sanik_Board/css/bootstrap.min.css" rel="stylesheet" />
+  @*  <script src="~/Scripts/jquery-1.11.3.js"></script>*@
+    <script src="~/Scripts/jquery.min.js"></script>
+ @*  <script src="~/Content/Rajya_Sanik_Board/js/bootstrap.min.js"></script>*@
+
+     <script src="~/Content/Rajya_Sanik_Board/js/bootstrap.min.js"></script>
+    <script src="~/Content/Rajya_Sanik_Board/js/bootstrap-datepicker.js"></script>
+    <link href="~/Content/Rajya_Sanik_Board/css/datepicker.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    @*<script src="~/Scripts/bootstrap-datetimepicker.min.js"></script>*@
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    @*<link href="~/Content/Rajya_Sanik_Board/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />*@
+    <link href="~/Content/Rajya_Sanik_Board/css/bootstrap-datepicker3.css" rel="stylesheet" />
+   @* <script src="~/Scripts/toast.js"></script>
+    <link href="~/Content/Rajya_Sanik_Board/css/toast.css" rel="stylesheet" />*@
+    <link href="~/Content/Rajya_Sanik_Board/css/toastr.min.css" rel="stylesheet" />
+    <link href="~/Content/Rajya_Sanik_Board/css/jquery-ui.css" rel="stylesheet" />
+    <script src="~/Scripts/toastr.min.js"></script>
+    <link href="~/Content/Rajya_Sanik_Board/css/style.css" rel="stylesheet" />
+     <link href="~/Content/Rajya_Sanik_Board/css/font-awesome.min.css" rel="stylesheet" />
+     <script src="~/Scripts/bootstrap-multiselect.js"></script>
+    <script src="~/Scripts/jquery-ui.js"></script>
+
+    @*14-04-2017*@
+    <link rel="stylesheet" href="~/Content/Rajya_Sanik_Board/css/w3-style.css">
+    @*//14-04-2017*@
+
+     <script type="text/javascript" src="~/Scripts/tipuesearch_set.js"></script>
+<script type="text/javascript" src="~/Scripts/tipuesearch_content.js"></script>
+<script type="text/javascript" src="~/Scripts/tipuesearch.min.js"></script>
+      <script type="text/javascript" src="~/Scripts/translator.js"></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            var all_tags = { "div": '14', "h1": '36', "h2": '30', "h3": '22', "h4": '16', "h5": '14', "h6": '12', "p": '14' };
+            jQuery.each(all_tags, function (i, val) {
+                jQuery(i).css('font-size', val + 'px');
+            });
+            checkBesicSize();
+            jQuery(".resetMe").click(function () {
+                jQuery.each(all_tags, function (i, val) {
+                    jQuery(i).css('font-size', val + 'px');
+
+                });
+
+            });
+            jQuery(".increase").click(function () {
+                jQuery.each(all_tags, function (i) {
+                    changeFontSize(i, 3);
+                });
+                return false;
+            });
+            jQuery(".decrease").click(function () {
+                jQuery.each(all_tags, function (i) {
+                    changeFontSize(i, -3);
+                });
+                return false;
+            });
+
+            function changeFontSize(tag, size) {
+                var currentSize = jQuery(tag).css('font-size');
+                var currentSize = parseFloat(currentSize) + parseFloat(size);
+                jQuery(tag).css('font-size', currentSize);
+            }
+
+        });
+        jQuery(window).resize(function () {
+            checkBesicSize();
+        });
+        function checkBesicSize() {
+            var width = jQuery(window).width();
+            if (width > 1290) {
+                var all_tags = { "div": '14', "h1": '36', "h2": '30', "h3": '22', "h4": '16', "h5": '14', "h6": '12', "p": '14' };
+                jQuery.each(all_tags, function (i, val) {
+                    jQuery(i).css('font-size', val + 'px');
+                });
+            }
+            if (width < 1290) {
+                var all_tags = { "div": '13', "h1": '28', "h2": '24', "h3": '20', "h4": '16', "h5": '14', "h6": '12', "p": '14' };
+                jQuery.each(all_tags, function (i, val) {
+                    jQuery(i).css('font-size', val + 'px');
+                });
+            }
+            if (width < 1100) {
+                var all_tags = { "div": '12', "h1": '28', "h2": '24', "h3": '20', "h4": '16', "h5": '14', "h6": '12', "p": '14' };
+                jQuery.each(all_tags, function (i, val) {
+                    jQuery(i).css('font-size', val + 'px');
+                });
+            }
+            if (width < 1024) {
+                var all_tags = { "div": '12', "h1": '28', "h2": '24', "h3": '20', "h4": '16', "h5": '14', "h6": '12', "p": '14' };
+                jQuery.each(all_tags, function (i, val) {
+                    jQuery(i).css('font-size', val + 'px');
+                });
+            }
+            if (width < 980) {
+                var all_tags = { "div": '13', "h1": '28', "h2": '24', "h3": '20', "h4": '16', "h5": '14', "h6": '12', "p": '14' };
+                jQuery.each(all_tags, function (i, val) {
+                    jQuery(i).css('font-size', val + 'px');
+                });
+            }
+            if (width < 800) {
+                var all_tags = { "div": '13', "h1": '28', "h2": '24', "h3": '20', "h4": '16', "h5": '14', "h6": '12', "p": '13' };
+                jQuery.each(all_tags, function (i, val) {
+                    jQuery(i).css('font-size', val + 'px');
+                });
+            }
+            if (width < 768) {
+                var all_tags = { "div": '13', "h1": '28', "h2": '24', "h3": '20', "h4": '16', "h5": '14', "h6": '12', "p": '13' };
+                jQuery.each(all_tags, function (i, val) {
+                    jQuery(i).css('font-size', val + 'px');
+                });
+            }
+            if (width < 640) {
+                var all_tags = { "div": '13', "h1": '24', "h2": '22', "h3": '20', "h4": '18', "h5": '16', "h6": '14', "p": '14' };
+                jQuery.each(all_tags, function (i, val) {
+                    jQuery(i).css('font-size', val + 'px');
+                });
+            }
+            if (width < 480) {
+                var all_tags = { "div": '12', "h1": '24', "h2": '22', "h3": '18', "h4": '16', "h5": '14', "h6": '12', "p": '12' };
+                jQuery.each(all_tags, function (i, val) {
+                    jQuery(i).css('font-size', val + 'px');
+                });
+            }
+            if (width < 400) {
+                var all_tags = { "div": '12', "h1": '20', "h2": '18', "h3": '16', "h4": '14', "h5": '12', "h6": '11', "p": '12' };
+                jQuery.each(all_tags, function (i, val) {
+                    jQuery(i).css('font-size', val + 'px');
+                });
+            }
+            if (width < 360) {
+                var all_tags = { "div": '12', "h1": '20', "h2": '16', "h3": '14', "h4": '12', "h5": '11', "h6": '10', "p": '12' };
+                jQuery.each(all_tags, function (i, val) {
+                    jQuery(i).css('font-size', val + 'px');
+                });
+            }
+
+        }
+</script>	
+
+    @*14-04-2017*@
+    <script>
+        function openloginreg(evt, cityName) {
+            var i, x, tablinks;
+            x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < x.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " w3-red";
+        }
+</script>
+
+    @*//14-04-2017*@
+     <script type="text/javascript" src="~/Scripts/custom2.js"></script>
+     
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+ @*<script src="~/Scripts/custom.js"></script> *@
+  <!--  <script src="~/Scripts/jquery.js"></script>!-->
+     </head>
+
+
+<body>
+    <header>
+	<div class="top-bar">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+				</div>
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+					<div class="col-lg-3 col-md-4 col-sm-4 skip-to">
+						<a href="#first-div" id="skip-text"> Skip To Main Content</a>
+					</div>
+					<div id="fontlinks" class="col-lg-3 col-md-3 col-sm-3 col-xs-5 font-changer">
+							<a href="#" id="incfont" class="increase">A+</a>
+							<a href="#" id="decfont" class="decrease">A-</a>
+							<a href="#" id="decfont" class="resetMe">Reset</a>
+					</div>
+					<div id="exchanger" class="col-lg-2 col-md-2 col-sm-2 col-xs-3 selectbox" style="display:inline-block;">
+						<ul>
+							<a href="#!" class="button-toggle-remove"></a>
+							<a href="#!" class="button-toggle-highcontrast"></a>
+						</ul>
+					</div>
+					
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 translator">
+						<div id="google_translate_element"></div>
+					</div>
+				</div>
+			</div>
+		</div> 
+	</div>
+    <div class="top-bar-head">
+	    <div class="container">
+		    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12 logo-div">
+			    <a href="~/Home/Index"><img class="hsb-logo img-responsive" src="../Content/Rajya_Sanik_Board/img/logo.png"></a>
+		    </div>
+		    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 heading-div">
+			    <h3>Department of Sainik and Ardh Sainik Welfare Haryana</h3>
+				    <h4>Ministry Of Defence, Goverment Of India</h4>
+			    
+		    </div>
+		   @* <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 heading-div search-bar">
+				    <form action="search.html">
+					    <input type="text" name="q" id="tipue_search_input" autocomplete="off" required placeholder="type to search...">
+				    </form>
+	        </div>*@
+	    </diV>
+    </div>
+
+        @*14-04-2017*@
+   <div id="nav">
+    <nav class="navbar navbar-default navbar-static" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+      
+          @if (Session["userid"] != null) {  <li><button  id="btnlogout"  class="w3-button cus-login-bttn">Logout</button></li>}
+
+          
+      </ul>
+    
+      </div><!-- /.navbar-collapse -->
+    </div>
+    </nav>
+  </div>
+        @*//14-04-2017*@
+
+ </header>
+
+    @*14-04-2017*@
+
+    <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <header class="w3-container w3-teal"> 
+        <span onclick="document.getElementById('id01').style.display='none'" 
+        class="w3-button w3-display-topright">&times;</span>
+        <h5 class="cus-modal-heading">Welcome to department of Sainik and Ardh Sainik welfare</h5>
+      </header>
+      <div class="w3-container cus-modal-container">
+        <div class="w3-container">
+ 
+  
+
+</div>
+      </div>
+      <footer class="w3-container w3-teal">
+        <p style="visibility: hidden;">Modal Footer</p>
+      </footer>
+    </div>
+  </div>
+
+       @*//14-04-2017*@
+
+
+<div class="container-fluid main-div-area" id="first-div">
+         <div class="row" style="margin: 0;">
+        <!-- Sidebar -->
+          @*  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 left-sidebar">
+                <div id="sidebar-wrapper" class="widget archieve">
+                    <div class="col-sm-12">
+                        <ul class="blog_archieve">
+                            
+                            <li>
+                                <a href="~/Home/RSBGeneralInfrm" id="sreg"><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                          Sanik Registration</a>
+                            </li>
+                            <li>
+                                <a href="~/Home/Schemes" id="sc"><i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                         Add Schemes</a>
+                            </li>
+                            <li>
+                                <a href="~/Home/Medical_Status" id="med"><i class="fa fa-angle-double-right"></i> Add Medical Status</a>
+                            </li>
+                            <li>
+                                <a href="~/Home/Award" id="awd"><i class="fa fa-angle-double-right"></i> Add Award</a>
+                            </li>
+                            <li>
+                                <a href="~/Home/Rank" id="rnk"><i class="fa fa-angle-double-right"></i> Add Rank</a>
+                            </li>
+                            <li>
+                                <a href="~/Home/Regcorps" id="regcrp"><i class="fa fa-angle-double-right"></i> Add Regement/Corps</a>
+                            </li>
+                            <li>
+                                <a href="~/Home/Pension" id="pens"><i class="fa fa-angle-double-right"></i> Add Pension</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-angle-double-right"></i> Contact</a>
+                            </li>
+                        </ul>
+                      </div>
+                </div>
+            </div>*@
+    
+
+        @RenderBody()
+             
+         </div>
+    </div>
+
+
+<footer id="footer" class="midnight-blue">
+	        <div class="container">
+		        <div class="row">
+			       @* <div class="col-lg-12 col-md- 12 col-sm-12 col-xs-12 footer-links-div"> 
+				        <ul class="footer-nav-links"> 
+					         <li><a href="index.html">Home</a></li> 
+					         <li><a href="termspage.html">Terms & Conditions</a></li> 
+					         <li><a href="copyrights.html">Copyrights Policy</a></li> 
+					         <li><a href="hyperlinking.html">HyperLinking Policy</a></li> 
+					         <li><a href="sitemap.html">Site Map</a></li>
+					        <li><a href="contactus.html">Contact Us</a></li> 
+				        </ul> 
+			         </div>*@
+			        <div class="col-lg-12 col-md- 12 col-sm-12 col-xs-12 copy-rights">
+			       <h4 style="margin: 0; padding:15px 0 4px;">&copy; 2017 <a target="_blank" href="#" title="">Department of Sainik and Ardh Sainik Welfare Haryana</a>. All Rights Reserved.</p>
+			        </div>
+		        </div>
+	        </div>
+	        <a href="#0" class="cd-top">Top</a>
+</footer> 
+     
+
+    
+</body>
+</html>
+

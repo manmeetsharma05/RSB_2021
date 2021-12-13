@@ -1,0 +1,75 @@
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\Rajya_Sanik_Board.dll
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\Rajya_Sanik_Board.pdb
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\Microsoft.Web.WebPages.OAuth.dll
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Net.Http.Formatting.dll
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.Helpers.dll
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.Http.dll
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.Http.WebHost.dll
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.Mvc.dll
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.Razor.dll
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.WebPages.Deployment.dll
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.WebPages.dll
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.WebPages.Razor.dll
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\WebMatrix.Data.dll
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\WebMatrix.WebData.dll
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\Microsoft.Web.Infrastructure.xml
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Net.Http.Formatting.xml
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.Helpers.xml
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.Http.xml
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.Http.WebHost.xml
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.Mvc.xml
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.Razor.xml
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.WebPages.xml
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.WebPages.Deployment.xml
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.WebPages.Razor.xml
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\WebMatrix.Data.xml
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\Microsoft.Web.WebPages.OAuth.xml
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\WebMatrix.WebData.xml
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\obj\Release\Rajya_Sanik_Board.dll
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\obj\Release\Rajya_Sanik_Board.pdb
+C:\Users\hp\documents\visual studio 2012\Projects\Rajya_Sanik_Board\Rajya_Sanik_Board\obj\Release\Rajya_Sanik_Board.csprojResolveAssemblyReference.cache
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\Rajya_Sanik_Board.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\Rajya_Sanik_Board.pdb
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\Antlr3.Runtime.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\CaptchaMvc.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\DotNetOpenAuth.AspNet.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\DotNetOpenAuth.Core.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\DotNetOpenAuth.OAuth.Consumer.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\DotNetOpenAuth.OAuth.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\DotNetOpenAuth.OpenId.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\EntityFramework.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\Microsoft.Web.Infrastructure.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\Microsoft.Web.WebPages.OAuth.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\Newtonsoft.Json.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.Helpers.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.Mvc.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.Optimization.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.Razor.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.WebPages.Deployment.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.WebPages.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.WebPages.Razor.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\WebGrease.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\WebMatrix.Data.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\WebMatrix.WebData.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\EntityFramework.xml
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\Newtonsoft.Json.xml
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.Helpers.xml
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.Mvc.xml
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.Razor.xml
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.WebPages.xml
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.WebPages.Deployment.xml
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\System.Web.WebPages.Razor.xml
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\WebMatrix.Data.xml
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\Microsoft.Web.WebPages.OAuth.xml
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\WebMatrix.WebData.xml
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\DotNetOpenAuth.AspNet.xml
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\DotNetOpenAuth.Core.xml
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\DotNetOpenAuth.OAuth.Consumer.xml
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\DotNetOpenAuth.OAuth.xml
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\DotNetOpenAuth.OpenId.xml
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\obj\Release\Rajya_Sanik_Board.csprojResolveAssemblyReference.cache
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\obj\Release\Rajya_Sanik_Board.dll
+G:\local new\Rajya_Sanik_Board\Rajya_Sanik_Board\obj\Release\Rajya_Sanik_Board.pdb

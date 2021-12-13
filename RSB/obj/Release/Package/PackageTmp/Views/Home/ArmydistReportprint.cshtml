@@ -1,0 +1,64 @@
+﻿@model  Rajya_Sanik_Board.Models.Generalform
+@{
+    ViewBag.Title = "ArmydistReportprint";
+}
+
+        <table class="col-md-12 table-bordered table-striped table-condensed cf" id="t02" style="background-color: #fff;  border: 1px solid #ddd;float: none;margin-top: 20px;
+display:inline-block;width:100%;">
+           
+            <tbody>
+                       @* <tr>
+                              <td colspan="10">
+                                 <img src="../../Content/Rajya_Sanik_Board/img/rsb-banner.png" alt="" style="height: 100px;"></img>
+                               </td>
+                           </tr>*@
+                        
+   
+                    <h2>Sanik  District Wise Report</h2>
+                   
+                <tr>
+                                         <td colspan="6" style="padding:10px;border:1px solid black;">
+                                         <img src="@Url.Content(Model.ImageUrl)"alt="" style="height: 100px;"></img>
+                                        </td>
+                                     </tr>
+                               <tr style="background:#DA251C;color:#fff;">
+                            <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;width:10%;font-size:12px;height:50px;text-align:left;">S.No</th>                        
+                        <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;width:18%;font-size:12px;height:50px;text-align:left;"> <p>Army Number</p><p>ESMIdentity Card Number</p><p>Citizen ID</p></th>                   
+                       
+                        <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;width:18%;font-size:12px;height:50px;text-align:left;"><p>Regement Corps</p><p>Force</p><p>Force Department</p><p>Rank</p></th> 
+                        <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;width:18%;font-size:12px;height:50px;text-align:left;"><p>Sanik Name</p><p>Father Name</p><p>Spouse Name</p></th>                     
+                        <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;width:18%;font-size:12px;height:50px;text-align:left;"><p>DOB</p><p>Gender</p><p>Marital Status</p></th>
+                         <th style="border: 1px solid black;border-collapse: collapse;padding: 5px;width:18%;font-size:12px;height:50px;text-align:left;">Address</th>
+                          </tr>   
+                       
+                @{var counter = 0;}
+                @{foreach (var item in Model.pdf1)
+                  {
+                     
+                      counter = counter + 1;     
+                    <tr class="cus-tr">
+                        
+                        
+                        <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;font-size:12px;text-align:left;">@counter</td>
+                        
+                        
+                        <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;font-size:12px;text-align:left;"><p>@item.Army_No</p> <p> @item.ESMIdentitycardnumber</p> <p> @item.Citizen_ID</p></td>
+                        <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;font-size:12px;text-align:left;"><p>@item.Force_Cat_Name</p> <p> @item.Force_Name</p> <p> @item.regt_CorpsType </p><p> @item.Rank_Type</p></td>
+                                                      
+                         <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;font-size:12px;text-align:left;"><p>@item.Sanik_Name_eng </p><p> @item.Father_Name_eng</p> <p> @item.spousename</p></td> 
+                              
+                         <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;font-size:12px;text-align:left;"><p>@item.dobsanik</p> <p> @item.Gender </p><p> @item.MaritalStatusDesc</p></td>  
+                        
+                        <td style="border: 1px solid black;border-collapse: collapse;padding: 5px;font-size:12px;text-align:left;"><p>@item.Per_address_eng</p> <p> @item.Per_Landmark_english </p> <p> @item.StateName </p> <p> @item.VNAME  @item.townname </p> <p> @item.Pin_code </p></td>
+                                     
+                                      
+                   
+                </tr>
+                  
+                    <td colspan="6" style="background:#fff;padding:7px;"></td>
+                  }}
+
+               
+                </tbody>
+        </table>
+   

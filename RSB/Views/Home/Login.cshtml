@@ -1,0 +1,153 @@
+﻿@model Rajya_Sanik_Board.Models.Generalform
+ 
+@{
+    
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_login.cshtml";
+}
+
+   
+
+  <div id="login" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 w3-container w3-border city">
+        <div class="col-lg-3 col-md-5 col-sm-6 col-xs-12 mobile-pull cus-login-box">
+              <article role="login">
+                <h3 class="text-center"><i class="fa fa-lock"></i> Login with your UserId</h3>
+                <form class="signup">
+                   <div class="form-group ">
+                       @Html.TextBoxFor(model => model.userid, new { @class = "cus-input-fields userid entr",placeholder="User ID" })
+                   @* <input type="email" class="cus-input-fields emailid" placeholder="Email Address" required>*@
+                  </div>
+                  <div class="form-group">
+                      @Html.TextBoxFor(model => model.pswd, new { @class = "cus-input-fields pwd entr",placeholder="Password" ,type="password",onblur="pass(this.value);"})
+                       @Html.Hidden("pswdhidden")
+                    @*<input type="password" class="cus-input-fields pwd" placeholder="Password" required>*@
+                  </div>
+                        <div class="editor-label"> 
+                           @Html.LabelFor(model => model.Captcha) 
+                           <a href="@Url.Action("Login")"> 
+        <img alt="Captcha" src="@Url.Action("CaptchaImage")" style="" /> 
+    </a> 
+                          
+</div> 
+<div class="editor-field ">  
+    @Html.EditorFor(model => model.Captcha) 
+    @Html.ValidationMessageFor(model => model.Captcha) 
+</div>
+                  <div class="form-group">
+                    <input type="button" id="sbmt" class="btn btn-success btn-block"  value="SUBMIT">
+                  </div>
+                  
+                    <div class="col-gl-12 col-md-12 col-sm-12 col-xs-12 text-center" style="margin: 0;"> @Html.ActionLink("Change Password","changePassword","Home",new { @class = "my-classnew" })</div>
+                  <div id="msg" style="text-align:center;" class="red"></div>
+                </form>
+
+              </article>
+            </div>
+       
+  </div>
+<style>
+    .my-classnew {
+        color: #da251c;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+</style>
+<script src="~/Scripts/md5_min.js"></script>
+<script type='text/javascript'>
+  
+    function pass(pd) {
+
+
+        if (pd.length > 0) {
+            var pwd = hex_md5(pd);
+            //alert(pwd);
+            $("#pswd").val(pwd);
+
+
+        }
+    }
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        
+        $("#btnlogout").hide();
+        
+        
+      
+     /*   if (window.event.keyCode == '13') {
+
+            alert("13");
+            if ($("#userid").val() != null && $("#pswd").val() != null) {
+                abc();
+            }
+            else {
+                alert(" password and user id  is not null !!!");
+            }
+        }*/
+           
+        function enterpress()
+            {
+            $.ajax(
+                {
+
+                    dataType: "json",
+                    type: "POST", //HTTP POST Method  
+                    url: '@Url.Action("login1", "Home")', // Controller/View   
+                    data: { //Passing data  
+                        userid: $("#userid").val(),
+                        pswd: $("#pswd").val(), //$("#pswd").val()
+                        Captcha: $("#Captcha").val()
+                        
+                    },
+                    success: function (response) {
+                        if (response.code=="yes")
+                        {
+                            window.location.href = '@Url.Content("~/Home/Login")';
+                        }
+                       else if (response.output == "notmatch") {
+                            $("#msg").html("*Captcha not match!!!");
+                       }
+                       else if (response.output == "notnull") {
+                           $("#msg").html("*Captcha value not be null!!!");
+                       }
+                        else if (response.output == "login") {
+                            $("#msg").hide();
+                            toastr.info("Login Successfully");
+                            window.location.href ='@Url.Content("~/Home/Index")';
+                           
+                           
+                        }
+                            
+                        else {
+
+                            $("#msg").html("*userid or password doesnot correct!!!");
+                          
+
+                        }
+
+                    },
+
+
+
+                });
+
+
+
+
+        }
+   
+        $('.entr').keypress(function (e) {
+
+            if (e.keyCode == 13) {
+
+                enterpress();
+            }
+        });
+
+        $("#sbmt").click(function () {
+            enterpress();
+        });
+       
+    });
+ 
+</script>

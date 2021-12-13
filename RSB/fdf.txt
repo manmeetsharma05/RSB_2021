@@ -1,0 +1,1 @@
+ <link rel="stylesheet" href="@Url.Content("~/Content/assets/stylesheet/css/style1.min.css")">

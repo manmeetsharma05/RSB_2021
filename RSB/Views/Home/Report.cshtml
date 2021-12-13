@@ -1,0 +1,476 @@
+﻿@model Rajya_Sanik_Board.Models.Generalform
+@{
+    ViewBag.Title = "Report";
+    Layout = "";
+}
+<script src="~/Scripts/jquery.min.js"></script>
+
+<script src="~/Scripts/jQuery.print.js"></script>
+<div id="maindiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cus-grid-tables">
+
+                     <div id="no-more-tables" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive cus-summary-report">
+                        <table class="col-md-12 table-bordered table-striped table-condensed cf" id="t02" style="width: 100%;">
+                                 <tbody>
+                                     <tr>
+                                         <td colspan="6">
+                                             <img src="@Url.Content("../img/rsb-header.png")" alt="" style="height: 100px;"/>
+                                          
+                                        </td>
+                                     </tr>
+                                       <tr>
+                                   <td colspan="6" style="background: #DB2B22; text-align:center; color: #fff; font-weight: bold; width: 100%;">Personal Details</td> 
+                                </tr>
+                                 @{foreach (var item in ViewBag.report1)
+                               {
+                                   var imgSrc = string.Empty;
+                                   if (item.photo != null)
+                                   {
+                                       byte[] imgVal = (item.photo).ToArray();
+                                       var base64 = Convert.ToBase64String(imgVal);
+                                       imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
+                                       //imgSrc = String.Format("{0}", base64);
+                                   }
+                                   else
+                                   {
+                                       imgSrc = null;
+                                   }
+                                   var disable = string.Empty;
+                                   if (item.Disable == true)
+                                   {
+                                       disable = "yes";
+                                   }
+                                   else
+                                   {
+                                       disable = "NO";
+                                   }
+                                       
+                                     <tr class="cus-tr">
+                                      <td><strong>Army Number</strong></td>
+                                    <td>@item.Army_No</td>
+                                          <td colspan="2" rowspan="4">
+                                        <span>
+                                       @if (imgSrc == null)
+                                       {
+                                                 <img style="margin:auto;display:block;" class="img-responsive" src="@Url.Content("~/Content/Rajya_Sanik_Board/img/LinkedInNoPic.png")" height="50" width="50" />
+                                       }
+                                       else
+                                       { 
+                                           <img style="margin:auto;display:block;" class="img-responsive" src="@imgSrc" height="100" width="100" />
+                                       }
+                                         
+                                     </span></td>
+                                </tr>
+                                 <tr class="cus-tr">
+                                       <td><strong>ESMIdentity Card Number</strong></td>
+                                    <td>@item.ESMIdentitycardnumber</td>
+                                         
+                                </tr>
+     
+                                    <tr class="cus-tr">
+                                        <td><strong>Citizen ID</strong></td>
+                                        <td>@item.Citizen_ID</td>
+                                        
+                                    </tr>
+                                     <tr class="cus-tr">
+                                        <td><strong>Aadhar Number</strong></td>
+                                     <td>@item.UID</td>
+                                        
+                                    </tr>
+                                    <tr class="cus-tr">
+                                         <td ><strong>Sainik Name(English)</strong></td>
+                                        <td>@item.Sanik_Name_eng</td>
+                                        <td><strong>Sainik Name(Hindi)</strong></td>
+                                        <td>@item.Sanik_Name_hindi</td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Father Name(English)</strong></td>
+                                        <td>@item.Father_Name_eng</td>
+                                         <td><strong>Father Name(Hindi)</strong></td>
+                                         <td>@item.Father_Name_hindi</td> 
+                                    </tr>
+                                 <tr>
+                                     <td><strong>Mother Name(English)</strong></td>
+                                     <td>@item.Mother_Name_eng</td>
+                                       <td><strong>Mother Name(Hindi)</strong></td>
+                                      <td>@item.Mother_Name_hindi</td>
+                                 </tr>
+                                     <tr>
+                                    <td><strong>Spouse Name (English)</strong></td>
+                                    <td>@item.spousename</td>
+                                    <td><strong>Spouse Name(Hindi)</strong></td>
+                                    <td>@item.spousenamehindi</td>
+                                 </tr>
+                                 <tr>
+                                      <td><strong>DOB</strong></td>
+                                     <td>@item.DOB</td>
+                                     <td><strong>Caste</strong></td>
+                                     <td>@item.CategoryDesc</td>
+                                 </tr>
+                                 <tr>
+                                     <td><strong>Gender</strong></td>
+                                        <td>@item.Gender</td>
+                                     <td ><strong>Marital Status</strong></td>
+                                     <td>@item.Marital_Status</td>
+                                     
+                                 </tr>
+                                 
+                                 <tr>
+                                     <td><strong>Mobile Number</strong></td>
+                                     <td>@item.mobileno</td>
+                                     <td><strong>Landline Number</strong></td>
+                                     <td>@item.landline</td>
+                                 </tr>
+                                 <tr>
+                                     
+                                     <td><strong>Email ID</strong></td>
+                                      <td>@item.emialid</td>
+                                 </tr>
+                                 <tr>
+                                     <td><strong>House Number(English)</strong></td>
+                                     <td>@item.Per_address_eng</td>
+                                     <td><strong>House Number(Hindi)</strong></td>
+                                     <td>@item.Per_address_hindi</td>
+                                 </tr>
+                                 <tr>
+                                     <td><strong>Landmark</strong></td>
+                                     <td>@item.Per_Landmark_english</td>
+                                    <td><strong>Landmark(hindi)</strong></td>
+                                    <td>@item.Per_Landmark_Hindi</td>
+                                 </tr>
+                                 <tr>
+                                    <td><strong>State</strong></td>
+                                    <td>@item.StateName</td>
+                                    <td><strong>District</strong></td>
+                                    <td>@item.dname</td>
+                                 </tr>
+                                 <tr>
+                                     <td><strong>Town/Village</strong></td> 
+                                     <td>@item.VNAME  @item.townname</td> 
+                                      <td><strong>Corresponding Address</strong></td>
+                                     <td>@item.Cors_address</td>
+                                 </tr>
+                                 <tr class="cus-tr">
+                                       <td><strong>Date Of Enrolment</strong></td>
+                                    <td>@item.Date_of_Enrolment</td>
+                                         
+                                </tr>
+                                      <tr class="cus-tr">
+                                       <td><strong>Person is Disable :</strong></td>
+                                    <td>
+                                        @disable  </td>                                   
+
+                                       <td><strong>Disability Percent</strong></td>
+                                    <td>@item.Disability_Percentage</td>
+                                         
+                                </tr>
+                                     <tr class="cus-tr">
+                                       <td><strong>PPO Number </strong></td>
+                                    <td>@item.PPO_number</td>
+                                
+                                       <td><strong>Pancard Number </strong></td>
+                                    <td>@item.Pancard_number</td>
+                                         
+                                </tr>
+                                       <tr class="cus-tr">
+                                       <td><strong>Bank Name </strong></td>
+                                    <td>@item.BankName</td>
+                                
+                                       <td><strong>Account Number </strong></td>
+                                    <td>@item.Bank_Acc_no</td>
+                                         
+                                </tr>
+                                 <tr>
+                                     <td><strong>Annual Income</strong></td>
+                                     <td>@item.Annual_income</td>
+                                     <td><strong>Annual Budget For Maintenance</strong></td>
+                                      <td>@item.Annual_Budget_for_Maintenance</td> 
+                                 </tr>
+                                     
+                                 <tr>
+                                     <td><strong>Rent Amount</strong></td> 
+                                     <td>@item.Amount_OF_Rent</td>     
+                                     <td><strong>Regiment/Corps</strong></td>
+                                     <td>@item.regt_CorpsType</td>
+                                 </tr>
+                                 <tr>
+                                     <td><strong>Character</strong></td>
+                                      <td>@item.Character_Type</td>     
+                                     <td><strong>Medical Status</strong></td>
+                                     <td>@item.MedicalCat_Type</td>
+                                 </tr>
+                                 <tr>
+                                     <td><strong>Rank</strong></td>  
+                                     <td>@item.Rank_Type</td> 
+                                     <td><strong>Force</strong></td>
+                                     <td>@item.Force_Cat_Name</td>
+                                 </tr>
+                                 <tr>
+                                     <td><strong>Force Department</strong></td>
+                                     <td>@item.Force_Name</td>
+                                      <td><strong>Retirement Date</strong></td> 
+                                      <td>@item.RetirementDate</td>
+                                 </tr>
+                           
+                                 }
+                                 }
+                                </tbody>
+                                 </table>
+                         </div>
+    <div id="no-more-tables" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive cus-summary-report">
+                                <table class="col-md-12 table-bordered table-striped table-condensed cf" id="t02" style="width: 100%;">
+                                    <tbody>
+                                <tr>
+                                   <td colspan="16" style="background: #DB2B22; text-align:center; color: #fff; font-weight: bold; width: 100%;">Dependent Details</td> 
+                                </tr>
+                                <tr>
+                                                                       
+                                    <th scope="row">Dependent Name</th>
+                                    <th scope="row">DOB</th>
+                                    <th scope="row">Relationship</th>
+                                    <th scope="row">Wife_OtherName</th>
+                                    <th scope="row">Wife_recorded_in_PPO_no</th>
+                                    <th scope="row">Number_Of_children</th>
+                                    <th scope="row">Recorded_in_DO_Part2</th>
+                                    <th scope="row">DO_Part2</th>
+                                    <th scope="row">Marital Status</th>
+                                    <th scope="row">DOM</th>
+                                    <th scope="row">Photo</th>                               
+                                      
+                                </tr>
+                                @{foreach (var item in ViewBag.report4)
+                                  {
+                                      var imgSrc = string.Empty;
+                                      var wiferecorded = string.Empty;
+                                          var recorded = string.Empty;
+                                      if (item.imagedept != null)
+                                      {
+                                          byte[] imgVal = (item.imagedept).ToArray();
+                                          var base64 = Convert.ToBase64String(imgVal);
+                                          imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
+                                          //imgSrc = String.Format("{0}", base64);
+                                      }
+                                      else
+                                      {
+                                          imgSrc = null;
+                                      }
+                                      if (item.Wife_recorded_in_PPO_no == true)
+                                      {
+                                          wiferecorded = "yes";
+                                      }
+                                      else {
+                                          wiferecorded = "NO";
+                                      }
+                                      if (item.Recorded_in_DO_Part2 == true)
+                                      {
+                                          recorded = "yes";
+                                      }
+                                      else
+                                      {
+                                          recorded = "NO";
+                                      }
+                                      <tr>
+                                    
+                                           <td>@item.Dependent_Name</td>
+                                          <td>@item.DOB</td>
+                                           <td>@item.RelationDesc</td>
+                                          <td>@item.Wife_OtherName</td>
+
+                                          <td>@wiferecorded</td>
+                                          <td>@item.Number_Of_children</td>
+                                            <td>@recorded</td>
+                                         <td>@item.Recorded_in_DO_Part2text</td>
+                                           <td>@item.Marital_Status</td>
+                                           <td>@item.DOM</td>
+                                          <td>
+                                        <span>
+                                         @if (imgSrc == null)
+                                         {
+                                           <img class="img-responsive" src='@Url.Content("~/Content/Rajya_Sanik_Board/img/LinkedInNoPic.png")' style="width:50px;min-height: 50px;">        
+                                         }
+                                         else
+                                         {
+                                         <img class="img-responsive" src="@imgSrc" height="50" width="50" />
+                                             imgSrc = null;
+                                         }
+                                     </span></td> 
+                                           </tr>        
+                                  }}
+                                        </tbody>
+                                    </table>
+        </div>
+     <div id="no-more-tables" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive cus-summary-report">
+                                 <table class="col-md-12 table-bordered table-striped table-condensed cf" id="t02" style="width: 100%;">
+                                     <tbody>
+                                 <tr>
+                                   <td colspan="6" style="background: #DB2B22; text-align:center; color: #fff; font-weight: bold;">Other Information</td> 
+                                </tr>
+                                 <tr>
+                                   <td colspan="6" style="background: #F85959; text-align:left; color: #fff; font-weight: bold; font-size: 13px;">Loan Details</td> 
+                                </tr>
+
+                                 <tr colspan="6">
+                                    <td scope="row">Loan Porpose</td>                                    
+                                    <td scope="row">Loan Amount</td>
+                                    <td scope="row">Outstanding Amount</td>
+                                    <td scope="row">Date of Loan</td>                                                                  
+                                      
+                                </tr>
+                                 @{foreach (var item in ViewBag.report5)
+                                   { <tr>
+                                                  
+                                             <td>@item.Purpose</td>
+                                           <td>@item.Loan_Amount</td>
+                                           <td>@item.Outstanding_Amount</td>
+                                           <td>@item.Date_loan</td>
+                                           </tr>        
+                                   }}
+                                    </tbody>
+                                </table>
+         </div>
+     <div id="no-more-tables" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive cus-summary-report">
+                                 <table class="col-md-12 table-bordered table-striped table-condensed cf" id="t02" style="width: 100%;">
+                                     <tbody>
+                                <tr>
+                                    <td colspan="5" style="background: #F85959; text-align:left; color: #fff; font-weight: bold; font-size: 13px;">Complain Details</td> 
+                                </tr>
+                                 <tr>
+                                    <th scope="row">Complain Name</th>                                    
+                                    <th scope="row">Level of Decision</th>
+                                    <th scope="row">Date of Complain</th>
+                                    <th scope="row">Pending With</th>
+                                    <th scope="row">Decision Given</th>                                                                  
+                                      
+                                </tr>
+                                 @{foreach (var item in ViewBag.report3)
+                                   { <tr>
+                                           <td>@item.Name_of_Complain</td>
+                                           <td>@item.Level_of_decision</td>
+                                           <td>@item.Date_of_Complain</td>
+                                           <td>@item.Pending_With</td>
+                                           <td>@item.Decision_Given</td>
+                                           </tr>        
+                                   }}
+                                </tbody>
+                            </table>
+         </div>
+     <div id="no-more-tables" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive cus-summary-report">
+                                 <table class="col-md-12 table-bordered table-striped table-condensed cf" id="t02" style="width: 100%;">
+                                     <tbody>
+                                 <tr>
+                                    <td colspan="4" style="background: #F85959; text-align:left; color: #fff; font-weight: bold; font-size: 13px;">Court Case Details</td> 
+                                </tr>
+                                 <tr>
+                                    <th scope="row">Case Number</th>                                    
+                                    <th scope="row">Case Year</th>
+                                    <th scope="row">court Name</th>
+                                    <th scope="row">Decision</th>                                                                                                   
+                                      
+                                </tr>
+                                 @{foreach (var item in ViewBag.report6)
+                                   { <tr>
+                                           <td>@item.Case_No</td>
+                                           <td>@item.Case_Year</td>
+                                           <td>@item.Court_Name</td>
+                                           <td>@item.Decision</td>                                          
+                                           </tr>        
+                                   }}
+                                         </tbody>
+                                     </table>
+         </div>
+     <div id="no-more-tables" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive cus-summary-report">
+                                 <table class="col-md-12 table-bordered table-striped table-condensed cf" id="t02" style="width: 100%;">
+                                     <tbody>
+                                 <tr>
+                                    <td colspan="4" style="background: #F85959; text-align:left; color: #fff; font-weight: bold; font-size: 13px;">Sanik Award Details</td> 
+                                </tr>
+                                 <tr>
+                                    <th scope="row">Award Name</th>                                    
+                                    <th scope="row">Award Date</th>
+                                    <th scope="row">Perpose</th>
+                                    
+                                </tr>
+                                 @{foreach (var item in ViewBag.report2)
+                                   { <tr>
+                                           <td>@item.awardName</td>
+                                           <td>@item.award_date</td>
+                                           <td>@item.Perpose</td>
+                                                                                   
+                                           </tr>        
+                                   }}
+                                </tbody>
+                            </table>
+                    </div>
+
+                </div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 w3-container w3-border city">
+    <div class="col-lg-3 col-md-5 col-sm-6 col-xs-12 cus-print-link mobile-pull army-no form-group">        
+
+          @*  <a href="@Url.Action("ExportPdf", "Home")">Print</a>*@
+        <button type="button" id="btnprint" onclick="exportpdf()" class="btn btn-primary next-step">Print</button>
+    </div>
+</div>
+
+<style>  
+
+table {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  float: none;
+  margin: auto;
+  width: 90%;
+} 
+
+.cus-print-link a {
+    background: #db2b22 none repeat scroll 0 0;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+  font-weight: bold;
+  margin: 10px;
+  padding: 5px;
+  text-decoration: none;
+  width: 100px;
+}
+.cus-print-link {
+  text-align: center;
+}
+
+th, td {  
+border: 1px solid black;  
+border-collapse: collapse; 
+padding: 5px;
+text-align:left;   
+}  
+div#no-more-tables {
+    width: 100%;
+    margin: auto;
+}
+
+</style>  
+<script type="text/javascript">
+    function exportpdf() {
+        //  $("#btnprint").click(function () {
+
+        //var printContents = document.getElementById("no-more-tables").innerHTML;
+        //var originalContents = document.body.innerHTML;
+        //document.body.innerHTML = printContents; window.print();
+        //document.body.innerHTML = originalContents;
+        //  });
+
+        $("#maindiv").print();
+
+    }
+</script>
+<script>
+    $("#btnlogout").click(function (event) {
+
+        $("#btnlogout").hide();
+        event.preventDefault();
+        var url = '@Url.Action("Logout", "Home")';
+        window.location.href = url;
+    });
+
+
+
+</script>

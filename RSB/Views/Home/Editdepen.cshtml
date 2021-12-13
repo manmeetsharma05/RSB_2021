@@ -1,0 +1,219 @@
+﻿@model Rajya_Sanik_Board.Models.Generalform
+
+@{
+    ViewBag.Title = "Editdepen";
+    Layout = "~/Views/Shared/_RajyaSanikBoard.cshtml";
+}
+ 
+
+   @* <div class="row">
+        <section>
+            <div class="wizard">
+                <div class="wizard-inner">
+                    <div class="connecting-line"></div>
+                    <ul class="nav nav-tabs" role="tablist">
+
+                        <li role="presentation" class="disabled">
+                            <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                                <span class="round-tab hidden-xs">Dependent Details</span>
+                                <span class="round-tab hidden-md hidden-sm hidden-lg">
+                                    <i class="glyphicon glyphicon-pencil"></i>
+                                </span>
+                            </a>
+                        </li>
+                       
+                    </ul>
+                </div>
+                <div class="well">
+
+                    <div class="tab-content">
+                        
+                       <div class="tab-pane" role="tabpanel" id="step2">
+                            <div class="panel panel-info main-heading">
+                                <div class="panel-heading">Edit Dependent Details</div>
+                                <div class="panel-body">
+                                    <div class="step2">
+                                        <div class="step_21">
+                                            <div class="row">
+                                                <div class="col-md-12 col-xs-12">
+                                                    <form class="form-horizontal">
+                                                        <div class="form-group has-success">
+                                                            <label class="col-md-2 col-xs-2 control-label" for="inputSuccess">Army No.</label>
+                                                            <div class="col-md-4 col-xs-10">
+                                                                @Html.TextBoxFor(model => model.Army_No, new { @class = "inputform", @readonly = "readonly" ,@id="armyno" })
+                                                                @Html.HiddenFor(m =>m.Army_No)
+                                                            </div>
+
+                                                            <label class="col-md-2 col-xs-2 control-label" for="inputWarning">Sainik Name</label>
+                                                            <div class="col-md-4 col-xs-10">
+                                                                @Html.TextBoxFor(model => model.Sanik_Name_eng, new { @class = "inputform", @readonly = "readonly",@id="sanikname" })
+                                                                @Html.HiddenFor(m =>m.Sanik_Name_eng)
+                                                            </div>
+                                                        </div>
+
+
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <hr>
+                                        <div class="col-lg-3">
+                                            <label for="dep-name">Dependent Name</label>
+                                          
+                                             @Html.EditorFor(model => model.Dependent_Name, new { htmlAttributes = new { @class = "inputform" } })
+                                            <label for="dep-name">Date of Birth</label>
+                                            
+                                             @Html.EditorFor(model => model.Dependent_DOB, new { htmlAttributes = new { @class = "inputform", type = "Date" } })
+                                            <div class="form-group">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <label for="relation">Relationship</label>
+                                            <div class="input-group">
+                                              
+                                                
+                                              @Html.DropDownList("RelationshipList", null, htmlAttributes: new { @id = "RelationshipStatus", @class = "inputform" })
+                                                @Html.HiddenFor(m => m.RelationCode, new { id = "rcode" })
+                                                
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="marital">Marital Status</label>
+                                                <div class="input-group">
+                                                   
+                                                  @Html.DropDownList("MaritalStatusList", null, htmlAttributes: new { @id = "MaritalStatus1", @class = "inputform" })
+                                                    
+                                                    @* @Html.DropDownList("MaritalStatusList", "Select")*@
+                                                   @* @Html.HiddenFor(m => m.MaritalStatusCode, new { id = "mcode1" })
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <label for="cidr-uid">CIDR/UID No. </label>
+                                           
+                                            @Html.EditorFor(model => model.Citizen_ID, new { htmlAttributes = new { @class = "form-control" } })
+                                            <label for="dep-name">Date of Marriage</label>
+                                             @Html.EditorFor(model => model.DOM, new { htmlAttributes = new { @class = "form-control", type = "Date" } })
+                                           
+                                        </div>
+                                        
+                                        <div class="col-lg-2">
+                                            <div class="user-image">
+                                                <img src="../../Content/Rajya_Sanik_Board/img/LinkedInNoPic.png" id="ImageToShow1" alt="" style="width: 100px;">
+                                                <input id="imageToUpload1" name="input2[]" type="file" class="file" multiple data-show-upload="false" data-show-caption="true" data-toggle="tooltip" data-placement="bottom" title="Select JPG Image only">
+                                            </div>
+                                            <div class="take-photo">
+                                                <label>OR</label>
+                                                <button type="submit" class="btn btn-info" data-toggle="modal" data-target="#rsbModal" data-toggle="tooltip" data-placement="bottom" title="Select JPG Image only "><i class="glyphicon glyphicon-camera"></i>Take Photo</button>
+                                                <div class="modal fade" id="rsbModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-body">
+                                                                ...
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <ul class="list-inline">
+                                               
+                                                <li>
+                                                    <button type="button"  id="btnsavedeptt" class="btn btn-primary next-step">Save</button></li>
+                                            </ul>
+                                        </div>
+
+                                      
+                                        
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                       
+                        
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>*@
+
+ <p>Ffj</p>
+@*<div>
+    @Html.ActionLink("Back to List", "Sanik_General_Registrationstep2")
+</div>*@
+<script>
+    $(document).ready(function () {
+        var date_input = $('input[name="Dependent_DOB"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var options = {
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+    })
+</script>
+<script>
+    $(document).ready(function () {
+        $("#MaritalStatus1").prepend('<option selected="selected" value="0">Select marital</option>');
+        $("#RelationshipStatus").prepend('<option selected="selected" value="0">Select relation</option>');
+        var date_input = $('input[name="DOM"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var options = {
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+    })
+</script>
+<script type="text/javascript">
+    $("#btnsavedeptt").click(function () {
+
+
+        $.ajax(
+            {
+                dataType: "json",
+                type: "POST", //HTTP POST Method  
+                url: '@Url.Action("Editdepen", "Home")', // Controller/View   
+                data: { //Passing data  
+                    Army_No: $("#Army_No").val(),
+                    Dependent_Name: $("#Dependent_Name").val(),
+                    RelationCode: $("#rcode").val(),
+                    UID: $("#uid1").val(),
+                    DOB: $("#Dependent_DOB").val(),
+                    MaritalStatusCode: $("#mcode1").val(),
+                    DOM: $("#DOM").val()
+                }
+
+
+
+            });
+
+        alert("save successfully!!");
+    });
+    </script>
+<script>
+    $('#MaritalStatus1').change(function () {
+        var mat1 = $('#MaritalStatus1').val();
+
+        $('#mcode1').val(mat1);
+    });
+</script>
+<script>
+    $('#RelationshipStatus').change(function () {
+        var rel = $('#RelationshipStatus').val();
+        alert(rel);
+        $('#rcode').val(rel);
+    });
+</script>

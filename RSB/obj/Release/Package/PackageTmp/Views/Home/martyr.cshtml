@@ -1,0 +1,834 @@
+﻿@model Rajya_Sanik_Board.Models.Generalform
+
+@{
+    ViewBag.Title = "martyr";
+    Layout = "~/Views/Shared/_RajyaSanikBoard.cshtml";
+}
+
+<div class="container">
+
+    <div class="row centered-form well">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Sanik Registration <small>Form</small></h3>
+                </div>
+
+                @using (Html.BeginForm("Sanik_Registration", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                { 
+
+
+                    <div class="panel-body rsb-form">
+
+                        <div class="col-md-12 user-img">
+                            <div class="col-md-3 col-md-offset-9">
+                                <img src="../../Content/Rajya_Sanik_Board/img/LinkedInNoPic.png" alt="" style="width: 100px;">
+                                <label class="btn btn-primary btn-file">Browse
+                                    <input type="file" style="display: none;"></label>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 Martyrno">
+                            <div class="form-group">
+                                @*<input type="text" name="Martyr_No" id=" Martyr_No" class="input-sm" placeholder="Martyr No." >*@
+                                @Html.TextBoxFor(m => m.Army_No, new { @class = "input-sm", placeholder = "Martyr_No" })
+
+                            </div>
+                        </div>
+
+                        @* TextBox for Citizen ID *@
+
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                @*<input type="text" name="Citizen_ID" id="Citizen_ID" class=" input-sm" placeholder="CIDR">*@
+                                @Html.TextBoxFor(m => m.Citizen_ID, new { @class = "input-sm", placeholder = "CID NO." })
+
+                            </div>
+                        </div>
+                        @* TextBox for  UID *@
+
+                        <div class="col-xs-6 col-sm-6 col-md-6 UID">
+                            <div class="form-group">
+                                @*<input type="text" name="UID" id="UID" class="input-sm" placeholder="Aadhar No.">*@
+                                @Html.TextBoxFor(m => m.UID, new { @class = "input-sm", placeholder = "Aadhar No,." })
+                            </div>
+                        </div>
+                        @* TextBox for Martyr Name *@
+                        <div class="MartyrName">
+                            <div class="col-xs-6 col-sm-6 col-md-6 ">
+                                <div class="form-group">
+                                    @*<input type="text" name="Martyr_Name_English" id="mrtyr_nme_eng" class="input-sm" placeholder="Martyr Name (English)">*@
+                                    @Html.TextBoxFor(m => m.Sanik_Name_eng, new { @class = "input-sm", placeholder = " Martyr Name (English)" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 ">
+                            <div class="form-group">
+                                @Html.TextBoxFor(m => m.Sanik_Name_hindi, new { @class = "input-sm", placeholder = " Martyr Name (Hindi)" })
+                            </div>
+                        </div>
+
+                        @* TextBox for Martyr Father Name *@
+
+                        <div class="col-xs-6 col-sm-6 col-md-6 FatherName">
+                            <div class="form-group">
+
+                                @Html.TextBoxFor(m => m.Father_Name_eng, new { @class = "input-sm", placeholder = "Father Name (English)" })
+                            </div>
+                        </div>
+                        @* father name hindi *@
+                        <div class="col-xs-6 col-sm-6 col-md-6 FatherName">
+                            <div class="form-group">
+                                @* <input type="text" name="Father_Name_Hindi" id="fthr_nme_hindi" class="input-sm" placeholder="Father Name (Hindi)">*@
+
+                                @Html.TextBoxFor(m => m.Father_Name_hindi, new { @class = "input-sm", placeholder = "Father Name (Hindi)" })
+                            </div>
+                        </div>
+
+                        @* TextBox for DOB *@
+
+                        <div class="col-xs-6 col-sm-6 col-md-6 DOB">
+                            <div class="form-group">
+
+                                @* <input class="input-sm" id="date_dob" name="date_dob" placeholder="DOB" type="text"/>*@
+                                @Html.TextBoxFor(model => model.DOB, new { @class = "input-sm", placeholder = "DOB", type = "Date" })
+                            </div>
+
+                        </div>
+                        @* DropDown Box for Category *@
+                        <div class="col-xs-6 col-sm-6 col-md-6 Category">
+                            <div class="form-group">
+                               @* <label>Category   @Html.DropDownList("Category", ViewBag.Category as SelectList, "Select") </label>
+
+                                @Html.HiddenFor(m => m.CategoryCode, new { id = "catid" })*@
+
+                            </div>
+                        </div>
+                        @* TextBox For Pancard No. *@
+
+                        <div class="col-xs-6 col-sm-6 col-md-6n Pancard">
+                            <div class="form-group">
+                                @*<input type="text" name="Pancard" id="pancard" class="input-sm" placeholder="Pancard No.">*@
+                                @Html.TextBoxFor(m => m.Pancard_No, new { @class = "input-sm", placeholder = "Pancard No." })
+                            </div>
+                        </div>
+                        @*TextBox for Regement/Crops ID  *@
+
+                        <div class="col-xs-6 col-sm-6 col-md-6 regement">
+                            <div class="form-group">
+                                @*<input type="text" name="regement_corps_Id" id="regcorpsId" class="input-sm" placeholder="Regement/Corps ID">*@
+                                @Html.TextBoxFor(m => m.regt_CorpsID, new { @class = "input-sm", placeholder = "Regement/CorpsID" })
+                            </div>
+                        </div>
+
+
+                        @* TextBox For Mobile No. *@
+
+                        <div class="col-xs-6 col-sm-6 col-md-6 mobileno">
+                            <div class="form-group">
+                                @Html.TextBoxFor(m => m.mobileno, new { @class = "input-sm", placeholder = "Mobile No." })
+                                @*<input type="text" name="Mobile_No" id="mble_no" class="input-sm" placeholder="Mobile No.">*@
+                            </div>
+                        </div>
+                        @* TextBox For Landline No. *@
+
+                        <div class="col-xs-6 col-sm-6 col-md-6 landline">
+                            <div class="form-group">
+                                @Html.TextBoxFor(m => m.landline, new { @class = "input-sm", placeholder = "Landline No." })
+                                @*<input type="text" name="Landline" id="lndlne_no" class="input-sm" placeholder="Landline No.">*@
+                            </div>
+                        </div>
+
+                        @* Email Id *@
+                        <div class="col-xs-6 col-sm-6 col-md-6 email">
+                            <div class="form-group">
+                                @*<input type="email" name="email" id="email" class="input-sm" placeholder="Email Address">*@
+                                @Html.TextBoxFor(m => m.emialid, new { @class = "input-sm", placeholder = "Email Id" })
+                            </div>
+                        </div>
+                        @* Radio Button For Marital Status *@
+
+                        <div class="col--xs-6 col-md-6 col-sm-6 marital">
+                            @*dl>
+                                    <dt>
+                                        <label for="Martial_status">Marital Status: </label>
+                                        <input name="Married" value="1" type="radio" />
+                                        <label>Married</label>
+                                        <input name="UnMarried" value="2" checked="checked" type="radio" />
+                                        <label>Unmarried</label>
+                                    </dt>
+
+                                </dl>*@
+                            <div>
+                                <label>Marital Status:</label></div>
+                            <label>Married</label>
+                         @*   @Html.RadioButtonFor(m => m.MaritalStatusCode, "Married")
+                            <label>Unmarried</label>
+                            @Html.RadioButtonFor(m => m.MaritalStatusCode, "Unmarried")
+                            <label>Widow</label>
+                            @Html.RadioButtonFor(m => m.MaritalStatusCode, "Widow")
+                            <label>Widower</label>
+                            @Html.RadioButtonFor(m => m.MaritalStatusCode, "Widower")*@
+
+                        </div>
+                        @* TextBox for Property *@
+                        <div class="col-xs-6 col-sm-6 col-md-6 Property">
+                            <div class="form-group">
+                                @*<input type="text" name="Property" id="property" class="input-sm" placeholder="Property">*@
+                                @Html.TextBoxFor(m => m.Property, new { @class = "input-sm", placeholder = "Property" })
+                            </div>
+                        </div>
+                        @* TextBox for Family Memeber *@
+
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <div class="form-group">
+                                @*<input type="text" name="No_of_Family_Member" id="fmly_Membr" class="input-sm" placeholder="No. of family member">*@
+                                @Html.TextBoxFor(m => m.No_FamilyMemb, new { @class = "input-sm", placeholder = "No of Family Members" })
+                            </div>
+                        </div>
+
+
+                        <fieldset>
+                            <legend>Family Information</legend>
+                            <div class="legend">
+                                @* Wife Detail *@
+                                @* TextBox for Wife Name *@
+
+                                <div class="col-xs-6 col-sm-6 col-md-6 wife ">
+                                    <div class="form-group">
+                                        @*<input type="text" name="WifeName" id="WifeName" class="input-sm" placeholder="Wife Name">*@
+                                        @Html.TextBoxFor(m => m.Wifename, new { @class = "input-sm", placeholder = "Wife Name" })
+                                    </div>
+                                </div>
+                                @* TextBox  Name of Other then Wife *@
+                                <div class="col-xs-6 col-sm-6 col-md-6 wife">
+                                    <div class="form-group">
+                                        @*<input type="text" name="othrthnWifeName" id="othrthnWifeName" class="input-sm" placeholder="Name of Person other than wife ">*@
+                                        @Html.TextBoxFor(m => m.Othrthnwifenme, new { @class = "input-sm", placeholder = "Name of person other than wife" })
+                                    </div>
+                                </div>
+                                @* TextBox for Dependent *@
+                                <div class="col-xs-6 col-sm-6 col-md-6 dependent">
+                                    <div class="form-group">
+                                        @*<input type="text" name="dependent" id="dependent" class="input-sm" placeholder="dependent Names">*@
+                                        @Html.TextBoxFor(m => m.Dependent_Name, new { @class = "input-sm", placeholder = "Dependent Name" })
+                                    </div>
+                                </div>
+                                @* textBox for Wife DOB *@
+                                <div class="col-xs-6 col-sm-6 col-md-6 wife">
+                                    <div class="form-group">
+
+                                        @* <input class="input-sm" id="wdate_dob" name="wdate_dob" placeholder="wife DOB" type="text"/>*@
+                                        @Html.TextBoxFor(model => model.Dependent_DOB, new { @class = "input-sm", placeholder = "DOB", type = "Date" })
+                                    </div>
+
+                                </div>
+                                @* textbox for Date of Marriage *@
+
+                                <div class="col-xs-6 col-sm-6 col-md-6 wife">
+                                    <div class="form-group">
+
+                                        @*<input class="input-sm" id="wdate_mrg" name="wdate_mrg" placeholder="Date of Marriage" type="text"/>*@
+                                        @Html.TextBoxFor(model => model.DOM, new { @class = "input-sm", placeholder = "Date of Marriage", type = "Date" })
+                                    </div>
+                                </div>
+
+
+
+                                @* TextBox for Wife CIDR *@
+                                <div class="col-xs-6 col-sm-6 col-md-6 WifeCIDR">
+                                    <div class="form-group">
+                                        @* <input type="text" name="wCitizen_ID" id="wCitizen_ID" class="input-sm" placeholder="CIDR">*@
+                                        @Html.TextBoxFor(model => model.Citizen_ID, new { @class = "input-sm", placeholder = "wCIDR" })
+                                    </div>
+                                </div>
+                                
+                                @* TextBox for Authority Letter No. *@
+                                <div class="col-xs-6 col-sm-6 col-md-6 wifeLetterno">
+                                    <div class="form-group">
+                                        @*<input type="text" name="wauthority" id="wauthority" class="input-sm" placeholder="Authority Letter No.">*@
+                                        @Html.TextBoxFor(model => model.Authority_Letter_no, new { @class = "input-sm", placeholder = "Authority Letter No." })
+                                    </div>
+                                </div>
+                                @*TextBox for No. of Children  *@
+
+                                <div class="col-xs-6 col-sm-6 col-md-6  children">
+                                    <div class="form-group">
+                                        @*<input type="text" name="No_of_Children" id="No_of_Children" class="input-sm" placeholder="No of Children">*@
+                                        @Html.TextBoxFor(model => model.noofchildren, new { @class = "input-sm", placeholder = "No. of Children" })
+                                    </div>
+                                </div>
+                                <fieldset>
+                                    <legend>Children Information</legend>
+                                    @* Children Details *@
+                                    @* TextBox for Children Name *@
+                                    <div class="col-xs-6 col-sm-6 col-md-6  children">
+                                        <div class="form-group">
+                                            @*<input type="text" name="ChildName" id="ChildName" class="input-sm" placeholder="Child Name">*@
+                                            @Html.TextBoxFor(model => model.ChildName, new { @class = "input-sm", placeholder = "Child Name" })
+                                        </div>
+                                    </div>
+                                    @* Child Date of Birth *@
+                                    <div class="col-xs-6 col-sm-6 col-md-6 children">
+                                        <div class="form-group">
+
+                                            @*<input class="input-sm" id="cdate_dob" name="cdate_dob" placeholder="Child DOB" type="text"/>*@
+                                            @Html.TextBoxFor(model => model.DOB, new { @class = "input-sm", placeholder = "cDOB", Type = "date" })
+                                        </div>
+                                    </div>
+                                    @* TextBox for Child CIDR *@
+                                    <div class="col-xs-6 col-sm-6 col-md-6 children">
+                                        <div class="form-group">
+                                            @*<input type="text" name="cCitizen_ID" id="cCitizen_ID" class="input-sm" placeholder="CIDR">*@
+                                            @Html.TextBoxFor(model => model.Citizen_ID, new { @class = "input-sm", placeholder = "chdCIDR" })
+                                        </div>
+                                    </div>
+                                 
+                                    @*Radio Button for Maritial Status *@
+                                    <div class="col-xs-6 col-md-6 col-sm-6 child-maritialstatus">
+                                        <div>
+                                            <label>Marital Status:</label></div>
+                                        <label>Married</label>
+                                      @*  @Html.RadioButtonFor(m => m.MaritalStatusCode, "Married")
+                                        <label>Unmarried</label>
+                                        @Html.RadioButtonFor(m => m.MaritalStatusCode, "Unmarried")
+                                        <label>Widow</label>
+                                        @Html.RadioButtonFor(m => m.MaritalStatusCode, "Widow")
+                                        <label>Widower</label>
+                                        @Html.RadioButtonFor(m => m.MaritalStatusCode, "Widower")*@
+
+                                    </div>
+
+
+                                </fieldset>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+
+                            <legend>Medical Information</legend>
+                            @* DropDown Box for Medical Status *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 medicalstatus">
+                                <div class="form-group">
+
+                                   @* <label>Medical Status  @Html.DropDownList("MedicalStatus", ViewBag.MedicalStatus as SelectList, "Select", new { @class = "from-control" })  </label>
+                                    
+                                      @Html.HiddenFor(m => m.medical_ID, new { id = "medicalid" })*@
+
+                                </div>
+                            </div>
+                            @* For Disablity Radio Button *@
+                            <div class="col-xs-6 col-md-6 col-sm-6 Disability">
+
+                                <div>
+                                    <label>Disability:</label></div>
+                                <label>Yes</label>
+                             @*   @Html.RadioButtonFor(m => m.Disability, "Married")*@
+                                <label>No</label>
+                              @*  @Html.RadioButtonFor(m => m.Disability, "Unmarried")*@
+
+
+                            </div>
+                            @* TextBox for Disability Percentage *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 Disability">
+                                <div class="form-group">
+                                    @* <input type="text" name="Disability_Percentage" id="dsblty_per" class="input-sm" placeholder="Disability Percentage">*@
+                                    @Html.TextBoxFor(model => model.DisabilityPercentage, new { @class = "input-sm", placeholder = "Disability Percentage" })
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend><b>Address Information</b></legend>
+
+                            @* Textbox for Permanent Address *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 permanentaddress">
+                                <div class="form-group">
+
+                                    @*<textarea rows="3" cols="61" placeholder="Permanent Address"></textarea>*@
+                                    @Html.TextAreaFor(m => m.Per_address_eng, new { rows = "3", columns = "61", placeholder = "Permanent Address" })
+                                </div>
+                            </div>
+                            @* TextBox For PinCode *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 pincode">
+                                <div class="form-group">
+                                    @*<input type="text" name="pincode" id="pincode" class="input-sm" placeholder="Pin Code">*@
+                                    @Html.TextBoxFor(model => model.Pin_code, new { @class = "input-sm", placeholder = "Pincode" })
+                                </div>
+                            </div>
+                            @* DropBox For State District *@
+                            <div class="form-group">
+
+                                <label for="State">State</label>
+
+                              @*  @Html.DropDownList("State", ViewBag.State as SelectList, "Select", new { @class = "from-control" })
+
+
+
+                                <label for="District">District</label>
+                                @Html.DropDownList("District", ViewBag.District as SelectList, "Select", new { @class = "from-control" })*@
+                                @* </div>*@
+                            </div>
+
+
+
+
+
+
+                            @* Radio Urban/Rural *@
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 offset-(-2) tehsil-village-div">
+
+                                <label for="Urban_Rural">Urban_Rural</label>
+
+                                <label>Urban</label>
+                           @*     @Html.RadioButtonFor(m => m.Uban_Rural, "Married")*@
+                                <label>Rural</label>
+                             @*   @Html.RadioButtonFor(m => m.Uban_Rural, "Unmarried")*@
+                                @* DropBox Tehsil Code and village *@
+                                <div class="form-group">
+                                    @*<label>Tehsil  @Html.DropDownList("Tehsil", ViewBag.Tehsil as SelectList, "Select", new { @class = "from-control" })  </label>
+                                    <label>Village @Html.DropDownList("Village", ViewBag.Village as SelectList, "Select", new { @class = "from-control" })</label>*@
+                                </div>
+                            </div>
+                            <div>
+                            </div>
+                            @* TextBox for Correspondence address *@
+
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 correspondenceaddress">
+                                <div class="form-group">
+                                    @*<textarea placeholder="Correspondence Address" rows="3" cols="61"></textarea>*@
+                                    @Html.TextAreaFor(m => m.Cors_address, new { rows = "3", columns = "61", placeholder = " Correspondence Address" })
+                                </div>
+                            </div>
+
+
+
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Department Related Information</legend>
+                            @* TextBox For Bank ID *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 BankID">
+                                <div class="form-group">
+                                    @*<input type="text" name="bank_Id" id="bank_Id" class="input-sm" placeholder="Bank ID">*@
+                                    @Html.TextBoxFor(model => model.BankID, new { @class = "input-sm", placeholder = "Bank ID" })
+                                </div>
+                            </div>
+                            @* TextBox  for Post *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 POSt">
+                                <div class="form-group">
+                                    @*<input type="text" name="Post" id="Post" class="input-sm" placeholder="Post">*@
+                                    @Html.TextBoxFor(model => model.Post, new { @class = "input-sm", placeholder = "Post" })
+                                </div>
+                            </div>
+
+                            @* Textbox PPONumber *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 PPONO">
+                                <div class="form-group">
+                                    @*<input type="text" name="PPONumber" id="PPO_Numb" class="input-sm" placeholder="PPO Number">*@
+                                    @Html.TextBoxFor(model => model.PPO_Number, new { @class = "input-sm", placeholder = "PPO Number" })
+                                </div>
+                            </div>
+
+                            @* TextBox ESMIdentityCard Number *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 ESMI">
+                                <div class="form-group">
+                                    @*<input type="text" name="ESMI" id="ESMI" class="input-sm" placeholder="ESMIdentityCard Number">*@
+                                    @Html.TextBoxFor(model => model.ESMIdentitycardnumber, new { @class = "input-sm", placeholder = "ESMIdentityCard Number" })
+                                </div>
+
+                            </div>
+                            @* TextBox for Rank ID  *@
+
+
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label>Rank</label>
+                                    @*@Html.DropDownList("Rank", ViewBag.Rank as SelectList, "Select", new { @class = "from-control" })
+                                    @Html.HiddenFor(m => m.Rank_ID, new { id = "rankid" })*@
+                                </div>
+                            </div>
+                            @* TextBox for RentHouse Information  *@
+                            @* TextBox for Location *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 HouseLocation">
+                                <div class="form-group">
+                                    @*<input type="text" name="Location" id="Location" class="input-sm" placeholder="Location">*@
+                                    @Html.TextBoxFor(model => model.Location, new { @class = "input-sm", placeholder = "Location" })
+                                </div>
+                            </div>
+                            @* TextBox for Amount of Rent *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 HouseLocation">
+                                <div class="form-group">
+                                    @*<input type="text" name="Amount_of_Rent" id="Amount_of_Rent" class="input-sm" placeholder="Amount of Rent">*@
+                                    @Html.TextBoxFor(model => model.Amount_OF_Rent, new { @class = "input-sm", placeholder = "Amount of Rent" })
+                                </div>
+                            </div>
+                            @* TextBox For Annual Income *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 AnualIncome">
+                                <div class="form-group">
+                                    @*<input type="text" name="AnualIncome" id="AnualIncome" class="input-sm" placeholder="Annual Income">*@
+                                    @Html.TextBoxFor(model => model.Annual_income, new { @class = "input-sm", placeholder = "Annual Income" })
+                                </div>
+                            </div>
+                            @*TextBox for Annual Budget For Maintenance  *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 HouseMaintenance">
+                                <div class="form-group">
+                                    @*<input type="text" name="Maintenance" id="Maintenance" class="input-sm" placeholder="Annual Budget for Maintenance">*@
+                                    @Html.TextBoxFor(model => model.Annual_Budget_for_Maintenance, new { @class = "input-sm", placeholder = "Annual Budget for Maintenance" })
+                                </div>
+                            </div>
+                            @* TextBox For Remarks *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 permanentaddress">
+                                <div class="form-group">
+
+                                    @* <textarea rows="3" cols="61" placeholder="Remarks for House Rent"></textarea>*@
+                                    @Html.TextAreaFor(m => m.Remarks, new { rows = "3", columns = "61", placeholder = "Remark for House Rent" })
+                                </div>
+                            </div>
+                            @* Hired for Post Detail *@
+                            @* TextBox for Location *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 Location">
+                                <div class="form-group">
+                                    @*<input type="text" name="LocationPost" id="LocationPost" class="input-sm" placeholder="Posting Location">*@
+                                    @Html.TextBoxFor(model => model.Location, new { @class = "input-sm", placeholder = "Posting Location" })
+                                </div>
+                            </div>
+                            @* TextBox for hire Date *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 children">
+                                <div class="form-group">
+
+                                    @*<input class="input-sm" id="hiredate" name="hiredate" placeholder="Date Of Hiring" type="text"/>*@
+                                    @Html.TextBoxFor(model => model.Date_of_Hire, new { @class = "input-sm", placeholder = "Date of Hiring", type = "Date" })
+
+                                </div>
+                            </div>
+                            @* TextBox for Period of lease *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 Location">
+                                <div class="form-group">
+                                    @*<input type="text" name="Period_Of_Lease" id="Period_Of_Lease" class="input-sm" placeholder="Period Of Lease">*@
+                                    @Html.TextBoxFor(model => model.Period_of_lease, new { @class = "input-sm", placeholder = "Period of Lease" })
+                                </div>
+                            </div>
+                            @* TextBox for Date of Joining *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 Joindate">
+                                <div class="form-group">
+
+                                    @*<input class="input-sm" id="joindate" name="joindate" placeholder="Date Of Joining" type="text"/>*@
+                                    @Html.TextBoxFor(model => model.Date_Of_joining, new { @class = "input-sm", placeholder = "Date of joining", type = "Date" })
+                                </div>
+                            </div>
+                            @* TextBox for Loan Type *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 Location">
+                                <div class="form-group">
+                                    @*<input type="text" name="Loan_Type" id="Loan_Type" class="input-sm" placeholder="Loan Type">*@
+                                    @Html.TextBoxFor(model => model.Loan_Amount, new { @class = "input-sm", placeholder = "Loan type" })
+                                </div>
+                            </div>
+                            @* Loan Date *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 Loan">
+                                <div class="form-group">
+
+                                    @* <input class="input-sm" id="loandate" name="loandate" placeholder="Loan Date" type="text"/>*@
+                                    @Html.TextBoxFor(model => model.Date_loan, new { @class = "input-sm", placeholder = "Loan Date", type = "Date" })
+                                </div>
+                            </div>
+
+                            @* Textbox for Year of Present in posting *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 Location">
+                                <div class="form-group">
+                                    @*<input type="text" name="yr_posting" id="yr_posting" class="input-sm" placeholder="No of years in posting">*@
+                                    @Html.TextBoxFor(model => model.No_yr_prsnt_Posting, new { @class = "input-sm", placeholder = "No. of year present in Posting" })
+                                </div>
+                            </div>
+                            @* Drop Force Department  *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 forcedept">
+                                <div class="form-group">
+
+                                    <label>Force Department</label>
+                                   @* @Html.DropDownList("forcedept", ViewBag.forcedept as SelectList, "Select", new { @class = "from-control" })
+                                    @Html.HiddenFor(m => m.Force_Dept_Id, new { id = "forcedeptid" })*@
+
+                                </div>
+                            </div>
+                            @* Force Name *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 forcename">
+                                <div class="form-group">
+
+                                    <label>Department</label>
+                                   @* @Html.DropDownList("dept", ViewBag.dept as SelectList, "Select", new { @class = "from-control" })*@
+                                   @* @Html.HiddenFor(m =>, new { id = "forcecatid" })*@
+
+
+                                </div>
+                            </div>
+
+                            @* DropdownBox for Award *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 award">
+                                <div class="form-group">
+                                    <label>Award</label>
+                                   @* @Html.DropDownList("award", ViewBag.award as SelectList, "Select", new { @class = "from-control" })
+                                    @Html.HiddenFor(m => m.awardID, new { id = "awardid" })*@
+
+
+
+                                </div>
+                            </div>
+
+
+                            @* TextBox for Pension Type *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 pension">
+                                <div class="form-group">
+                                    <label>Pension</label>
+                                   @* @Html.DropDownList("pension", ViewBag.pension as SelectList, "Select", new { @class = "from-control" })
+                                    @Html.HiddenFor(m => m.Pensionstatus_ID, new { id = "pensionid" })*@
+
+                                </div>
+                            </div>
+                            @* Textbox Payscale  *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 payscale">
+                                <div class="form-group">
+                                    @*<input type="text" name="Payscale" id="Payscale" class="input-sm" placeholder="Payscale">*@
+                                    @Html.TextBoxFor(model => model.PayScale, new { @class = "input-sm", placeholder = "Payscale" })
+                                </div>
+                            </div>
+                            @* TextBox for Date of Retirement *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 retirement">
+                                <div class="form-group">
+
+                                    @*<input class="input-sm" id="date_rtrmnt" name="date_rtrmnt" placeholder="Date of Retirement" type="text"/>*@
+                                    @Html.TextBoxFor(model => model.RetirementDate, new { @class = "input-sm", placeholder = "Date of retirement", type = "Date" })
+                                </div>
+                            </div>
+
+                            @* Description for CourtCase *@
+                            @* TextBox for Name of Party *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 partyname">
+                                <div class="form-group">
+                                    @*<input type="text" id="partyname" class="input-sm" placeholder="Party Name">*@
+                                    @Html.TextBoxFor(model => model.Name_of_Party, new { @class = "input-sm", placeholder = "Party Name" })
+                                </div>
+                            </div>
+
+                            @* TextBox for Court Name *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 Courtcase">
+                                <div class="form-group">
+                                    @*<input type="text" name="Court_Name" id="Court_Name" class="input-sm" placeholder="Court Name">*@
+                                    @Html.TextBoxFor(model => model.Court_Name, new { @class = "input-sm", placeholder = "Court Name" })
+                                </div>
+                            </div>
+                            @* TextBox for Case_No *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 caseno">
+                                <div class="form-group">
+                                    @*<input type="text" name="Case_No" id="Case_No" class="input-sm" placeholder="Case No">*@
+                                    @Html.TextBoxFor(model => model.Case_No, new { @class = "input-sm", placeholder = "Case No." })
+                                </div>
+                            </div>
+                            @* TextBox for Case_Year *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 case year">
+                                <div class="form-group">
+                                    @*<input type="text" name="Case_Year" id="Case_Year" class="input-sm" placeholder="Case Year">*@
+                                    @Html.TextBoxFor(model => model.Case_Year, new { @class = "input-sm", placeholder = "case year" })
+                                </div>
+                            </div>
+                            @* TextBox for Decision *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 decision">
+                                <div class="form-group">
+                                    @*<textarea rows="3" cols="61" placeholder="Decision"></textarea>*@
+                                    @Html.TextAreaFor(m => m.Decision, new { rows = "3", columns = "61", placeholder = "Decision" })
+                                </div>
+                            </div>
+
+                            @* TextBox for Reason for Discharge *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 discharge">
+                                <div class="form-group">
+                                    @* <textarea rows="3" cols="61" placeholder="Reason for Discharge"></textarea>*@
+                                    @Html.TextAreaFor(m => m.Reson_for_Discharge, new { rows = "3", columns = "61", placeholder = "Reson for discharge" })
+                                </div>
+                            </div>
+
+
+
+
+                            @* TextBox for Description *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 discharge">
+                                <div class="form-group">
+                                    @* <textarea rows="3" cols="61" placeholder="Reason for Discharge"></textarea>*@
+                                    @Html.TextAreaFor(m => m.Description, new { rows = "3", columns = "61", placeholder = "Description" })
+                                </div>
+                            </div>
+
+                        </fieldset>
+
+                        <input type="submit" value="Register" class="btn btn-info btn-block">
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@* script for date of retirement *@
+<script>
+    $(document).ready(function () {
+        var date_input = $('input[name="Date"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var options = {
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+    })
+</script>
+@* script for DOB *@
+<script>
+    $(document).ready(function () {
+        var date_input = $('input[name="Martyr_DOB"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var options = {
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+    })
+</script>
+@* script for wife DOB *@
+<script>
+    $(document).ready(function () {
+        var date_input = $('input[name="wifeDOB"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var options = {
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+    })
+</script>
+@* script for Date of marriage *@
+<script>
+    $(document).ready(function () {
+        var date_input = $('input[name="DateofMarriage"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var options = {
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+    })
+</script>
+@* script for Child date of Birth *@
+<script>
+    $(document).ready(function () {
+        var date_input = $('input[name="ChildDOB"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var options = {
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+    })
+</script>
+@* script for Hire Date *@
+<script>
+    $(document).ready(function () {
+        var date_input = $('input[name="Date_of_Hire"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var options = {
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+    })
+</script>
+@* script for Join Date *@
+<script>
+    $(document).ready(function () {
+        var date_input = $('input[name="Date_Of_joining"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var options = {
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+    })
+</script>
+@* Required field validate *@
+@*<script>
+    function validateForm() {
+        var x = document.forms["form"]["Martyr_No", "Citizen_ID", "UID", "Martyr_Name_eng", "Martyr_DOB", "Father_Name_eng"].value;
+        if (x == null || x == "") {
+            alert(" must be filled out");
+            return false;
+        }
+    }
+</script>*@
+<script>
+    $('#Category').change(function () {
+
+        var cat1 = $('#Category').val();
+        $('#catid').val(cat1);
+
+    });
+
+
+
+</script>
+<script>
+    $('#MedicalStatus').change(function () {
+        var med = $('#MedicalStatus').val();
+        $('#medicalid').val(med);
+    });
+</script>
+<script>
+    $('#Rank').change(function () {
+        var rank = $('#Rank').val();
+        $('#Rank').val(rank);
+    });
+</script>
+<script>
+    $('#forcedept').change(function () {
+        var fdept = $('#forcedept').val();
+        $('#forcedeptid').val(fdept);
+    });
+</script>
+<script>
+    $('#dept').change(function () {
+        var dept = $('#dept').val();
+        $('#forcecatid').val(dept);
+    });
+</script>
+<script>
+    $('#award').change(function () {
+        var award = $('#award').val();
+        $('#awardid').val(award);
+    });
+</script>
+
+
+

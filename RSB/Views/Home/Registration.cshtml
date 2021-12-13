@@ -1,0 +1,543 @@
+﻿@model Rajya_Sanik_Board.Models.SainikModal
+@{
+    ViewBag.Title = "Registration";
+    Layout = "~/Views/Shared/_RajyaSanikBoard.cshtml";
+}
+
+
+<div class="container">
+    <div class="row ">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Martyr Registration <small>Form</small></h3>
+                </div>
+
+                @* Textbox for Martyr No. *@
+
+                <div class="panel-body">
+                    <form role="form">
+                        
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div>
+                                    <input type="text" name="Martyr_No" id=" Martyr_No"  placeholder="Martyr No.">
+                                </div>
+                            </div>
+                            @* TextBox for Citizen ID *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div >
+                                    <input type="text" placeholder="text"  />
+                                    <input type="text" name="Citizen_ID" id="Citizen_ID"  placeholder="Citizen ID">
+                                </div>
+                            </div>
+                            @* TextBox for Martyr Name *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="Martyr_Name_English" id="mrtyr_nme_eng" class="form-control input-sm" placeholder="Martyr Name (English)">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="Martyr_Name_Hindi" id="mrtyr_nme_hindi" class="form-control input-sm" placeholder="Martyr Name (Hindi)">
+                                </div>
+                            </div>
+                            @* TextBox for Martyr Father Name *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="Father_Name_English" id="fthr_nme_eng" class="form-control input-sm" placeholder="Father Name (English)">
+                                </div>
+                            </div>
+                            @* father name hindi *@
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="Father_Name_Hindi" id="fthr_nme_hindi" class="form-control input-sm" placeholder="Father Name (Hindi)">
+                                </div>
+                            </div>
+                            @* TextBox For Pancard No. *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="Pancard" id="pancard" class="form-control input-sm" placeholder="Pancard No.">
+                                </div>
+                            </div>
+                            @*TextBox for Regement/Crops ID  *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="regement_corps_Id" id="regcorpsId" class="form-control input-sm" placeholder="Regement/Corps ID">
+                                </div>
+                            </div>
+                            @* TextBox for DOB *@
+
+                           <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                 <label class="control-label" for="date">DOB</label>
+                             <input class="form-control" id="date_dob" name="date_dob" placeholder="MM/DD/YYY" type="text"/>
+                             </div>
+                                                                
+                                </div>
+
+
+                            @* TextBox For Aadhar No. *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="Aadhar_No" id="adhr_no" class="form-control input-sm" placeholder="Aadhar No.">
+                                </div>
+                            </div>
+                            @* TextBox For Mobile No. *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="Mobile_No" id="mble_no" class="form-control input-sm" placeholder="Mobile No.">
+                                </div>
+                            </div>
+                            @* TextBox For Landline No. *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="Landline" id="lndlne_no" class="form-control input-sm" placeholder="Landline No.">
+                                </div>
+                            </div>
+                            @* DropDown Box for Category *@
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+
+                                    <dl>
+                                        <dd>
+                                            <label for="catgry">Category</label>
+                                            <select size="1" name="Category" id="catgry">
+                                                <option value="0">Select Category</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+
+                                </div>
+                            </div>
+                            @* Radio Button For Marital Status *@
+
+                            <div class="col--xs-6 col-md-6 col-sm-6">
+                                <dl>
+                                    <dt>
+                                        <label for="Martial_status">Marital Status: &nbsp;&nbsp</label>
+                                        <input name="Married" value="1" type="radio" />
+                                        <label>yes</label>
+                                        <input name="UnMarried" value="2" checked="checked" type="radio" />
+                                        <label>No</label>
+                                    </dt>
+
+                                </dl>
+                            </div>
+
+                            @* DropDown Box for Medical Status *@
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+
+                                    <dl>
+                                        <dd>
+                                            <label for="Medical_Status">Medical Status</label>
+                                            <select size="1" name="Medical Status" id="mdcl_stuts">
+                                                <option value="0">Select Category</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+
+                                </div>
+                            </div>
+                            @* For Disablity Radio Button *@
+                            <div class="col-xs-6 col-md-6 col-sm-6">
+                                <dl>
+                                    <dt>
+                                        <label for="disblty">Disability:&nbsp;&nbsp</label>
+
+
+                                        <input name="Disability" value="1" type="radio" />
+                                        <label>yes</label>
+                                        <input name="Disability" value="2" checked="checked" type="radio" />
+                                        <label>No</label>
+
+                                        @* <li>
+                                                    <input name="Disability" value="1" checked="checked" type="radio" />
+                                                    <label>No</label>
+                                                </li>*@
+
+
+                                    </dt>
+
+                                </dl>
+                            </div>
+                            @* TextBox for Disability Percentage *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="Disability_Percentage" id="dsblty_per" class="form-control input-sm" placeholder="Disability Percentage">
+                                </div>
+                            </div>
+
+                            @* Email Id *@
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+                                </div>
+                            </div>
+
+                            @* TextBox for Family Memeber *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="No_of_Family_Member" id="fmly_Membr" class="form-control input-sm" placeholder="No. of family member">
+                                </div>
+                            </div>
+
+
+                            @* Textbox for Permanent Address *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+
+                                    <textarea rows="3" cols="10" placeholder="Permanent Address"></textarea>
+                                </div>
+                            </div>
+                            @* TextBox for Correspondence address *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <textarea placeholder="Correspondence Address" rows="3" cols="10"></textarea>
+                                </div>
+                            </div>
+                            @* TextBox for Property *@
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="Property" id="property" class="form-control input-sm" placeholder="Property">
+                                </div>
+                            </div>
+                            @* TextBox For Bank ID *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="bank_Id" id="bank_Id" class="form-control input-sm" placeholder="Bank ID">
+                                </div>
+                            </div>
+                            @* TextBox For PinCode *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="pincode" id="pincode" class="form-control input-sm" placeholder="Pin Code">
+                                </div>
+                            </div>
+                            @* DropBox For State District *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6 tehsil-village-div">
+                                <div class="form-group">
+
+                                    <dl>
+                                        <dd>
+                                            <label for="State">State</label>
+                                            <select size="1" name="State" id="state">
+                                                <option value="0">Select State</option>
+                                            </select>
+                                        </dd>
+                                        <dd>
+                                            <label for="District">District</label>
+                                            <select size="1" name="District" id="District">
+                                                <option value="0">Select District</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+
+                                </div>
+                            </div>
+
+
+                            @* Radio Urban/Rural *@
+
+                            <div class="col-xs-6 col-md-6 col-sm-6 tehsil-village-div">
+                                <dl>
+                                    <dt>
+                                        <label for="Urban_Rural">Urban_Rural</label>
+                                        <ul class="urban-rural-selector">
+                                            <li class="urban-rural">
+                                                <input name="Urban" value="1" checked="checked" type="radio" />
+                                                <label>Urban</label>
+                                            </li>
+                                            <li class="urban-rural">
+                                                <input name="Rural" value="2" type="radio" />
+                                                <label>Rural</label>
+                                            </li>
+                                        </ul>
+                                    </dt>
+                                </dl>
+                            </div>
+
+
+                            @* Textbox PPONumber *@
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="PPONumber" id="PPO_Numb" class="form-control input-sm" placeholder="PPO Number">
+                                </div>
+                            </div>
+
+
+                            @* DropBox Tehsil Code and village *@
+                            <div class="col-xs-6 col-sm-6 col-md-6 tehsil-village-div">
+                                <div class="form-group">
+
+                                    <dl>
+                                        <dd>
+                                            <label for="Tehsil">Tehsil</label>
+                                            <select size="1" name="Tehsil" id="Tehsil">
+                                                <option value="0">Select Tehsil</option>
+                                            </select>
+                                        </dd>
+                                        <dd>
+                                            <label for="Village">Village</label>
+                                            <select size="1" name="Village" id="Village">
+                                                <option value="0">Select Village</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+
+                                </div>
+                            </div>
+
+                            @* TextBox ESMIdentityCard Number *@
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="ESMI" id="ESMI" class="form-control input-sm" placeholder="ESMIdentityCard Number">
+                                </div>
+
+                            </div>
+                            @* DropDownBox for character Type *@
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+
+                                    <dl>
+                                        <dd>
+                                            <label for="Character">Character Type</label>
+                                            <select size="1" name="Character" id="Character">
+                                                <option value="0">Character Type</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+
+                                </div>
+                            </div>
+                            @* DropDownBox for character Description *@
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+
+                                    <dl>
+
+                                        <dd>
+                                            <label for="CharacterDescription">Character Description</label>
+                                            <select size="1" name="CharacterDecrptn" id="CharacterDecrptn">
+                                                <option value="0">Character Description</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+
+                                </div>
+                            </div>
+                            @* TextBox  for Post *@
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="Post" id="Post" class="form-control input-sm" placeholder="Post">
+                                </div>
+                            </div>
+                            @* Drop Force Department  *@
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+
+                                    <dl>
+
+                                        <dd>
+                                            <label for="ForceDept">Force Department</label>
+                                            <select size="1" name="ForceDept" id="ForceDept">
+                                                <option value="0">Force Department</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+
+                                </div>
+                            </div>
+                            @* Force Name *@
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+
+                                    <dl>
+
+                                        <dd>
+                                            <label for="Dept">Department</label>
+                                            <select size="1" name="Department" id="Department">
+                                                <option value="0">Department</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+
+                                </div>
+                            </div>
+                            @* TextBox for Rank ID  *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="Rank_id" id="Rank_Id" class="form-control input-sm" placeholder="Rank ID">
+                                </div>
+                            </div>
+                             @* DropdownBox for Award *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+
+                                    <dl>
+
+                                        <dd>
+                                            <label for="award">Award</label>
+                                            <select size="1" name="Award" id="Award">
+                                                <option value="0">Select Award</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+
+                                </div>
+                            </div>
+                             @* DropDown for Pension *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+
+                                    <dl>
+
+                                        <dd>
+                                            <label for="Pension">Pension</label>
+                                            <select size="1" name="Pension" id="Pension">
+                                                <option value="0">Select Pension</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+
+                                </div>
+                            </div>
+
+                            @* Textbox Payscale  *@
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="Payscale" id="Payscale" class="form-control input-sm" placeholder="Payscale">
+                                </div>
+                            </div>
+                            @* TextBox for Date of Retirement *@
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                 <label class="control-label" for="date">Date of Retirement</label>
+                             <input class="form-control" id="date_rtrmnt" name="date_rtrmnt" placeholder="MM/DD/YYY" type="text"/>
+                             </div>
+                                                                
+                           
+                           
+                           
+                             @* TextBox For Death Date and Death Place *@
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                 <label class="control-label" for="date">Death Date</label>
+                             <input class="form-control" id="date_dth_dte" name="date_dth_dte" placeholder="MM/DD/YYY" type="text"/>
+
+                               </div>
+                                <div>
+                                    <input type="text" name="death_plce" id="death_plce" class="form-control input-sm" placeholder="Death Place">
+                                </div>
+                                                                
+                                </div>
+
+                                </div>
+                            @* TextBox for Reason for Discharge *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <textarea rows="3" cols="10" placeholder="Reason for Discharge"></textarea>
+                                </div>
+                            </div>
+                           
+                           
+                            @* TextBox for Cause of Action *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+
+                                    <textarea rows="3" cols="10" placeholder="Cause of Action"></textarea>
+                                </div>
+                            </div>
+
+                            @* DropBox for Declared By *@
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+
+                                    <dl>
+                                        <dd>
+                                            <label for="Declared_By">Declared By</label>
+                                            <select size="1" name="dclrd_by" id="dclrd_by">
+                                                <option value="0">Select Declared By</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+
+                                </div>
+                            </div>
+                                                                              
+                    
+                       </div>
+                        <input type="submit" value="Register" class="btn btn-info btn-block">
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* script for death date *@
+<script>
+    $(document).ready(function () {
+        var date_input = $('input[name="date_dth_dte"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var options = {
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+    })
+</script>
+@* script for date of retirement *@
+<script>
+    $(document).ready(function () {
+        var date_input = $('input[name="date_rtrmnt"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var options = {
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+    })
+</script>
+@* script for DOB *@
+<script>
+    $(document).ready(function () {
+        var date_input = $('input[name="date_dob"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var options = {
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+    })
+</script>
+

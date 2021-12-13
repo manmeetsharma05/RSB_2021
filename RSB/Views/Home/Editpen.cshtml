@@ -1,0 +1,66 @@
+﻿@model Rajya_Sanik_Board.Models.Generalform
+
+@{
+    ViewBag.Title = "Editpen";
+    Layout = "~/Views/Shared/_RajyaSanikBoard.cshtml";
+}
+
+@using (Html.BeginForm("Editpen", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+
+
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 center-div">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inner-content-div">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Edit Pension</h3>
+                    </div>
+                <div class="panel-body rsb-form">
+                    <div class="col-xs-6 col-sm-6 col-md-6 SchemeID">
+                                <div class="form-group">
+                                   <label>Pension ID</label>
+                                     @Html.TextBoxFor(m => m.Pensionstatus_ID, new { @readonly="readonly" })
+                                    @Html.HiddenFor(m =>m.Pensionstatus_ID)
+                                </div>
+
+                            </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 SchemeID">
+                                <div class="form-group">
+                                   <label>Pension Type:</label>
+                                     @Html.EditorFor(model => model.Pensionstatus_Type, new { htmlAttributes = new { @class = "form-control" } })
+                                    <small class="fg-red" style="color: red;">@Html.ValidationMessageFor(m =>m.Pensionstatus_Type)</small>
+                                </div>
+
+                            </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 SchemeID">
+                                <div class="form-group">
+                                   <label>Description:</label>
+                                   @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+
+                            </div>
+                    
+                                <div class="form-group sub-btn">
+                                  <input type="submit" value="Save" class="btn btn-default next-step" />
+                                </div>
+
+                            
+                </div>
+                
+                </div>
+            </div>
+        </div>
+        
+    
+}
+<script type="text/javascript">
+    $("#btnlogout").click(function (event) {
+        
+        $("#btnlogout").hide();
+        event.preventDefault();
+        var url = '@Url.Action("Logout", "Home")';
+        window.location.href = url;
+
+     });
+</script>
+

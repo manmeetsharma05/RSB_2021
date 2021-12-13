@@ -1,0 +1,681 @@
+﻿@model IEnumerable<Rajya_Sanik_Board.Models.Generalform>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_of_Published)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ESMIdentitycardnumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Active)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Army_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sanik_Name_eng)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sanik_Name_hindi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Father_Name_eng)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Father_Name_hindi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mother_Name_eng)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mother_Name_hindi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.spousename)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.spousenamehindi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marital_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaritalStatusDesc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Citizen_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.regt_CorpsID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.regt_CorpsType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pancard_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mobileno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.landline)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emialid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Per_address_eng)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Per_address_hindi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Per_Landmark_english)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dependent_DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RelationCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dcode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VCODE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tcode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.towncode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.townname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Urban_rural)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.statecode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StateName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Per_Landmark_Hindi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pin_code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cors_address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dependent_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pensionstatus_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pensionstatus_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BankID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.awardName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rank_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rank_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.medical_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MedicalCat_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Character_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Character_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Court_Case_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Case_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Case_Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Court_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Decision)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Complain_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name_of_Complain)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Level_of_decision)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_of_Complain)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pending_With)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Decision_Given)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Force_Dept_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Force_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Force_Cat_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Force_Cat_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Retirement_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name_of_Retiree)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RetirementDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Advance_Doc_Submit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rent_House_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount_OF_Rent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Annual_income)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Outstanding_Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Annual_Budget_for_Maintenance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hired_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_of_Hire)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Period_of_lease)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Scheme_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Property)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Scheme_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhotoString)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.imgg)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Regement_Corps_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.awardID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sanikawrdid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.award_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PerposeSanikawrdid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Perpose)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rest_House_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BankName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bank_Acno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IFSC_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dependent_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Loan_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Loan_Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Purpose)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RelationDesc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_of_Published)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ESMIdentitycardnumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Active)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Army_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sanik_Name_eng)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sanik_Name_hindi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Father_Name_eng)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Father_Name_hindi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mother_Name_eng)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mother_Name_hindi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CategoryDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.spousename)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.spousenamehindi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender_code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Marital_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaritalStatusDesc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Citizen_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.regt_CorpsID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.regt_CorpsType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pancard_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mobileno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.landline)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emialid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Per_address_eng)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Per_address_hindi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Per_Landmark_english)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dependent_DOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RelationCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dcode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VCODE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tcode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.towncode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.townname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Urban_rural)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.statecode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StateName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Per_Landmark_Hindi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pin_code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cors_address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dependent_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pensionstatus_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pensionstatus_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BankID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.awardName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rank_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rank_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.medical_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MedicalCat_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Character_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Character_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Court_Case_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Case_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Case_Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Court_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Decision)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Complain_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name_of_Complain)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Level_of_decision)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_of_Complain)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pending_With)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Decision_Given)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Force_Dept_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Force_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Force_Cat_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Force_Cat_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Retirement_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name_of_Retiree)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RetirementDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Advance_Doc_Submit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remarks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rent_House_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount_OF_Rent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Annual_income)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Outstanding_Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Annual_Budget_for_Maintenance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hired_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_of_Hire)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Period_of_lease)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Scheme_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Property)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Scheme_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhotoString)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.imgg)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Regement_Corps_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.awardID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sanikawrdid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.award_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PerposeSanikawrdid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Perpose)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rest_House_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BankName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bank_Acno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IFSC_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dependent_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Loan_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Loan_Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Purpose)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RelationDesc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "demo";
+    Layout = "~/Views/Shared/_RajyaSanikBoard.cshtml";
+}
+
+<h2>demo</h2>
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>WebcamJS Test Page</title>
+	<style type="text/css">
+		body { font-family: Helvetica, sans-serif; }
+		h2, h3 { margin-top:0; }
+		form { margin-top: 15px; }
+		form > input { margin-right: 15px; }
+		#results { float:right; margin:20px; padding:20px; border:1px solid; background:#ccc; }
+	</style>
+</head>
+<body>
+	<div id="results">Your captured image will appear here...</div>
+	 @Html.Hidden("hdByteString")
+	<h1>WebcamJS Test Page</h1>
+	<h3>Demonstrates simple 320x240 capture &amp; display</h3>
+	
+	<div id="my_camera"></div>
+	
+	<!-- First, include the Webcam.js JavaScript Library -->
+@*	<script type="text/javascript" src="../webcam.js"></script>*@
+    <script src="~/testing/webcam.js"></script>
+	<!-- Configure a few settings and attach camera -->
+	<script type="text/javascript">
+		Webcam.set({
+			width: 320,
+			height: 240,
+			image_format: 'jpeg',
+			jpeg_quality: 90
+		});
+		Webcam.attach( '#my_camera' );
+	</script>
+	
+	<!-- A button for taking snaps -->
+	<form>
+		<input type=button value="Take Snapshot" onClick="take_snapshot()">
+	</form>
+	
+	<!-- Code to handle taking the snapshot and displaying it locally -->
+	<script type="text/javascript">
+		function take_snapshot() {
+			// take snapshot and get image data
+		    Webcam.snap(function (data_uri) {
+		        //alert(data_uri);
+		       
+		        // display results in page
+		       // $("#hdByteString").val(data_uri);
+				document.getElementById('results').innerHTML = 
+					'<h2>Here is your image:</h2>' + 
+					'<img src="' + data_uri + '" />';
+				var str = data_uri;
+				//alert(str.substring(24));
+				if (data_uri != null)
+				{
+				    
+				   // check(str.substring(24));
+				    check(str);
+				}
+                
+			} );
+		}
+	</script>
+    
+
+<script>
+    function check(response1) {
+        alert(response1);
+        var myObj = { datauri: response1};
+        $.ajax({
+            url: '@Url.Action("webcamchange", "Home")',
+             async: true,
+             type: "POST",
+             data: JSON.stringify(myObj),
+             dataType: "json",
+             contentType: "application/json; charset=utf-8",
+             success: function (result) {
+                 alert("success");
+                 alert(result);
+                
+             }
+         });
+    }
+</script>
+    </body>
+</html>

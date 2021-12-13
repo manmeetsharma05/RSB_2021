@@ -1,0 +1,394 @@
+﻿@model  Rajya_Sanik_Board.Models.Generalform
+@{
+    ViewBag.Title = "Armyreportprint";
+}
+
+
+                                            <table border="0" class="col-md-12 table-condensed cf" id="t02" style="background-color:#fff;border:1px solid #ccc;float:none;margin-top:20px;width:100%;">
+                                 
+                            <tbody>
+                                <h2>Summary Report</h2>
+                                      <tr>
+                                         <td colspan="6" style="padding:10px;border:1px solid #ccc;">
+                                         <img src="@Url.Content(Model.ImageUrl)"alt="" style="height: 100px;"></img>
+                                        </td>
+                                     </tr>
+                                      <tr style="width:90%;">
+                                   <td colspan="6" style="background: #DB2B22; text-align:center; color: #fff; font-weight: bold; width: 100%;padding:3px;border:1px solid #ccc;">Personal Details</td> 
+                                </tr>
+
+                                 @{foreach (var item in Model.pdf2 )
+                               {
+                                   var sdob = @item.dobsanik;
+                                   
+                                  var imgSrc1 = @item.pathsnk;
+                                 /*  var imgSrc = string.Empty;
+                                   if (@item.Photo != null)
+                                   {
+                                       byte[] imgVal = (@item.Photo);
+                                       var base64 = Convert.ToBase64String(imgVal);
+                                       imgSrc = String.Format("data:image/jpeg;base64,{0}", base64);
+                                       
+                                       //imgSrc = String.Format("{0}", base64);
+                                   }
+                                   else
+                                   {
+                                       imgSrc = null;
+                                   }*/
+                                     <tr class="cus-tr" style="font-size:12px;">
+                                      <td style="padding:5px;border:1px solid #ccc;width:26%;border-collapse: collapse;" colspan="2"><strong>Army Number</strong></td>
+                                    <td style="padding:5px;border:1px solid #ccc;width:26%;border-collapse: collapse; ">@item.Army_No</td>
+                                          <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;margin:0 auto;display:block;position:absolute;left:100px;" colspan="3" rowspan="4">
+                                        <span>
+                                       
+                                         @if (imgSrc1 == null)
+                                         {
+                                           <img src="@item.defaultimage"  height="100" width="100"/>      
+                                         }
+                                         else
+                                         {
+                                         <img class="img-responsive" src="@imgSrc1" height="100" width="100" />
+                                            
+                                         }
+                                     </span></td>
+                                </tr>
+                                 <tr class="cus-tr" style="font-size:12px;" >
+                                       <td style="padding:5px;border:1px solid #ccc;width:25%;border-collapse: collapse;" colspan="2"><strong>ESMIdentity Card Number</strong></td>
+                                    <td style="padding:5px;border:1px solid #ccc;width:25%;border-collapse: collapse;" >@item.ESMIdentitycardnumber</td>
+                                         
+                                </tr>
+                                     <tr class="cus-tr" style="font-size:12px;" >
+                                       
+                                         <td style="padding:5px;border:1px solid #ccc;width:25%;border-collapse: collapse;" colspan="2"><strong>Aadhar Number</strong></td>
+                                     <td style="padding:5px;border:1px solid #ccc;width:25%;border-collapse: collapse;" >@item.UID</td>
+                                </tr>
+     
+                                    <tr class="cus-tr" style="font-size:12px;">
+                                        <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Citizen ID</strong></td>
+                                        <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" >@item.Citizen_ID</td>
+                                        
+                                    </tr>
+                                    <tr class="cus-tr" style="font-size:12px;">
+                                         <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Sainik Name(English)</strong></td>
+                                        <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;">@item.Sanik_Name_eng</td>
+                                        <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Sainik Name(Hindi)</strong></td>
+                                        <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" >@item.Sanik_Name_hindi</td>
+                                    </tr>
+                                    <tr style="font-size:12px;">
+                                        <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Father Name(English)</strong></td>
+                                        <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;">@item.Father_Name_eng</td>
+                                         <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Father Name(Hindi)</strong></td>
+                                         <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" >@item.Father_Name_hindi</td> 
+                                    </tr>
+                                 <tr style="font-size:12px;">
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Mother Name(English)</strong></td>
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;">@item.Mother_Name_eng</td>
+                                       <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Mother Name(Hindi)</strong></td>
+                                      <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" >@item.Mother_Name_hindi</td>
+                                 </tr>
+                                     <tr style="font-size:12px;">
+                                    <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Spouse Name (English)</strong></td>
+                                    <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;">@item.spousename</td>
+                                    <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Spouse Name(Hindi)</strong></td>
+                                    <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" >@item.spousenamehindi</td>
+                                 </tr>
+                                 <tr style="font-size:12px;">
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>DOB</strong></td>
+                                      
+                                            @if (sdob != null)
+                                              {
+                                                    <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;">@sdob</td>
+                                              }
+                                              else
+                                              {
+                                                    <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;"></td>
+                                              }
+                                   
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Caste</strong></td>
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;">@item.CategoryDesc</td>
+                                 </tr>
+                                      
+                                 <tr style="font-size:12px;">
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Gender</strong></td>
+                                        <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" >@item.Gender</td>
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Marital Status</strong></td>
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;">@item.MaritalStatusDesc</td>
+                                     
+                                 </tr>
+                                
+                                 <tr style="font-size:12px;">
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Mobile Number</strong></td>
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;">@item.mobileno</td>
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Landline Number</strong></td>
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" >@item.landline</td>
+                                 </tr>
+                                 <tr style="font-size:12px;">
+                                 
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Email ID</strong></td>
+                                      <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" >@item.emialid</td>
+                                 </tr>
+                                 <tr style="font-size:12px;">
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>House Number(English)</strong></td>
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;">@item.Per_address_eng</td>
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>House Number(Hindi)</strong></td>
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" >@item.Per_address_hindi</td>
+                                 </tr>
+                                 <tr style="font-size:12px;">
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Landmark</strong></td>
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;">@item.Per_Landmark_english</td>
+                                    <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Landmark(hindi)</strong></td>
+                                    <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" >@item.Per_Landmark_Hindi</td>
+                                 </tr>
+                                 <tr style="font-size:12px;">
+                                    <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>State</strong></td>
+                                    <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;">@item.StateName</td>
+                                    <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>District</strong></td>
+                                    <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" >@item.dname</td>
+                                 </tr>
+                                 <tr style="font-size:12px;">
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Town/Village</strong></td> 
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;">@item.VNAME  @item.townname</td> 
+                                      <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Corresponding Address</strong></td>
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" >@item.Cors_address</td>
+                                 </tr>
+                                 <tr style="font-size:12px;">
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Annual Income</strong></td>
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;">@item.Annual_income</td>
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Annual Budget For Maintenance</strong></td>
+                                      <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;">@item.Annual_Budget_for_Maintenance</td> 
+                                 </tr>
+                                 <tr style="font-size:12px;">
+                                     <td style="padding:5px;border:1px solid #ccc;" colspan="2"><strong>Rent Amount</strong></td> 
+                                     <td style="padding:5px;border:1px solid #ccc;">@item.Amount_OF_Rent</td>     
+                                         <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;" colspan="2"><strong>Regement/Corps</strong></td>
+                                     <td style="padding:5px;border:1px solid #ccc;border-collapse: collapse;">@item.regt_CorpsType</td>
+                                 </tr>
+                                 <tr style="font-size:12px;">
+                                     <td style="padding:5px;border:1px solid #ccc;" colspan="2"><strong>Character</strong></td>
+                                      <td style="padding:5px;border:1px solid #ccc;">@item.Character_Type</td>     
+                                     <td style="padding:5px;border:1px solid #ccc;" colspan="2"><strong>Medical Status</strong></td>
+                                     <td style="padding:5px;border:1px solid #ccc;" >@item.MedicalCat_Type</td>
+                                 </tr>
+                                 <tr style="font-size:12px;">
+                                     <td style="padding:5px;border:1px solid #ccc;" colspan="2"><strong>Rank</strong></td>  
+                                     <td style="padding:5px;border:1px solid #ccc;">@item.Rank_Type</td> 
+                                     <td style="padding:5px;border:1px solid #ccc;" colspan="2"><strong>Force</strong></td>
+                                     <td style="padding:5px;border:1px solid #ccc;" >@item.Force_Cat_Name</td>
+                                 </tr>
+                                 <tr style="font-size:12px;">
+                                     <td style="padding:5px;border:1px solid #ccc;" colspan="2"><strong>Force Department</strong></td>
+                                     <td style="padding:5px;border:1px solid #ccc;" >@item.Force_Name</td>
+                                      <td style="padding:5px;border:1px solid #ccc;" colspan="2"><strong>Retirement Date</strong></td> 
+                                     
+                                            @if (@item.domretiremnt != null)
+                                              {
+                                                    <td style="padding:5px;border:1px solid #ccc;" >@item.domretiremnt</td>
+                                              }
+                                              else
+                                              {
+                                                   <td style="padding:5px;border:1px solid #ccc;" ></td>
+                                              }
+                                      
+                                 </tr>
+                           
+                                 }
+                                 }
+                                </tbody>
+                                 </table>
+                                <table class="col-md-12 table-bordered table-striped table-condensed cf" id="t02" style="width:100%;margin-top:15px;">
+                                    <tbody>
+                                <tr>
+                                   <td style="padding:5px;border:1px solid #ccc;background: #DB2B22; text-align:center; color: #fff; font-weight: bold;" colspan="6">Dependent Details</td> 
+                                </tr>
+                                <tr>
+                                                                       
+                                    <th style="border:1px solid #ccc; font-size:12px;padding:5px;font-weight:bold;">Dependent Name</th>
+                                    <th style="border:1px solid #ccc;font-size:12px;padding:5px;font-weight:bold;">DOB</th>
+                                    <th style="border:1px solid #ccc;font-size:12px;padding:5px;font-weight:bold;">Relationship</th>
+                                    <th style="border:1px solid #ccc;font-size:12px;padding:5px;font-weight:bold;">Marital Status</th>
+                                    <th style="border:1px solid #ccc;font-size:12px;padding:5px;font-weight:bold;">Date of Marriage</th>
+                                    <th style="border:1px solid #ccc;font-size:12px;padding:5px;font-weight:bold;">Photo</th>                               
+                                      
+                                </tr>
+                                @{foreach (var item in Model.pdf)
+                                  {
+                                      var depdob = @item.dobdept;
+                                      var imgSrc = @item.pathdep;
+                                      var domdept = @item.domdept;
+                                      <tr>
+                                    
+                                           <td style="padding:5px;border:1px solid #ccc;font-size:12px;">@item.Dependent_Name</td>
+                                        
+                                              
+                                            @if (depdob != null)
+                                              {
+                                                    <td style="padding:5px;border:1px solid #ccc;font-size:12px;">@depdob</td>
+                                              }
+                                              else
+                                              {
+                                                   <td style="padding:5px;border:1px solid #ccc;font-size:12px;"></td>
+                                              }
+                                          
+                                          
+                                          
+                                           <td style="padding:5px;border:1px solid #ccc;font-size:12px;">@item.RelationDesc</td>
+                                           <td style="padding:5px;border:1px solid #ccc;font-size:12px;">@item.MaritalStatusDesc</td>
+                                           @if (domdept != null)
+                                              {
+                                                    <td style="padding:5px;border:1px solid #ccc;font-size:12px;">@domdept</td>
+                                              }
+                                              else
+                                              {
+                                                  <td style="padding:5px;border:1px solid #ccc;font-size:12px;"></td>
+                                              }
+                                           
+                                          
+                                          
+                                           
+                                          <td style="padding:5px;border:1px solid #ccc;font-size:12px;">
+                                        <span>
+                                         @if (imgSrc == null)
+                                         {
+                                           <img src="@item.defaultimage"  height="50" width="80" />          
+                                         }
+                                         else
+                                         {
+                                         <img class="img-responsive" src="@imgSrc" height="50" width="80" />
+                                            
+                                         }
+                                     </span></td> 
+                                           </tr>        
+                                  }}
+                                        </tbody>
+                                    </table>
+                                 <table class="col-md-12 table-bordered table-striped table-condensed cf" id="t02" style="width:100%;margin-top:56px;">
+                                     <tbody>
+                                 <tr>
+                                   <td style="padding:5px;border:1px solid #ccc;background: #DB2B22; text-align:center; color: #fff; font-weight: bold;" colspan="6">Other Information</td> 
+                                </tr>
+                                 <tr>
+                                   <td style="padding:5px;border:1px solid #ccc;background: #F85959; text-align:left; color: #fff; font-weight: bold; font-size: 13px;" colspan="6">Loan Details</td> 
+                                </tr>
+
+                                 <tr >
+                                    <td style="padding:5px;border:1px solid #ccc;font-size:12px;font-weight:800;" colspan="2">Loan Porpose</td>                                    
+                                    <td style="padding:5px;border:1px solid #ccc;font-size:12px;font-weight:800;" colspan="1">Loan Amount</td>
+                                    <td style="padding:5px;border:1px solid #ccc;font-size:12px;font-weight:800;" colspan="2">Outstanding Amount</td>
+                                    <td style="padding:5px;border:1px solid #ccc;font-size:12px;font-weight:800;" colspan="1">Date of Loan</td>                                                                  
+                                      
+                                </tr>
+                                 @{foreach (var item in Model.pdf)
+                                       
+                                   { 
+                                      
+                                         
+                                       <tr>
+                                            
+                                      
+                                             <td style="padding:5px;border:1px solid #ccc;font-size:12px;" colspan="2">@item.Purpose</td>
+                                           <td style="padding:5px;border:1px solid #ccc;font-size:12px;" colspan="1">@item.Loan_Amount</td>
+                                           <td style="padding:5px;border:1px solid #ccc;font-size:12px;" colspan="2">@item.Outstanding_Amount</td>
+                                               @if (@item.domloan != null )
+                                              {
+                                                  <td style="padding:5px;border:1px solid #ccc;font-size:12px;" colspan="1">@item.domloan</td>
+                                              }
+                                              else
+                                              {
+                                                   <td style="padding:5px;border:1px solid #ccc;font-size:12px;" colspan="1"></td>
+                                              }
+                                           
+                                           </tr>        
+                                   }}
+                                    </tbody>
+                                </table>
+                                 <table class="col-md-12 table-bordered table-striped table-condensed cf" id="t02" style="width:100%;margin-top:15px;">
+                                     <tbody>
+                                <tr>
+                                    <td style="padding:5px;border:1px solid #ccc;background: #F85959; text-align:left; color: #fff; font-weight: bold; font-size: 13px;" colspan="6">Complain Details</td> 
+                                </tr>
+                                 <tr>
+                                    <th style="padding:5px;border:1px solid #ccc;font-size:12px;font-weight:800;" colspan="2">Complain Name</th>                                    
+                                    <th style="padding:5px;border:1px solid #ccc;font-size:12px;font-weight:800;">Level of Decision</th>
+                                    <th style="padding:5px;border:1px solid #ccc;font-size:12px;font-weight:800;" >Date of Complain</th>
+                                    <th style="padding:5px;border:1px solid #ccc;font-size:12px;font-weight:800;">Pending With</th>
+                                    <th style="padding:5px;border:1px solid #ccc;font-size:12px;font-weight:800;">Decision Given</th>                                                                  
+                                      
+                                </tr>
+                                 @{foreach (var item in Model.pdf)
+                                   { <tr>
+                                           <td style="padding:5px;border:1px solid #ccc;font-size:12px;" colspan="2">@item.Name_of_Complain</td>
+                                           <td style="padding:5px;border:1px solid #ccc;font-size:12px;">@item.Level_of_decision</td>
+                                        @if (@item.dobcmp != null)
+                                              {
+                                                    
+                                           <td style="padding:5px;border:1px solid #ccc;font-size:12px;">@item.dobcmp</td>
+                                              }
+                                              else
+                                              {
+                                                 
+                                           <td style="padding:5px;border:1px solid #ccc;font-size:12px;"></td>
+                                              }
+                                           
+                                           <td style="padding:5px;border:1px solid #ccc;font-size:12px;">@item.Pending_With</td>
+                                           <td style="padding:5px;border:1px solid #ccc;font-size:12px;">@item.Decision_Given</td>
+                                           </tr>        
+                                   }}
+                                </tbody>
+                            </table>
+                                 <table class="col-md-12 table-bordered table-striped table-condensed cf" id="t02" style="width:100%;margin-top:15px;">
+                                     <tbody>
+                                 <tr>
+                                    <td style="padding:5px;border:1px solid #ccc;background: #F85959; text-align:left; color: #fff; font-weight: bold; font-size: 13px;" colspan="6">Court Case Details</td> 
+                                </tr>
+                                 <tr>
+                                    <th style="padding:5px;border:1px solid #ccc;font-size:12px;font-weight:800;" colspan="2">Case Number</th>                                    
+                                    <th style="padding:5px;border:1px solid #ccc;font-size:12px;font-weight:800;" colspan="1">Case Year</th>
+                                    <th style="padding:5px;border:1px solid #ccc;font-size:12px;font-weight:800;" colspan="2">Court Name</th>
+                                    <th style="padding:5px;border:1px solid #ccc;font-size:12px;font-weight:800;" colspan="1">Decision</th>                                                                                                   
+                                      
+                                </tr>
+                                 @{foreach (var item in Model.pdf)
+                                   { <tr>
+                                           <td style="padding:5px;border:1px solid #ccc;font-size:12px;" colspan="2">@item.Case_No</td>
+                                           <td style="padding:5px;border:1px solid #ccc;font-size:12px;" colspan="1">@item.Case_Year</td>
+                                           <td style="padding:5px;border:1px solid #ccc;font-size:12px;" colspan="2">@item.Court_Name</td>
+                                           <td style="padding:5px;border:1px solid #ccc;font-size:12px;" colspan="1">@item.Decision</td>                                          
+                                           </tr>        
+                                   }}
+                                         </tbody>
+                                     </table>
+                                 <table class="col-md-12 table-bordered table-striped table-condensed cf" id="t02" style="width:100%;margin-top:15px;">
+                                     <tbody>
+                                 <tr>
+                                    <td style="padding:5px;border:1px solid #ccc;background: #F85959; text-align:left; color: #fff; font-weight: bold; font-size: 13px;" colspan="6">Sanik Award Details</td> 
+                                </tr>
+                                 <tr>
+                                    <th style="padding:5px;border:1px solid #ccc;font-size:12px;font-weight:800;" colspan="2">Award Name</th>                                    
+                                    <th style="padding:5px;border:1px solid #ccc;font-size:12px;font-weight:800;" colspan="2">Award Date</th>
+                                    <th style="padding:5px;border:1px solid #ccc;font-size:12px;font-weight:800;" colspan="2">Purpose</th>
+                                    
+                                </tr>
+                                 @{foreach (var item in Model.pdf)
+                                   { <tr>
+                                           <td style="padding:5px;border:1px solid #ccc;font-size:12px;" colspan="2">@item.awardName</td>
+                                          @if (@item.domaward != null)
+                                              {
+                                                    
+                                             <td style="padding:5px;border:1px solid #ccc;font-size:12px;" colspan="2">@item.domaward</td>
+                                              }
+                                              else
+                                              {
+                                                 
+                                              <td style="padding:5px;border:1px solid #ccc;font-size:12px;" colspan="2">@item.domaward</td>
+                                              }
+                                           
+                                        
+                                           <td style="padding:5px;border:1px solid #ccc;font-size:12px;" colspan="2">@item.Perpose</td>
+                                                                                   
+                                           </tr>        
+                                   }}
+                                </tbody>
+                            </table>
+                   
+
+               

@@ -1,0 +1,56 @@
+﻿@model Rajya_Sanik_Board.Models.Generalform
+
+
+@{
+    Layout ="~/Views/Shared/_login.cshtml";
+}
+
+
+
+                  <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 required">
+                                                        <label for="state-name">District (जिला) :<span class="red">*</span></label>
+                                                        <div class="input-group">
+                                                            
+                                                            <td id="District">
+                                                            @Html.DropDownListFor(x => x.dname, new List<SelectListItem>(), "--Select--", new { @id = "DistrictStatus", @class = "inputform" })
+                                                            @Html.HiddenFor(m => m.dcode, new { id = "ddcode" })
+                                                        </div>
+                                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 cus-field-div">
+                                            <label for="dep-name">From Date</label>
+                                            <asp:TextBox type="date" ID="txtfrmDate"  name="txtfrmDate" runat="Server" >
+                                            <label for="dep-name">To Date</label>
+                                            <asp:TextBox type="date" ID="txttoDate"  name="txttoDate"  runat="Server" >
+                                            <div class="form-group">
+                                            </div>
+                                        </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var date_input = $('input[name="txtfrmDate"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var options = {
+            dateFormat: 'dd/mm/yy',
+            changeMonth: true,
+            changeYear: true,
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+
+
+
+        var date_input = $('input[name="txttoDate"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var options = {
+            dateFormat: 'dd/mm/yy',
+            changeMonth: true,
+            changeYear: true,
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+    })
+</script>

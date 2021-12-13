@@ -1,0 +1,146 @@
+﻿
+@model Rajya_Sanik_Board.Models.Generalform
+@{
+    ViewBag.Title = "Schemes";
+    Layout = "~/Views/Shared/_RajyaSanikBoard.cshtml";
+}
+
+
+
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 center-div">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inner-content-div">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Schemes Form</h3>
+                </div>
+
+                @using (Html.BeginForm("Schemes", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+
+                    if (ViewBag.Message != null)
+                    {<label>@ViewBag.Message</label> }
+                    <div class="panel-body rsb-form">
+  
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <div class="form-group">
+                               <label>Scheme: </label>
+                               @Html.TextAreaFor(m => m.Scheme_Name, new { rows = "3", columns = "61", placeholder = "Scheme" } )
+                              <small class="fg-red" style="color: red;">@Html.ValidationMessageFor(m =>m.Scheme_Name)</small>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-6 col-sm-6 col-md-6 DOB">
+                            <div class="form-group">
+
+                                <label>Date of Published</label>
+                                @Html.TextBoxFor(model => model.Date_of_Published, new { @class = "input-sm", placeholder = "Date of Published", type = "Date" })
+                                <small class="fg-red" style="color: red;">@Html.ValidationMessageFor(m =>m.Date_of_Published)</small>
+                            </div>
+                          </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 DOB">
+                            <div class="form-group cus-active-checkbox">
+
+                                <label style="width: auto;">Active:</label>
+                                @Html.CheckBoxFor(m => m.Active, new {@checked="checked" })
+                            </div>
+                          </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                            <input type="submit" value="ADD" class="btn btn-primary next-step">
+                        </div>
+                        
+                 
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cus-grid-tables">
+                        
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive" style="padding:15px 0;">
+
+                                <table class="table-bordered table-striped table-condensed cf" id="t01">
+                                    <thead>
+                                        @{var counter = 0;}
+                                        <th>S.No </th>
+                                        <th>Scheme</th>
+                                        <th>Date of Published</th>
+                                        <th>Active</th>
+                                       <th>Edit</th>
+                                
+                                    </thead>
+                                    @foreach (var item in ViewBag.Schemes)
+                                    {
+                                        
+                                        counter = counter + 1;
+                                       <tr>
+                                            <td>@counter</td>
+                                            <td>@item.Scheme_Name</td>
+                                           <td>@item.Date_of_Published.ToShortDateString()</td>
+                                           <td>@item.Active</td>
+                                           <td> @Html.ActionLink("Edit", "Edit", new { id=item.Scheme_ID })</td> </tr>
+                                        
+                                    }
+                           
+                                </table>
+                            </div>
+                    </div>
+                    <style>  
+table#t01 {  
+width: 100%;  
+background-color: #f1f1c1;  
+}  
+  
+table#t01 tr:nth-child(even) {  
+background-color: #eee;  
+}  
+table#t01 tr:nth-child(odd) {  
+background-color: #fff;  
+}  
+table#t01 th {  
+color: #333;  
+}  
+table, th, td {  
+border: 1px solid black;  
+}  
+table, th, td {  
+border: 1px solid black;  
+border-collapse: collapse;  
+}  
+table, th, td {  
+border: 1px solid black;  
+border-collapse: collapse;  
+}  
+th, td {  
+padding: 15px;  
+}  
+</style> 
+            
+                }    
+            </div>
+    </div>
+        </div>
+                
+                    @* script for DOP *@
+<script>
+    $(document).ready(function () {
+        var date_input = $('input[name="Date_of_Published"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var options = {
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+    })
+</script>
+<script type="text/javascript">
+    $("#btnlogout").click(function (event) {
+        
+        $("#btnlogout").hide();
+        event.preventDefault();
+        var url = '@Url.Action("Logout", "Home")';
+        window.location.href = url;
+
+    });
+</script>
+
+
+
+

@@ -1,0 +1,380 @@
+﻿@model Rajya_Sanik_Board.Models.Generalform
+
+@{
+    ViewBag.Title = "DistrictReport";
+    Layout = "";
+}
+<style>
+    .table-condensed tr th span {
+	width: 100%;
+	display: inline-block;
+	font-size: 14px;
+}
+    table, th, td {
+
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: left;
+    font-size: 14px;
+
+}
+    .cus-army-no-field span {
+    width: 100%;
+    display: inline-block;
+}
+</style>
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="~/Scripts/jQuery.print.js"></script>
+<div id="maindiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cus-grid-tables">
+
+    <div id="no-more-tables" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive cus-summary-report" style="padding: 15px 0;">
+       
+          
+        <table class="col-md-12 table-bordered table-striped table-condensed cf" id="t02" style="width: 100%; padding: 0">
+                          
+            <tbody style="width: 100%; display: inline-table;">
+
+                        <tr>
+                              <td colspan="10">
+                                 <img src="@Url.Content("../img/rsb-header.png")" alt="" style="height: 100px;">
+                               </td>
+                           </tr>
+                <tr style="background:#DA251C;color:#fff;">
+                        <th>S.No</th>                        
+                        <th><span>Army Number<strong>/</strong></span>
+                            <span>ESMIdentity Card Number<strong>/</strong></span>
+                            <span>Citizen ID</span>
+                        </th>                   
+                       
+                        <th><span>Force<strong>/</strong></span>
+                            <span>Force Department<strong>/</strong></span>
+                            <span>Regement Corps<strong>/</strong></span>
+                            <span>Rank<strong>/</strong></span></th> 
+                        <th><span>Sainik Name<strong>/</strong></span>
+                            <span>Father Name<strong>/</strong></span>
+                            <span>Spouse Name</span></th>                     
+                        <th>
+                            <span>DOB<strong>/</strong></span>
+                            <span>Gender<strong>/</strong></span>
+                            <span>Marital Status</span>
+                            <span>Mobile Number</span>
+                        </th>
+                        <th>Address</th>
+						   
+                   </tr>    
+                    
+                      
+                       
+                @{var counter = 0;}
+                @{foreach (var item in ViewBag.report)
+                  {
+                      counter = counter + 1;
+
+                      var armyno = string.Empty;
+                      if (item.Army_No != null && item.ESMIdentitycardnumber != null)
+                      {
+                          armyno = item.Army_No;
+
+                          armyno = string.Concat(armyno, "/");
+                      }
+                      else
+                      {
+                          armyno = item.Army_No;
+                      }
+                      var ESMIdentitycardnumber = string.Empty;
+                      if (item.ESMIdentitycardnumber != null && @item.Citizen_ID!=null)
+                      {
+                          ESMIdentitycardnumber = item.ESMIdentitycardnumber;
+
+                          ESMIdentitycardnumber = string.Concat(ESMIdentitycardnumber, "/");
+                      }
+                      else
+                      {
+                          ESMIdentitycardnumber = item.ESMIdentitycardnumber;
+                      }
+
+                    
+                      var Forcecat = string.Empty;
+                      if (item.Force_Cat_Name != null && item.Force_Name != null)
+                      {
+                          Forcecat = item.Force_Cat_Name;
+                          
+                          Forcecat = string.Concat(Forcecat, "/");
+                      }
+                      else
+                      {
+                          Forcecat = item.Force_Cat_Name;
+                      }
+                      var Forcename = string.Empty;
+                      if (item.Force_Name != null && item.regt_CorpsType != null)
+                      {
+                          Forcename = item.Force_Name;
+
+                          Forcename = string.Concat(Forcename, "/");
+                      }
+                      else
+                      {
+                          Forcename = item.Force_Name;
+                      }
+                      var regt_CorpsType = string.Empty;
+                      if (item.regt_CorpsType != null && item.Rank_Type !=null)
+                      {
+                          regt_CorpsType = item.regt_CorpsType;
+
+                          regt_CorpsType = string.Concat(regt_CorpsType, "/");
+                      }
+                      else
+                      {
+                          regt_CorpsType = item.regt_CorpsType;
+                      }
+                      var Sanik_Name_eng = string.Empty;
+                      if (item.Sanik_Name_eng != null && item.Father_Name_eng != null)
+                      {
+                          Sanik_Name_eng = item.Sanik_Name_eng;
+
+                          Sanik_Name_eng = string.Concat(Sanik_Name_eng, "/");
+                      }
+                      else
+                      {
+                          Sanik_Name_eng = item.Sanik_Name_eng;
+                      }
+                      var Father_Name_eng = string.Empty;
+                      if (item.Father_Name_eng != null && item.spousename != null)
+                      {
+                          Father_Name_eng = item.Father_Name_eng;
+
+                          Father_Name_eng = string.Concat(Father_Name_eng, "/");
+                      }
+                      else
+                      {
+                          Father_Name_eng = item.Father_Name_eng;
+                      }
+                      var DOB = string.Empty;
+                      if (item.DOB != null && item.Gender != null)
+                      {
+                          DOB = item.DOB;
+
+                          DOB = string.Concat(DOB, "/");
+                      }
+                      else
+                      {
+                          DOB = item.DOB;
+                      }
+                      var Gender = string.Empty;
+                      if (item.Gender != null && item.Marital_Status !=null)
+                      {
+                          Gender = item.Gender;
+
+                          Gender = string.Concat(Gender, "/");
+                      }
+                      else
+                      {
+                          Gender = item.Gender;
+                      }
+                      var Marital_Status = string.Empty;
+                      if (item.Marital_Status != null && item.mobileno != null)
+                      {
+                          Marital_Status = item.Marital_Status;
+
+                          Marital_Status = string.Concat(Marital_Status, "/");
+                      }
+                      else
+                      {
+                          Marital_Status = item.Marital_Status;
+                      }
+                      var Per_address_eng = string.Empty;
+                      if (item.Per_address_eng != null && item.Per_Landmark_english != null)
+                      {
+                          Per_address_eng = item.Per_address_eng;
+
+                          //Per_address_eng = string.Concat(Per_address_eng, "/");
+                      }
+                      else
+                      {
+                          Per_address_eng = item.Per_address_eng;
+                      }
+                      var Per_Landmark_english = string.Empty;
+                      if (item.Per_Landmark_english != null && item.StateName != null)
+                      {
+                          Per_Landmark_english = item.Per_Landmark_english;
+
+                         // Per_Landmark_english = string.Concat(Per_Landmark_english, "/");
+                      }
+                      else
+                      {
+                          Per_Landmark_english = item.Per_Landmark_english;
+                      }
+                      var StateName = string.Empty;
+                      if (item.StateName != null && (item.VNAME != null || item.townname != null))
+                      {
+                          StateName = item.StateName;
+
+                         // StateName = string.Concat(StateName, "/");
+                      }
+                      else
+                      {
+                          StateName = item.StateName;
+                      }
+                      var VNAME = string.Empty;
+                      if (item.VNAME != null && item.Pin_code !=null)
+                      {
+                          VNAME = item.VNAME;
+
+                         // VNAME = string.Concat(VNAME, "/");
+                      }
+                      else
+                      {
+                          VNAME = item.VNAME;
+                      }
+                      var townname = string.Empty;
+                      if (item.townname != null && item.Pin_code!=null)
+                      {
+                          townname = item.townname;
+
+                         // townname = string.Concat(townname, "/");
+                      }
+                      else
+                      {
+                          townname = item.townname;
+                      }
+					  
+                                   
+                    <tr class="cus-tr">
+                        
+                        
+                        <td>@counter</td>
+                        
+                       
+                        <td class="cus-army-no-field"><span>@armyno</span> <span>@ESMIdentitycardnumber</span><span> @item.Citizen_ID </span></td>
+                        <td class="cus-army-no-field"><span>@Forcecat </span><span> @Forcename  </span><span> @regt_CorpsType </span> @item.Rank_Type </td>
+                                                      
+                         <td class="cus-army-no-field"><span>@Sanik_Name_eng  </span><span> @Father_Name_eng  </span><span> @item.spousename </span></td> 
+                              
+                         <td class="cus-army-no-field"><span>@DOB  </span> <span> @Gender  </span><span> @Marital_Status  </span><span>@item.mobileno</span></td>  
+                        
+                        <td class="cus-army-no-field"><span>@Per_address_eng  </span><span> @Per_Landmark_english </span><span> @StateName </span><span> @VNAME  @townname</span> <span> @item.Pin_code </span> </td>
+                                     
+                        
+                                     
+                   
+                </tr>
+                    <tr>
+                    <td colspan="6" style="background:#fff;padding:2px;"></td>
+                        </tr>
+                  }}
+
+               
+                </tbody>
+        </table>
+           
+       
+    </div>
+               
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 w3-container w3-border city">
+    <div class="col-lg-3 col-md-5 col-sm-6 col-xs-12 cus-print-link mobile-pull army-no form-group">        
+
+          @*  <a href="@Url.Action("ExportPdf", "Home")">Print</a>*@
+        <button type="button" id="btnprint" onclick="exportpdf()" class="btn btn-primary next-step">Print</button>
+         <button type="button" id="btnprintexel" onclick="exportexecl()" class="btn btn-primary next-step">Print to excel</button>
+          @*<button type="button" id="btnprintword" onclick="exportword()" class="btn btn-primary next-step">Print to word</button>*@
+    </div>
+</div>
+<script src="~/Scripts/table2excel.js"></script>
+@*<script src="~/Scripts/tableExport.js"></script>*@
+@*<script src="~/Scripts/jquery.base64.js"></script>*@
+<script src="~/Scripts/FileSaver.js"></script>
+@*<script src="~/Scripts/wordExport.js"></script>*@
+
+<script type="text/javascript">
+    function exportpdf() {
+        //  $("#btnprint").click(function () {
+
+        //var printContents = document.getElementById("no-more-tables").innerHTML;
+        //var originalContents = document.body.innerHTML;
+        //document.body.innerHTML = printContents; window.print();
+        //document.body.innerHTML = originalContents;
+        //  });
+
+        $("#maindiv").print();
+
+    }
+    function exportexecl() {
+
+        $("#maindiv").table2excel({
+            filename: "DistrictWiseReport.xls"
+        });
+      
+        //$("[id$=btnprintexel]").click(function (e) {
+        //    window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('div[id$=maindiv]').html()));
+        //    e.preventDefault();
+        //});
+        // $('#btnprintexel').bind('click', function (e) {
+        //     alert();
+        //$('#maindiv').tableExport({ type: 'excel', escape: 'false' });
+        //  });
+
+    }
+    //function exportword() {
+    //    //  $("#btnprint").click(function () {
+
+    //    //var printContents = document.getElementById("no-more-tables").innerHTML;
+    //    //var originalContents = document.body.innerHTML;
+    //    //document.body.innerHTML = printContents; window.print();
+    //    //document.body.innerHTML = originalContents;
+    //    //  });
+
+
+    //    $("#maindiv").wordExport();
+
+    //}
+</script>
+<style>
+  table#t02 {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  float: none;
+  margin: auto;
+  width: 100%;
+  display:inline-block;
+} 
+
+    table#t01 tr:nth-child(even) {
+        background-color: #eee;
+    }
+
+    table#t01 tr:nth-child(odd) {
+        background-color: #fff;
+    }
+
+    table#t01 th {
+        color: #333;
+    }
+    .cus-print-link a {
+    background: #db2b22 none repeat scroll 0 0;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+  font-weight: bold;
+  margin: 10px;
+  padding: 5px;
+  text-decoration: none;
+  width: 100px;
+}
+.cus-print-link.mobile-pull.army-no.form-group {
+  text-align: center;
+}
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        text-align:left;
+            }
+    .cus-army-no-field p {
+  margin: 2px 0;
+}
+</style>
+
+

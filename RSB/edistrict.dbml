@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="edistrict" Class="edistrictDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=edistrict;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="edistrictConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblVillageMaster" Member="tblVillageMasters">
+    <Type Name="tblVillageMaster">
+      <Column Name="DCODE" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="TCODE" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="VCODE" Type="System.String" DbType="Char(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="VNAME" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VNAME_HIN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BCODE" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="SDO_CODE" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="CON_CODE" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="PCON_CODE" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="STA_CODE" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="CENSUS_VCODE" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="VILL_TYPE" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="MERGED_IN_TW" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="RURAL_URBAN" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="MC_CODE" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="DIV_CODE" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="RegUnit_Code" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VillageCode_RGI" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTownMaster" Member="tblTownMasters">
+    <Type Name="tblTownMaster">
+      <Column Name="towncode" Type="System.String" DbType="NVarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="townname" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="dcode" Type="System.String" DbType="NVarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tcode" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="mcode" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="townname_hin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="polcode" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="polname_hin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="subtCode" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="population" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="CreateUser" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ChangeUser" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="ChangeDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="serialno" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="twcode" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="TownCode_RGI" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblBankMaster" Member="tblBankMasters">
+    <Type Name="tblBankMaster">
+      <Column Name="BankID" Type="System.Decimal" DbType="Decimal(5,0) NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Bank_Code" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="BankName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Bank_Name_Short" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Responsible_officer" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Telephone_no" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="Mobile_no" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bank_PO" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Bank_Acno" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="IFSC_Code" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Payee_Code" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDistrictMaster" Member="tblDistrictMasters">
+    <Type Name="tblDistrictMaster">
+      <Column Name="statecode" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="dcode" Type="System.String" DbType="NVarChar(4) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="dname" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="divcode" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="dname_hin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreateUser" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ChangeUser" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="ChangeDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DistrictCode_RGI" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblLogin" Member="tblLogins">
+    <Type Name="tblLogin">
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LocationID" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="ApplicationGranted" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ModulesGranted" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="dcode" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="tcode" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="UserType" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="SCACode" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="RollEdit" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="RollDelete" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="IPAddress" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="CreateUser" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ChangeUser" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="ChangeDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Account_Activated" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="UserChangePwd" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Citizen_Id" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="dsc_file" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="dsc_pwd" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="bcode" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="mcode" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="RegUnitCode" Type="System.String" DbType="NVarChar(4)" CanBeNull="true" />
+      <Column Name="Hospital_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="finger_print" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Designation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="subdivcode" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="Dept_Code" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="ZoneCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblMaritalStatusMaster" Member="tblMaritalStatusMasters">
+    <Type Name="tblMaritalStatusMaster">
+      <Column Name="MaritalStatusCode" Type="System.Char" DbType="Char(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaritalStatusDesc" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCasteCategoryMaster" Member="tblCasteCategoryMasters">
+    <Type Name="tblCasteCategoryMaster">
+      <Column Name="CategoryCode" Type="System.String" DbType="NVarChar(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CategoryDesc" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblstate_master" Member="tblstate_masters">
+    <Type Name="tblstate_master">
+      <Column Name="StateCode" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="StateName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="StateName_LL" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="STDCode" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTehsilMaster" Member="tblTehsilMasters">
+    <Type Name="tblTehsilMaster">
+      <Column Name="tcode" Type="System.String" DbType="NVarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="tname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="dcode" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="ccode" Type="System.String" DbType="NVarChar(2)" CanBeNull="true" />
+      <Column Name="asscode" Type="System.String" DbType="NVarChar(3)" CanBeNull="true" />
+      <Column Name="tname_hin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreateUser" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ChangeUser" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="ChangeDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ttype" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Column Name="subdivisioncode" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="TehsilCode_RGI" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="DistrictCode_RGI" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tblpwdhistory" Member="Tblpwdhistories">
+    <Type Name="Tblpwdhistory">
+      <Column Name="sno" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="uid" Type="System.String" DbType="NVarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="pwd" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="pwddatetime" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTraceError" Member="tblTraceErrors">
+    <Type Name="tblTraceError">
+      <Column Name="SNO" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Error" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PageError" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DateError" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MsgError" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DetailError" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCitizenSrno" Member="tblCitizenSrnos">
+    <Type Name="tblCitizenSrno">
+      <Column Name="scode" Type="System.String" DbType="VarChar(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="dcode" Type="System.String" DbType="VarChar(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="lastsrno" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCIDR" Member="tblCIDRs">
+    <Type Name="tblCIDR">
+      <Column Name="UID" Type="System.String" DbType="VarChar(28)" CanBeNull="true" />
+      <Column Name="Citizen_ID" Type="System.String" DbType="VarChar(12) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Citizen_Name_LL" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Citizen_Name_EN" Type="System.String" DbType="VarChar(99)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Marital_Status" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Caste_Category" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Father_Name_LL" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Father_Name_EN" Type="System.String" DbType="VarChar(99)" CanBeNull="true" />
+      <Column Name="Mother_Name_LL" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Mother_Name_EN" Type="System.String" DbType="VarChar(99)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DOB_Type" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="PODOB_Doc_Type" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="PODOB_DocId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Family_ES" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="RationCardNo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="POES_Verified" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="POES_DocId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="House_Name_No" Type="System.String" DbType="VarChar(75)" CanBeNull="true" />
+      <Column Name="Landmark_Locality_Colony" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="House_Name_No_LL" Type="System.String" DbType="NVarChar(75)" CanBeNull="true" />
+      <Column Name="Landmark_Locality_Colony_LL" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Correspondence_Address_EN" Type="System.String" DbType="NVarChar(225)" CanBeNull="true" />
+      <Column Name="RuralUrban" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Village_Town_Code" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="WardNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Block_Tehsil_Code" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="District_Code" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="PIN" Type="System.String" DbType="Char(6)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Email_id" Type="System.String" DbType="VarChar(254)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="VarChar(18)" CanBeNull="true" />
+      <Column Name="STD_Landline" Type="System.String" DbType="VarChar(18)" CanBeNull="true" />
+      <Column Name="POI_Verified" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="POI_Doc_Type" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="POI_DocId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="POA_Verified" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="POA_Doc_type" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="POA_DocId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="POC_Verified" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="POC_DocId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="DOD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="createuser" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="changedate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="changeuser" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Photo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="EdishaXtnID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="DOD_Verified" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="POD_DocId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="age" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EnrolmentNo" Type="System.String" DbType="VarChar(28)" CanBeNull="true" />
+      <Column Name="Father_EID_UID" Type="System.String" DbType="VarChar(28)" CanBeNull="true" />
+      <Column Name="Mother_EID_UID" Type="System.String" DbType="VarChar(28)" CanBeNull="true" />
+      <Column Name="FatherOrHusband" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="DOM" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DOM_verified" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="POM_Doc_Type" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="POM_DocId" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Spouse_Name_LL" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Spouse_Name_EN" Type="System.String" DbType="NVarChar(99)" CanBeNull="true" />
+      <Column Name="Spouse_EID_UID" Type="System.String" DbType="VarChar(28)" CanBeNull="true" />
+      <Column Name="Nationality" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="CountryCode" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="Source" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="eKycStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Saral_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Saral_SPID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PortalCode" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCitizen" Member="tblCitizens">
+    <Type Name="tblCitizen">
+      <Column Name="LoginID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(12)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MobileVarificationCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EmailVerificationCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreatedOn" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsMobileNumberVerify" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsEmailVerify" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GoogleSignUpID" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="FacebookSignUpID" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ImageUrl" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="MobileVerificationDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EmailVerificationDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="PortalCode" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="TwitterSignUpID" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.pedishaGETCitizenID" Method="pedishaGETCitizenID">
+    <Parameter Name="p_scode" Type="System.String" DbType="NVarChar(2)" />
+    <Parameter Name="p_dcode" Type="System.String" DbType="NVarChar(2)" />
+    <Parameter Name="ReturnCitizenID" Parameter="returnCitizenID" Type="System.String" DbType="NVarChar(12)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

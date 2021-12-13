@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RSB" Class="rsbgeneralUPDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.88.229.244;Initial Catalog=RSB;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="RSBConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Gender" Member="Genders">
+    <Type Name="Gender">
+      <Column Name="Gender_code" Type="System.String" DbType="VarChar(1) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Gender" Member="Gender1" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RegisterSaniklogin" Member="RegisterSaniklogins">
+    <Type Name="RegisterSaniklogin">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="userid" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="pswd" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ForceName" Member="ForceNames">
+    <Type Name="ForceName">
+      <Column Name="Force_Cat_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Force_Dept_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Force_Cat_Name" Type="System.String" DbType="Char(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Force_Hire_Accommodation" Member="Force_Hire_Accommodations">
+    <Type Name="Force_Hire_Accommodation">
+      <Column Name="Hired_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Army_No" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Date_of_Hire" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Period_of_lease" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="Amount_of_rent" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Force_Court_Case" Member="Force_Court_Cases">
+    <Type Name="Force_Court_Case">
+      <Column Name="Court_Case_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Army_No" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Case_No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Case_Year" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="Court_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Decision" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblawards" Member="tblawards">
+    <Type Name="tblaward">
+      <Column Name="awardID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="awardName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblpensiontype" Member="tblpensiontypes">
+    <Type Name="tblpensiontype">
+      <Column Name="Pensionstatus_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Pensionstatus_Type" Type="System.String" DbType="Char(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Create_user" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Change_user" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Create_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Change_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblrank" Member="tblranks">
+    <Type Name="tblrank">
+      <Column Name="Rank_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Rank_Type" Type="System.String" DbType="Char(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblregement_corps" Member="tblregement_corps">
+    <Type Name="tblregement_corp">
+      <Column Name="regt_CorpsID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="regt_CorpsType" Type="System.String" DbType="Char(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Create_user" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Change_user" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Create_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Change_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sanik_otherinformation" Member="sanik_otherinformations">
+    <Type Name="sanik_otherinformation">
+      <Column Name="otherinfmid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Army_No" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Character_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="medical_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Rank_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RetirementDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Force_Cat_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Force_Dept_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Force_Complaints" Member="Force_Complaints">
+    <Type Name="Force_Complaint">
+      <Column Name="Complain_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Army_No" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Name_of_Complain" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Level_of_decision" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date_of_Complain" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Pending_With" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Decision_Given" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblcharacter" Member="tblcharacters">
+    <Type Name="tblcharacter">
+      <Column Name="Character_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Character_Type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Character_Description" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblsanikRelation" Member="tblsanikRelations">
+    <Type Name="tblsanikRelation">
+      <Column Name="RelationCode" Type="System.String" DbType="Char(2) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RelationDesc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MaritalStatus" Member="MaritalStatus">
+    <Type Name="MaritalStatus">
+      <Column Name="Marital_Code" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Marital_Status" Type="System.String" DbType="NChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblfamilydetails" Member="tblfamilydetails">
+    <Type Name="tblfamilydetail">
+      <Column Name="Dependent_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Army_No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="imagedept" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Dependent_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RelationCode" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UID" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="MaritalStatusCode" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="DOM" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Create_user" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Change_user" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Create_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Change_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sanik_award" Member="Sanik_awards">
+    <Type Name="Sanik_award">
+      <Column Name="Sanikawrdid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Army_No" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="awardID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="award_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Perpose" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sanik_Loans" Member="Sanik_Loans">
+    <Type Name="Sanik_Loan">
+      <Column Name="Loan_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Army_No" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Loan_Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Purpose" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Outstanding_Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Date_loan" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblschemes" Member="tblschemes">
+    <Type Name="tblscheme">
+      <Column Name="Scheme_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Scheme_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Date_of_Published" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Force_Dept_catgry" Member="Force_Dept_catgries">
+    <Type Name="Force_Dept_catgry">
+      <Column Name="Force_Dept_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Force_Name" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblmedicalcat" Member="tblmedicalcats">
+    <Type Name="tblmedicalcat">
+      <Column Name="medical_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MedicalCat_Type" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="Create_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Change_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Create_user" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Change_user" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Force_Retirement" Member="Force_Retirements">
+    <Type Name="Force_Retirement">
+      <Column Name="Retirement_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name_of_Retiree" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="RetirementDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Advance_Doc_Submit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sanik_Rent_House" Member="Sanik_Rent_Houses">
+    <Type Name="Sanik_Rent_House">
+      <Column Name="Rent_House_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Amount_OF_Rent" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Annual_income" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Annual_Budget_for_Maintenance" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.rsbgeneral" Member="rsbgenerals">
+    <Type Name="rsbgeneral">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="photo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Army_No" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Sanik_Name_eng" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Sanik_Name_hindi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Father_Name_eng" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Father_Name_hindi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Mother_Name_eng" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Mother_Name_hindi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="spousename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="spousenamehindi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ESMIdentitycardnumber" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Gender_code" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="CategoryCode" Type="System.String" DbType="NVarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="MaritalStatusCode" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Citizen_ID" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="UID" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="Regement_Corps_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mobileno" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="landline" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="emialid" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Per_address_eng" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Per_address_hindi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Per_Landmark_english" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="dcode" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="VCODE" Type="System.String" DbType="Char(6) NOT NULL" CanBeNull="false" />
+      <Column Name="tcode" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="towncode" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="Urban_rural" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Per_cors" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="perchk" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="statecode" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Per_Landmark_Hindi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Pin_code" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="Cors_address" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BankID" Type="System.String" DbType="Char(4)" CanBeNull="true" />
+      <Column Name="Bank_Acc_no" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="Bank_IFSC" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Amount_OF_Rent" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Annual_Budget_for_Maintenance" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Annual_income" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="RegistrationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreateUser" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="ChangeDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ChangeUser" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.check_unique" Method="check_unique">
+    <Parameter Name="Army_No" Parameter="army_No" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="ESMIdentitycardnumber" Parameter="eSMIdentitycardnumber" Type="System.String" DbType="NVarChar(20)" />
+    <ElementType Name="check_uniqueResult">
+      <Column Name="Army_No" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ESMIdentitycardnumber" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="mobileno" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetSanikaward" Method="GetSanikaward">
+    <Parameter Name="Army_No" Parameter="army_No" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="GetSanikawardResult">
+      <Column Name="Sanikawrdid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="awardName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="award_date" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Perpose" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetSanikcomp" Method="GetSanikcomp">
+    <Parameter Name="Army_No" Parameter="army_No" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="GetSanikcompResult">
+      <Column Name="Complain_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name_of_Complain" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Level_of_decision" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Date_of_Complain" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Pending_With" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Decision_Given" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetSanikdep" Method="GetSanikdep">
+    <Parameter Name="Army_No" Parameter="army_No" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="GetSanikdepResult">
+      <Column Name="imagedept" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="Dependent_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RelationDesc" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DOM" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="UID" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="MaritalStatusDesc" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetSanikloan" Method="GetSanikloan">
+    <Parameter Name="Army_No" Parameter="army_No" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="GetSanikloanResult">
+      <Column Name="Loan_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Loan_Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Purpose" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Outstanding_Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Date_loan" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetSanikcourtcase" Method="GetSanikcourtcase">
+    <Parameter Name="Army_No" Parameter="army_No" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="GetSanikcourtcaseResult">
+      <Column Name="Army_No" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Case_No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Case_Year" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="Court_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Decision" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Districtwise" Method="Districtwise">
+    <Parameter Name="dcode" Type="System.String" DbType="NVarChar(6)" />
+    <Parameter Name="startdate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="enddate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="DistrictwiseResult">
+      <Column Name="photo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="Army_No" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ESMIdentitycardnumber" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="Citizen_ID" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="Sanik_Name_eng" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Father_Name_eng" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="spousename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MaritalStatusDesc" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Per_address_eng" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Per_Landmark_english" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="StateName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="townname" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="VNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="regt_CorpsType" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="Force_Cat_Name" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+      <Column Name="Force_Name" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="Rank_Type" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="Pin_code" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetSanikdetail" Method="GetSanikdetail">
+    <Parameter Name="Army_No" Parameter="army_No" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="GetSanikdetailResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="photo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="Army_No" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Sanik_Name_eng" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Sanik_Name_hindi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Father_Name_eng" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Father_Name_hindi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Mother_Name_eng" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="dcode" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="Mother_Name_hindi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="spousename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="spousenamehindi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ESMIdentitycardnumber" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="DOB" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Citizen_ID" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="UID" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="mobileno" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="landline" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="emialid" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Per_address_eng" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Per_address_hindi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Per_Landmark_english" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Urban_rural" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Per_cors" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="perchk" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Per_Landmark_Hindi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Pin_code" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="Cors_address" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Bank_Acc_no" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="Bank_IFSC" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Amount_OF_Rent" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Annual_Budget_for_Maintenance" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Annual_income" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CategoryDesc" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="MaritalStatusDesc" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="regt_CorpsType" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="dname" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="VNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="townname" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="StateName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BankName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Character_Type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MedicalCat_Type" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Rank_Type" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="RetirementDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Force_Name" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="Force_Cat_Name" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetSanikdetail1" Method="GetSanikdetail1">
+    <Parameter Name="Army_No" Parameter="army_No" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="dcode" Type="System.String" DbType="NVarChar(6)" />
+    <ElementType Name="GetSanikdetail1Result">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="photo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" />
+      <Column Name="Army_No" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Sanik_Name_eng" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Sanik_Name_hindi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Father_Name_eng" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Father_Name_hindi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Mother_Name_eng" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="dcode" Type="System.String" DbType="NVarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="Mother_Name_hindi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="spousename" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="spousenamehindi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ESMIdentitycardnumber" Type="System.String" DbType="NVarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="DOB" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Citizen_ID" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="UID" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Column Name="mobileno" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="landline" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="emialid" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Per_address_eng" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Per_address_hindi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Per_Landmark_english" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Urban_rural" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Per_cors" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="perchk" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Per_Landmark_Hindi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Pin_code" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="Cors_address" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Bank_Acc_no" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="Bank_IFSC" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Amount_OF_Rent" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Annual_Budget_for_Maintenance" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Annual_income" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="CategoryDesc" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="MaritalStatusDesc" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="regt_CorpsType" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="dname" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="VNAME" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="tname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="townname" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
+      <Column Name="StateName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BankName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Character_Type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MedicalCat_Type" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Rank_Type" Type="System.String" DbType="Char(100)" CanBeNull="true" />
+      <Column Name="RetirementDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Force_Name" Type="System.String" DbType="Char(5)" CanBeNull="true" />
+      <Column Name="Force_Cat_Name" Type="System.String" DbType="Char(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

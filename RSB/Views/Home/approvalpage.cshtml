@@ -1,0 +1,208 @@
+﻿@model Rajya_Sanik_Board.Models.Generalform
+@{
+    ViewBag.Title = "approvalpage";
+    Layout = "~/Views/Shared/_RajyaSanikBoard.cshtml";
+}
+
+
+<script src="~/Scripts/jquery.min.js"></script>
+
+<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+   <label id="lbl"><span class="red">No Record Found !!</span></label>
+                                                <table class="table-bordered table-striped table-condensed cf">
+                                                    <div id="UpdatePaneluidsearch">
+                                                    </div>
+
+                                                </table>
+ </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#lbl").hide();
+        $("#UpdatePaneluidsearch").css('display', 'none');
+        $.ajax({
+            url: '@Url.Action("returnapprovalpage", "Home")',
+            async: true,
+            type: "POST",
+            data: "",
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (str) {
+                if (str == "not") {
+                    $("#lbl").show();
+                }
+                else {
+                   
+                    $("#UpdatePaneluidsearch").css('display', 'block');
+                    loadDatauid(str);
+                }
+
+
+            }
+        });
+    });
+        function loadDatauid(data) {
+            // Here we will format & load/show data 
+
+            var imgg = null;
+            var counter = 0;
+
+            var tab = $('<table class="table-bordered table-striped table-condensed cf myTable" id="myTable"></table>');
+            var thead = $('<thead></thead>');
+            thead.append('<th> S.No</th>');
+            thead.append('<th> Army Number</th>');
+            thead.append('<th>Sanik name</th>');
+            thead.append('<th>Father Name</th>');           
+          
+            thead.append('<th>ESMI IDentity Card Number</th>');
+            // thead.append('<th>Aadhar No.</th>');       
+            thead.append('<th>Action</th>');
+            tab.append(thead);
+            $.each(data, function (i, val) {
+                var s = i + 1;
+
+
+                var cid = val.Citizen_ID;
+
+                //var dob = val.DOBnew;
+
+                //if (val.DOBnew != "") {
+
+                //    var dateString = dob.substr(6);
+                //    var currentTime = new Date(parseInt(dateString));
+                //    var month = currentTime.getMonth() + 1;
+                //    var n = month.toString().length;
+
+                //    if (n == 1) {
+                //        month = "0" + month.toString();
+                //    }
+
+                //    var day = currentTime.getDate();
+                //    var d = day.toString().length;
+                //    if (d == 1) {
+                //        day = "0" + day.toString();
+                //    }
+                //    var year = currentTime.getFullYear();
+                //    var date = day + "/" + month + "/" + year;
+                //}
+                //else {
+                //    date = "";
+                //}
+
+
+                //if (date == "01/01/1") {
+                //    date = "";
+                //}
+                //else {
+                //    date = date;
+                //}
+
+
+
+                //var img = val.ImgByte;
+
+                //if ((val.ImgByte != null)) {
+
+                //    var bytConv = val.ImgByte;
+                //    imgg = "data:image/jpeg;base64," + bytConv;
+                //}
+                //else {
+
+                //    imgg = "";
+                //}
+
+
+
+
+                var uidd;
+                var sear;
+
+                //if (val.UID != null && val.UID != '') {
+
+                //    uidd = val.UID;
+                //    sear = "uid";
+                //}
+                //if (val.ESMIdentitycardnumber != '' && val.ESMIdentitycardnumber != null) {
+
+                //    uidd = val.ESMIdentitycardnumber;
+                //    sear = "uid";
+                //}
+                //else {
+
+                //    uidd = val.Army_No;
+                //    sear = "armyno";
+                //}
+
+                 var result = '<input type="button" onclick="goDoSomething(this);" id="btnEdit1" class="btnEdit1 next-step" data-movieId="' + val.id + '" value="Take Action">';
+
+                var trow = $('<tr></tr>');
+
+                trow.append('<td>' + s + '</td>');
+                if (val.Army_No == null) {
+                    val.Army_No = "";
+                }
+                else {
+                    val.Army_No = val.Army_No;
+                }
+                trow.append('<td>' + val.Army_No + '</td>');
+                trow.append('<td>' + val.Sanik_Name_eng + '</td>');
+                trow.append('<td>' + val.Father_Name_eng + '</td>');
+                //trow.append('<td>' + date + '</td>');
+                //trow.append('<td>' + val.mobileno + '</td>');
+                if (cid == null) {
+                    cid = "";
+                }
+                else {
+                    cid = cid;
+                }
+                trow.append('<td>' + val.ESMIdentitycardnumber + '</td>');
+                // trow.append('<td>' + val.UID + '</td>');
+                //if (imgg == null) {
+                //    trow.append('<td>&nbsp;</td>');
+                //}
+                //else {
+                //    trow.append('<td><img src="' + imgg + '" class="tbl"></td>');
+                //}
+               trow.append('<td>' + result + '</td>');
+                tab.append(trow);
+            });
+            $("tr:odd", tab).css('background-color', '#f5f5f5');
+            $("#UpdatePaneluidsearch").html(tab);
+
+
+        };
+        function goDoSomething(d) {
+
+
+            var id = d.getAttribute("data-movieId");
+
+            $("#id").val(id);
+            $.ajax({
+                url: "@Url.Action("insertintomaintable", "Home")",
+            data: {
+                'id': id,
+
+            },
+            async: false,
+            success: function (data) {
+                var r = data.res;
+
+                window.location.href = '@Url.Action("returnapproved", "Home")';
+
+             },
+            type: "GET",
+            cache: false
+
+        });
+
+
+    }
+</script>
+<script type="text/javascript">
+    $("#btnlogout").click(function (event) {
+        $("#btnlogout").hide();
+        event.preventDefault();
+        var url = '@Url.Action("Logout", "Home")';
+        window.location.href = url;
+
+    });
+</script>

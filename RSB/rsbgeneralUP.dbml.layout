@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="rsbgeneralUP">
+  <DataContextMoniker Name="/rsbgeneralUPDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ffd6ac3b-be28-4e0d-a064-0797eb0c256c" isExpanded="false" absoluteBounds="7.25, 4.25, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/Gender" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c7235046-9c32-404b-bf50-bed6ba211d2b" absoluteBounds="7.2650000000000006, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bce7a800-8ef1-42df-bfc9-6c14a6c1699a" isExpanded="false" absoluteBounds="0.625, 6.625, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/RegisterSaniklogin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2dacf87a-e3c1-4faf-b930-2d2105d4e943" absoluteBounds="0.64000000000000012, 7.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="80518957-6d40-4866-b663-1e5d7af4a010" isExpanded="false" absoluteBounds="0.75, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/ForceName" />
+      <nestedChildShapes>
+        <elementListCompartment Id="464a3c45-ccd4-4b5a-860d-3c1ef2e2c89c" absoluteBounds="0.76500000000000012, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8c2c2114-e5cc-433b-8993-c8c0a7a78ffe" isExpanded="false" absoluteBounds="0.75, 1.125, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/Force_Hire_Accommodation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fcd2ee77-a8d3-4f6a-a009-3ab97d39022f" absoluteBounds="0.76500000000000012, 1.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bb63cd7a-3031-4203-8f38-c708b77de049" isExpanded="false" absoluteBounds="0.625, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/Force_Court_Case" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a8b40322-1eb9-4188-b74c-f1668da9beb9" absoluteBounds="0.64000000000000012, 2.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8599a324-3fe1-4bfc-9908-1b28d8bfffca" isExpanded="false" absoluteBounds="0.75, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/tblaward" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3ced8efa-ab05-4463-95fa-05fb49edc3de" absoluteBounds="0.76500000000000012, 2.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f81bfb1b-76ae-41c3-a2ec-66c818cf5c12" isExpanded="false" absoluteBounds="0.75, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/tblpensiontype" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dce90a71-2881-48ab-b132-d5a8d2169ea1" absoluteBounds="0.76500000000000012, 4.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0f33ab46-2069-4f55-9f1d-c3b25e8c7af8" isExpanded="false" absoluteBounds="0.75, 4.5, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/tblrank" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2c5ae706-a615-4023-b73d-8ec26d3638cf" absoluteBounds="0.765, 4.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ea436d46-99ec-43d0-ab95-befd74619d09" isExpanded="false" absoluteBounds="0.75, 5.125, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/tblregement_corp" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dafa4589-b478-476d-9f97-698161e02984" absoluteBounds="0.76500000000000012, 5.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6ce204b0-db28-4e4a-8173-f2b5af958f5b" isExpanded="false" absoluteBounds="3.5, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/Force_Complaint" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dab1aedd-78a0-4304-9128-f7630b8f3318" absoluteBounds="3.515, 0.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d09d6691-0502-46ba-b0f0-6db1ec765849" isExpanded="false" absoluteBounds="3.75, 1.5, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/tblcharacter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fde01f39-140b-4d96-a78e-9723061c66f6" absoluteBounds="3.7649999999999997, 1.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3bc3c41e-e1c5-45d1-951e-e5fe7bd86868" isExpanded="false" absoluteBounds="3.875, 2.375, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/tblsanikRelation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9f7437eb-9291-4a7a-a873-f933ea8b8e31" absoluteBounds="3.8899999999999997, 2.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="276e3eea-b239-443a-a00d-14da127679c9" isExpanded="false" absoluteBounds="3.75, 3.125, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/MaritalStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4a6a0105-f195-4775-bb7b-046bccb1d133" absoluteBounds="3.7649999999999997, 3.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0e6da94f-c6fa-4a9d-bd8b-40e214e38e18" isExpanded="false" absoluteBounds="4, 4.5, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/Sanik_award" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ba4d46e-630b-4de7-9a38-f5fcbc2a29b6" absoluteBounds="4.015, 4.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="29a8cc43-ee12-4d77-a8cd-2a5008bfbd45" isExpanded="false" absoluteBounds="4.25, 5, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/Sanik_Loan" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7392b582-00b0-4998-b9e8-d221d1042901" absoluteBounds="4.265, 5.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fac6468c-45c2-4f13-b618-483b9f797548" isExpanded="false" absoluteBounds="4.25, 5.75, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/tblscheme" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e5ca7bf7-20cf-4431-80ae-eb3bedaba581" absoluteBounds="4.265, 6.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d5c28a10-6771-42c7-9d1c-75b35977805f" isExpanded="false" absoluteBounds="7, 0.5, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/Force_Dept_catgry" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d9e7f1b-cc42-4201-83f7-229865d8a58c" absoluteBounds="7.015, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b29fb041-3a21-4e73-afb7-1b6dac8bcd90" isExpanded="false" absoluteBounds="7.125, 1.375, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/tblmedicalcat" />
+      <nestedChildShapes>
+        <elementListCompartment Id="254cd3a6-c6e1-4715-ace2-155a4002ad95" absoluteBounds="7.14, 1.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3f20a4ba-3216-4f60-85ad-29e5a3ea6b66" isExpanded="false" absoluteBounds="7.125, 2.125, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/Force_Retirement" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5e7c0af4-aee7-4c28-9abb-5bad62b8b44f" absoluteBounds="7.14, 2.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e221b292-8e96-4f79-bb35-6e33486257fb" isExpanded="false" absoluteBounds="7.25, 2.875, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/Sanik_Rent_House" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fc56c978-e729-4bdb-bdb4-0914f837c5fd" absoluteBounds="7.265, 3.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="80cf42d8-2c5e-4a22-9968-82b4cb204730" isExpanded="false" absoluteBounds="0.875, 5.875, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/sanik_otherinformation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="43afcabf-b142-4fc1-bb1d-2f8c30b78e9e" absoluteBounds="0.89000000000000012, 6.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="be8bcf77-feef-4afd-80c6-6eac390c3414" isExpanded="false" absoluteBounds="3.75, 3.625, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/tblfamilydetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e6ff075-c1d7-444f-a691-920fd8e03160" absoluteBounds="3.7649999999999997, 4.085, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="865e51f5-b9e9-4779-b78f-75e47f9c791b" isExpanded="false" absoluteBounds="0.875, 2.875, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/rsbgeneral" />
+      <nestedChildShapes>
+        <elementListCompartment Id="64ed4318-9d33-466d-9903-e42682651e29" absoluteBounds="0.89000000000000012, 3.335, 1.9700000000000002, 10.441365559895832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a1b2221b-f89a-4fee-9bfc-14ee78b3d44c" isExpanded="false" absoluteBounds="7.125, 4.875, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/rsbgeneral_citizen1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f318af5e-e3c2-410d-9c3f-1eb535f95d68" absoluteBounds="7.14, 5.335, 1.9700000000000002, 11.018269856770832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="56543766-229f-4fde-9d9b-dd8d941cd0ad" isExpanded="false" absoluteBounds="7.25, 3.75, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/tblfamilydetails_citizen" />
+      <nestedChildShapes>
+        <elementListCompartment Id="897566e6-b2da-459d-9019-fccd88aa63be" absoluteBounds="7.265, 4.21, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a1581bee-dc9c-4d85-97d3-c8eb753dd2b2" isExpanded="false" absoluteBounds="7.25, 6.5, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/Sanik_Loans_citizen" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c5e62b4c-bda9-49a1-9679-f67bfcc0bccf" absoluteBounds="7.2650000000000006, 6.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cb4da0cd-5ea2-47d5-b7cc-aa34ffff9500" isExpanded="false" absoluteBounds="7.25, 6, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/Force_Court_Case_citizen" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9343cd84-e62f-4078-ac2e-08664284b445" absoluteBounds="7.265, 6.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="70164a38-befa-499e-ad1f-a596ad67bb1e" isExpanded="false" absoluteBounds="7.25, 5.5, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/sanik_otherinformation_citizen" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd7e3a20-904a-447b-a0a5-f8f48f41ec40" absoluteBounds="7.265, 5.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="69ae1abe-4c2f-4674-a0f1-0601535169b9" isExpanded="false" absoluteBounds="4.5, 6.375, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/Force_Complaints_citizen" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f7bcd0a6-ffab-404d-837f-64e399489f12" absoluteBounds="4.515, 6.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d8a040b8-c924-40f7-a8e6-ec6d83fef7d9" isExpanded="false" absoluteBounds="4.5, 7.125, 2, 0.45">
+      <DataClassMoniker Name="/rsbgeneralUPDataContext/Sanik_award_citizen" />
+      <nestedChildShapes>
+        <elementListCompartment Id="67d3a4c8-a7b7-474d-a1da-356df11930d6" absoluteBounds="4.515, 7.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

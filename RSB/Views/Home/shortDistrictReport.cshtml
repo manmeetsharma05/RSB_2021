@@ -1,0 +1,216 @@
+﻿@model Rajya_Sanik_Board.Models.Generalform
+@{
+    ViewBag.Title = "shortDistrictReport";
+    Layout = "";
+}
+
+
+<style>
+    .table-condensed tr th span {
+	width: 100%;
+	display: inline-block;
+	font-size: 14px;
+}
+    .table-condensed tbody tr th:last-child {
+	width: 23%;
+}
+    table, th, td {
+
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px !important;
+    text-align: left;
+    font-size: 14px;
+
+}
+ .cus-army-no-field span {
+    width: 100%;
+
+}
+.cus-tr .cus-army-no-field:last-child span:empty {
+    display: none !important;
+}
+</style>
+<script src="~/Scripts/jquery.min.js"></script>
+<script src="~/Scripts/jQuery.print.js"></script>
+<div id="maindiv" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cus-grid-tables">
+
+    <div id="no-more-tables" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive cus-summary-report" style="padding: 15px 0;">
+       
+          
+        <table class="col-md-12 table-bordered table-striped table-condensed cf" id="t02" style="width: 100%; padding: 0">
+                          
+            <tbody style="width: 100%; display: inline-table;">
+
+                        <tr>
+                              <td colspan="10" style="background: #fff;">
+                                 <img src="@Url.Content("../img/rsb-header.png")" alt="" style="height: 100px;">
+                               </td>
+                           </tr>
+                <tr style="background:#DA251C;color:#fff;">
+                        <th>S.No</th> 
+                                                
+                        <th><span>Army Number</span></th> 
+                         
+                         <th> <span>Rank</span></th> 
+                    <th> <span>Name</span></th>  
+                     <th> <span>Address</span></th>
+                    <th> <span>Mobile Number</span></th>                     
+                     <th> <span>ESMIdentity Card Number</span></th>  
+                                         
+                        
+                        
+                          </tr>   
+                   
+                    
+                       
+              
+                    
+                      
+                       
+                @{var counter = 0;}
+                @{foreach (var item in ViewBag.shortreport)
+                  {
+                      counter = counter + 1;
+
+                     
+                                   
+                    <tr class="cus-tr">
+                        
+                        
+                        <td>@counter</td>
+                        
+                       <td class="cus-army-no-field"><span>@item.Army_No</span> </td>
+                        <td class="cus-army-no-field"><span>@item.Rank_Type  </span></td> 
+                        <td class="cus-army-no-field"><span>@item.Sanik_Name_eng</span> </td>
+                        <td class="cus-army-no-field"><span>@item.Per_address_eng  </span><span> @item.Per_Landmark_english </span><span> @item.StateName </span><span> @item.VNAME  @item.townname</span> <span> @item.Pin_code </span> </td>
+                        <td class="cus-army-no-field"><span>@item.mobileno  </span></td>                         
+                        <td class="cus-army-no-field"><span>@item.ESMIdentitycardnumber</span> </td>
+                                                      
+                         
+                                                   
+                       
+                        
+                                                             
+                                      
+                   
+                </tr>@*
+                    <tr>
+                    <td colspan="6" style="background:#fff;padding:2px;"></td>
+                        </tr>*@
+                  }}
+
+               
+                </tbody>
+        </table>
+           
+       
+    </div>
+               
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 w3-container w3-border city">
+    <div class="col-lg-3 col-md-5 col-sm-6 col-xs-12 cus-print-link mobile-pull army-no form-group">        
+
+          @*  <a href="@Url.Action("ExportPdf", "Home")">Print</a>*@
+        <button type="button" id="btnprint" onclick="exportpdf()" class="btn btn-primary next-step">Print</button>
+         <button type="button" id="btnprintexel" onclick="exportexecl()" class="btn btn-primary next-step">Print to excel</button>
+          @*<button type="button" id="btnprintword" onclick="exportword()" class="btn btn-primary next-step">Print to word</button>*@
+    </div>
+</div>
+<script src="~/Scripts/table2excel.js"></script>
+@*<script src="~/Scripts/tableExport.js"></script>*@
+@*<script src="~/Scripts/jquery.base64.js"></script>*@
+<script src="~/Scripts/FileSaver.js"></script>
+@*<script src="~/Scripts/wordExport.js"></script>*@
+
+<script type="text/javascript">
+    function exportpdf() {
+        //  $("#btnprint").click(function () {
+
+        //var printContents = document.getElementById("no-more-tables").innerHTML;
+        //var originalContents = document.body.innerHTML;
+        //document.body.innerHTML = printContents; window.print();
+        //document.body.innerHTML = originalContents;
+        //  });
+
+        $("#maindiv").print();
+
+    }
+    function exportexecl() {
+
+        $("#maindiv").table2excel({
+            filename: "DistrictWiseReport.xls"
+        });
+
+        //$("[id$=btnprintexel]").click(function (e) {
+        //    window.open('data:application/vnd.ms-excel,' + encodeURIComponent($('div[id$=maindiv]').html()));
+        //    e.preventDefault();
+        //});
+        // $('#btnprintexel').bind('click', function (e) {
+        //     alert();
+        //$('#maindiv').tableExport({ type: 'excel', escape: 'false' });
+        //  });
+
+    }
+    //function exportword() {
+    //    //  $("#btnprint").click(function () {
+
+    //    //var printContents = document.getElementById("no-more-tables").innerHTML;
+    //    //var originalContents = document.body.innerHTML;
+    //    //document.body.innerHTML = printContents; window.print();
+    //    //document.body.innerHTML = originalContents;
+    //    //  });
+
+
+    //    $("#maindiv").wordExport();
+
+    //}
+</script>
+<style>
+  table#t02 {
+  background-color: #fff;
+  border: none;
+  float: none;
+  margin: auto;
+  width: 100%;
+  display:inline-block;
+} 
+
+    table#t01 tr:nth-child(even) {
+        background-color: #eee;
+    }
+
+    table#t01 tr:nth-child(odd) {
+        background-color: #fff;
+    }
+
+    table#t01 th {
+        color: #333;
+    }
+    .cus-print-link a {
+    background: #db2b22 none repeat scroll 0 0;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+  font-weight: bold;
+  margin: 10px;
+  padding: 5px;
+  text-decoration: none;
+  width: 100px;
+}
+.cus-print-link.mobile-pull.army-no.form-group {
+  text-align: center;
+}
+
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        text-align:left;
+            }
+    .cus-army-no-field p {
+  margin: 2px 0;
+}
+</style>
+
+

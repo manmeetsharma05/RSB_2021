@@ -1,0 +1,142 @@
+﻿@model Rajya_Sanik_Board.Models.Generalform
+
+@{
+    ViewBag.Title = "Rank";
+    Layout = "~/Views/Shared/_RajyaSanikBoard.cshtml";
+}
+
+<script type="text/javascript">
+    var refer = document.referrer;
+    var url = document.URL;
+    if (refer == url) {
+     
+        $.ajax(
+                 {
+
+                     dataType: "json",
+                     type: "POST", //HTTP POST Method  
+                     url: '@Url.Action("DestroySession", "Home")', // Controller/View   
+                         data: "",
+                         success: function (response) {
+                             if (response.code == "distroy") {
+                                 window.location.href = '@Url.Content("~/Home/Login")';
+                         }
+
+                     },
+
+
+
+                     });
+            @* @Session["userid"] = null;*@
+
+        }
+</script>
+
+
+ <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 center-div">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inner-content-div">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Rank Form </h3>
+                </div>
+
+                @using (Html.BeginForm("Rank", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+
+                    if (ViewBag.Message != null)
+                    {<label>@ViewBag.Message</label> }
+                    <div class="panel-body rsb-form">
+
+                        <div class="col-md-12 user-img">
+                            
+                        </div>
+                       
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <div class="form-group">
+                               <label>Rank: </label>
+                                @Html.TextBoxFor(m => m.Rank_Type, new {  placeholder = "Rank Name" })
+                                <small class="fg-red" style="color: red;">@Html.ValidationMessageFor(m =>m.Rank_Type)</small>
+
+                            </div>
+                        </div>
+                        
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                            <input type="submit" value="ADD" class="btn btn-primary next-step">
+                        </div>
+                        
+                 
+                    </div>
+                    
+                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cus-grid-tables">
+                    <h2 class="cus-grid-table-heading">Show Database</h2>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive" style="padding:15px 0;">
+                         <table class="table-bordered table-striped table-condensed cf" id="t01">
+                            <thead>
+                                 @{var counter = 0;}
+                                <th>S.No </th>
+                                <th>Rank</th>
+                               <th>Edit</th>
+                                
+                            </thead>
+                            @foreach (var item in ViewBag.rank)
+                            {
+                                counter = counter + 1;
+                               <tr>
+                                    <td>@counter </td>
+                                    <td>@item.Rank_Type</td>
+
+                                   <td> @Html.ActionLink("Edit", "Editrank", new { id=item.Rank_ID })</td> </tr>
+                                
+                            }
+                           
+                        </table>
+                    </div>
+                </div>
+         <style>  
+table#t01 {  
+width: 100%;  
+background-color: #f1f1c1;  
+}  
+  
+table#t01 tr:nth-child(even) {  
+background-color: #eee;  
+}  
+table#t01 tr:nth-child(odd) {  
+background-color: #fff;  
+}  
+table#t01 th {  
+color: #333;  
+}  
+table, th, td {  
+border: 1px solid black;  
+}  
+table, th, td {  
+border: 1px solid black;  
+border-collapse: collapse;  
+}  
+table, th, td {  
+border: 1px solid black;  
+border-collapse: collapse;  
+}  
+th, td {  
+padding: 15px;  
+}  
+</style> 
+            
+                }
+            </div>
+    </div>
+        </div>
+<script type="text/javascript">
+    $("#btnlogout").click(function (event) {
+        
+        $("#btnlogout").hide();
+        event.preventDefault();
+        var url = '@Url.Action("Logout", "Home")';
+        window.location.href = url;
+
+     });
+</script>
+
+

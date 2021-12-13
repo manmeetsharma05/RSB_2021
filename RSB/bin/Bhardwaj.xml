@@ -1,0 +1,1034 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Bhardwaj</name>
+    </assembly>
+    <members>
+        <member name="T:Bhardwaj.clsLogger">
+             <summary>
+            Bhardwaj ( 9050660400 ): This class is used for Logging the exception or any other message
+             </summary>
+        </member>
+        <member name="P:Bhardwaj.clsLogger.EdistrictConnectString">
+             <summary>
+            Bhardwaj ( 9050660400 ): Set this parameter with connection string where you want to save your detail
+             </summary>
+        </member>
+        <member name="P:Bhardwaj.clsLogger.ExceptionError">
+             <summary>
+            Bhardwaj ( 9050660400 ): Set this parameter with exception 
+             </summary>
+        </member>
+        <member name="P:Bhardwaj.clsLogger.ExceptionMsg">
+             <summary>
+            Bhardwaj ( 9050660400 ): Set this parameter with exception message name
+             </summary>
+        </member>
+        <member name="P:Bhardwaj.clsLogger.ExceptionPage">
+             <summary>
+            Bhardwaj ( 9050660400 ): Set this parameter with exception page name
+             </summary>
+        </member>
+        <member name="P:Bhardwaj.clsLogger.ExceptionDetail">
+             <summary>
+            Bhardwaj ( 9050660400 ): Set this parameter with exception related detail
+             </summary>
+        </member>
+        <member name="P:Bhardwaj.clsLogger.ExceptionDate">
+             <summary>
+            Bhardwaj ( 9050660400 ): Set this parameter with exception date
+             </summary>
+        </member>
+        <member name="M:Bhardwaj.clsLogger.SaveException">
+             <summary>
+            Bhardwaj ( 9050660400 ): For Using SaveException method There is necessary to have the RS_SaveTraceError Procedure in the related database
+             </summary>
+        </member>
+        <member name="M:Bhardwaj.clsLogger.WriteErrorLog(System.Exception,System.String,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): For Using WriteErrorLog method you have to pass the available System Drive in the LogFilePath and LogFileName as html file
+             </summary>
+        </member>
+        <member name="M:Bhardwaj.clsLogger.WriteLog(System.String,System.String,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): For Using WriteLog method you have to pass the available System Drive in the LogFilePath and LogFileName as html file
+             </summary>
+        </member>
+        <member name="T:Bhardwaj.CommenFunc">
+             <summary>
+            Bhardwaj ( 9050660400 ): This class is used for Commen function
+             </summary>
+        </member>
+        <member name="M:Bhardwaj.CommenFunc.GetLogPath">
+             <summary>
+            Bhardwaj ( 9050660400 ): This funtion is used for getting host name
+             </summary>
+        </member>
+        <member name="M:Bhardwaj.CommenFunc.SendMail(Bhardwaj.MailData)">
+             <summary>
+            Bhardwaj ( 9050660400 ): This funtion is used for sending mail with Attachment
+             </summary>
+        </member>
+        <member name="T:Bhardwaj.MailData">
+             <summary>
+            Bhardwaj ( 9050660400 ): This class is used for sending mail
+             </summary>
+        </member>
+        <member name="P:Bhardwaj.MailData.Mail_Subject">
+             <summary>
+            Bhardwaj ( 9050660400 ): This is used for MailHeaderText
+             </summary>
+        </member>
+        <member name="P:Bhardwaj.MailData.Mail_Body">
+             <summary>
+            Bhardwaj ( 9050660400 ): This is used for MailBodyText
+             </summary>
+        </member>
+        <member name="P:Bhardwaj.MailData.Mail_To_List">
+             <summary>
+            Bhardwaj ( 9050660400 ): This is used for list of emailid list for TO
+             </summary>
+        </member>
+        <member name="P:Bhardwaj.MailData.Mail_CC_List">
+             <summary>
+            Bhardwaj ( 9050660400 ): This is used for list of emailid list for CC
+             </summary>
+        </member>
+        <member name="P:Bhardwaj.MailData.Mail_BCC_List">
+             <summary>
+            Bhardwaj ( 9050660400 ): This is used for list of emailid list for BCC
+             </summary>
+        </member>
+        <member name="P:Bhardwaj.MailData.Mail_Attachment">
+             <summary>
+            Bhardwaj ( 9050660400 ): This is used for MailAttachment
+             </summary>
+        </member>
+        <member name="T:Bhardwaj.DBActions">
+             <summary>
+            Bhardwaj ( 9050660400 ): The DBActions class is intended to encapsulate high performance, scalable best practices for 
+             common uses of SqlClient.
+             </summary>
+        </member>
+        <member name="M:Bhardwaj.DBActions.AttachParameters(System.Data.SqlClient.SqlCommand,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): This method is used to attach array of SqlParameters to a SqlCommand.
+             
+             This method will assign a value of DbNull to any parameter with a direction of
+             InputOutput and a value of null.  
+             
+             This behavior will prevent default values from being used, but
+             this will be the less common case than an intended pure output parameter (derived as InputOutput)
+             where the user provided no input value.
+             </summary>
+             <param name="command">The command to which the parameters will be added</param>
+             <param name="commandParameters">an array of SqlParameters tho be added to command</param>
+        </member>
+        <member name="M:Bhardwaj.DBActions.AssignParameterValues(System.Data.SqlClient.SqlParameter[],System.Object[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): This method assigns an array of values to an array of SqlParameters.
+             </summary>
+             <param name="commandParameters">array of SqlParameters to be assigned values</param>
+             <param name="parameterValues">array of objects holding the values to be assigned</param>
+        </member>
+        <member name="M:Bhardwaj.DBActions.PrepareCommand(System.Data.SqlClient.SqlCommand,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): This method opens (if necessary) and assigns a connection, transaction, command type and parameters 
+             to the provided command.
+             </summary>
+             <param name="command">the SqlCommand to be prepared</param>
+             <param name="connection">a valid SqlConnection, on which to execute this command</param>
+             <param name="transaction">a valid SqlTransaction, or 'null'</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <param name="commandParameters">an array of SqlParameters to be associated with the command or 'null' if no parameters are required</param>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteNonQuery(System.String,System.Data.CommandType,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns no resultset and takes no parameters) against the database specified in 
+             the connection string. 
+             </summary>
+             <remarks>
+             e.g.:  
+              int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders");
+             </remarks>
+             <param name="connectionString">a valid connection string for a SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteNonQuery(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns no resultset) against the database specified in the connection string 
+             using the provided parameters.
+             </summary>
+             <remarks>
+             e.g.:  
+              int result = ExecuteNonQuery(connString, CommandType.StoredProcedure, "PublishOrders", new SqlParameter("@prodid", 24));
+             </remarks>
+             <param name="connectionString">a valid connection string for a SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+             <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteNonQuery(System.String,System.String,System.Object[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a stored procedure via a SqlCommand (that returns no resultset) against the database specified in 
+             the connection string using the provided parameter values.  This method will query the database to discover the parameters for the 
+             stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+             </summary>
+             <remarks>
+             This method provides no access to output parameters or the stored procedure's return value parameter.
+             
+             e.g.:  
+              int result = ExecuteNonQuery(connString, "PublishOrders", 24, 36);
+             </remarks>
+             <param name="connectionString">a valid connection string for a SqlConnection</param>
+             <param name="spName">the name of the stored prcedure</param>
+             <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+             <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns no resultset and takes no parameters) against the provided SqlConnection. 
+             </summary>
+             <remarks>
+             e.g.:  
+              int result = ExecuteNonQuery(conn, CommandType.StoredProcedure, "PublishOrders");
+             </remarks>
+             <param name="connection">a valid SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns no resultset) against the specified SqlConnection 
+             using the provided parameters.
+             </summary>
+             <remarks>
+             e.g.:  
+              int result = ExecuteNonQuery(conn, CommandType.StoredProcedure, "PublishOrders", new SqlParameter("@prodid", 24));
+             </remarks>
+             <param name="connection">a valid SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+             <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteNonQuery(System.Data.SqlClient.SqlConnection,System.String,System.Object[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a stored procedure via a SqlCommand (that returns no resultset) against the specified SqlConnection 
+             using the provided parameter values.  This method will query the database to discover the parameters for the 
+             stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+             </summary>
+             <remarks>
+             This method provides no access to output parameters or the stored procedure's return value parameter.
+             
+             e.g.:  
+              int result = ExecuteNonQuery(conn, "PublishOrders", 24, 36);
+             </remarks>
+             <param name="connection">a valid SqlConnection</param>
+             <param name="spName">the name of the stored procedure</param>
+             <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+             <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteNonQuery(System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns no resultset and takes no parameters) against the provided SqlTransaction. 
+             </summary>
+             <remarks>
+             e.g.:  
+              int result = ExecuteNonQuery(trans, CommandType.StoredProcedure, "PublishOrders");
+             </remarks>
+             <param name="transaction">a valid SqlTransaction</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteNonQuery(System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns no resultset) against the specified SqlTransaction
+             using the provided parameters.
+             </summary>
+             <remarks>
+             e.g.:  
+              int result = ExecuteNonQuery(trans, CommandType.StoredProcedure, "GetOrders", new SqlParameter("@prodid", 24));
+             </remarks>
+             <param name="transaction">a valid SqlTransaction</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+             <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteNonQuery(System.Data.SqlClient.SqlTransaction,System.String,System.Object[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a stored procedure via a SqlCommand (that returns no resultset) against the specified 
+             SqlTransaction using the provided parameter values.  This method will query the database to discover the parameters for the 
+             stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+             </summary>
+             <remarks>
+             This method provides no access to output parameters or the stored procedure's return value parameter.
+             
+             e.g.:  
+              int result = ExecuteNonQuery(conn, trans, "PublishOrders", 24, 36);
+             </remarks>
+             <param name="transaction">a valid SqlTransaction</param>
+             <param name="spName">the name of the stored procedure</param>
+             <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+             <returns>an int representing the number of rows affected by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteDataset(System.String,System.Data.CommandType,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset and takes no parameters) against the database specified in 
+             the connection string. 
+             </summary>
+             <remarks>
+             e.g.:  
+              DataSet ds = ExecuteDataset(connString, CommandType.StoredProcedure, "GetOrders");
+             </remarks>
+             <param name="connectionString">a valid connection string for a SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <returns>a dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteDataset(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset) against the database specified in the connection string 
+             using the provided parameters.
+             </summary>
+             <remarks>
+             e.g.:  
+              DataSet ds = ExecuteDataset(connString, CommandType.StoredProcedure, "GetOrders", new SqlParameter("@prodid", 24));
+             </remarks>
+             <param name="connectionString">a valid connection string for a SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+             <returns>a dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteDataset(System.String,System.String,System.Object[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a stored procedure via a SqlCommand (that returns a resultset) against the database specified in 
+             the connection string using the provided parameter values.  This method will query the database to discover the parameters for the 
+             stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+             </summary>
+             <remarks>
+             This method provides no access to output parameters or the stored procedure's return value parameter.
+             
+             e.g.:  
+              DataSet ds = ExecuteDataset(connString, "GetOrders", 24, 36);
+             </remarks>
+             <param name="connectionString">a valid connection string for a SqlConnection</param>
+             <param name="spName">the name of the stored procedure</param>
+             <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+             <returns>a dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteDataset(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset and takes no parameters) against the provided SqlConnection. 
+             </summary>
+             <remarks>
+             e.g.:  
+              DataSet ds = ExecuteDataset(conn, CommandType.StoredProcedure, "GetOrders");
+             </remarks>
+             <param name="connection">a valid SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <returns>a dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteDataset(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset) against the specified SqlConnection 
+             using the provided parameters.
+             </summary>
+             <remarks>
+             e.g.:  
+              DataSet ds = ExecuteDataset(conn, CommandType.StoredProcedure, "GetOrders", new SqlParameter("@prodid", 24));
+             </remarks>
+             <param name="connection">a valid SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+             <returns>a dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteDataset(System.Data.SqlClient.SqlConnection,System.String,System.Object[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a stored procedure via a SqlCommand (that returns a resultset) against the specified SqlConnection 
+             using the provided parameter values.  This method will query the database to discover the parameters for the 
+             stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+             </summary>
+             <remarks>
+             This method provides no access to output parameters or the stored procedure's return value parameter.
+             
+             e.g.:  
+              DataSet ds = ExecuteDataset(conn, "GetOrders", 24, 36);
+             </remarks>
+             <param name="connection">a valid SqlConnection</param>
+             <param name="spName">the name of the stored procedure</param>
+             <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+             <returns>a dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteDataset(System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset and takes no parameters) against the provided SqlTransaction. 
+             </summary>
+             <remarks>
+             e.g.:  
+              DataSet ds = ExecuteDataset(trans, CommandType.StoredProcedure, "GetOrders");
+             </remarks>
+             <param name="transaction">a valid SqlTransaction</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <returns>a dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteDataset(System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset) against the specified SqlTransaction
+             using the provided parameters.
+             </summary>
+             <remarks>
+             e.g.:  
+              DataSet ds = ExecuteDataset(trans, CommandType.StoredProcedure, "GetOrders", new SqlParameter("@prodid", 24));
+             </remarks>
+             <param name="transaction">a valid SqlTransaction</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+             <returns>a dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteDataset(System.Data.SqlClient.SqlTransaction,System.String,System.Object[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a stored procedure via a SqlCommand (that returns a resultset) against the specified 
+             SqlTransaction using the provided parameter values.  This method will query the database to discover the parameters for the 
+             stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+             </summary>
+             <remarks>
+             This method provides no access to output parameters or the stored procedure's return value parameter.
+             
+             e.g.:  
+              DataSet ds = ExecuteDataset(trans, "GetOrders", 24, 36);
+             </remarks>
+             <param name="transaction">a valid SqlTransaction</param>
+             <param name="spName">the name of the stored procedure</param>
+             <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+             <returns>a dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteDataTable(System.String,System.Data.CommandType,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset and takes no parameters) against the database specified in 
+             the connection string. 
+             </summary>
+             <remarks>
+             e.g.:  
+              DataTable ds = ExecuteDataTable(connString, CommandType.StoredProcedure, "GetOrders");
+             </remarks>
+             <param name="connectionString">a valid connection string for a SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <returns>a DataTable containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteDataTable(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset) against the database specified in the connection string 
+             using the provided parameters.
+             </summary>
+             <remarks>
+             e.g.:  
+              DataTable ds = ExecuteDataTable(connString, CommandType.StoredProcedure, "GetOrders", new SqlParameter("@prodid", 24));
+             </remarks>
+             <param name="connectionString">a valid connection string for a SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+             <returns>a DataTable containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteDataTable(System.String,System.String,System.Object[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a stored procedure via a SqlCommand (that returns a resultset) against the database specified in 
+             the connection string using the provided parameter values.  This method will query the database to discover the parameters for the 
+             stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+             </summary>
+             <remarks>
+             This method provides no access to output parameters or the stored procedure's return value parameter.
+             
+             e.g.:  
+              DataTable ds = ExecuteDataTable(connString, "GetOrders", 24, 36);
+             </remarks>
+             <param name="connectionString">a valid connection string for a SqlConnection</param>
+             <param name="spName">the name of the stored procedure</param>
+             <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+             <returns>a dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset and takes no parameters) against the provided SqlConnection. 
+             </summary>
+             <remarks>
+             e.g.:  
+              DataTable ds = ExecuteDataTable(conn, CommandType.StoredProcedure, "GetOrders");
+             </remarks>
+             <param name="connection">a valid SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <returns>a DataTable containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset) against the specified SqlConnection 
+             using the provided parameters.
+             </summary>
+             <remarks>
+             e.g.:  
+              DataTable ds = ExecuteDataTable(conn, CommandType.StoredProcedure, "GetOrders", new SqlParameter("@prodid", 24));
+             </remarks>
+             <param name="connection">a valid SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+             <returns>a DataTable containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteDataTable(System.Data.SqlClient.SqlConnection,System.String,System.Object[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a stored procedure via a SqlCommand (that returns a resultset) against the specified SqlConnection 
+             using the provided parameter values.  This method will query the database to discover the parameters for the 
+             stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+             </summary>
+             <remarks>
+             This method provides no access to output parameters or the stored procedure's return value parameter.
+             
+             e.g.:  
+              DataTable ds = ExecuteDataTable(conn, "GetOrders", 24, 36);
+             </remarks>
+             <param name="connection">a valid SqlConnection</param>
+             <param name="spName">the name of the stored procedure</param>
+             <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+             <returns>a DataTable containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteDataTable(System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset and takes no parameters) against the provided SqlTransaction. 
+             </summary>
+             <remarks>
+             e.g.:  
+              DataTable ds = ExecuteDataTable(trans, CommandType.StoredProcedure, "GetOrders");
+             </remarks>
+             <param name="transaction">a valid SqlTransaction</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <returns>a DataTable containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteDataTable(System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset) against the specified SqlTransaction
+             using the provided parameters.
+             </summary>
+             <remarks>
+             e.g.:  
+              DataTable ds = ExecuteDataTable(trans, CommandType.StoredProcedure, "GetOrders", new SqlParameter("@prodid", 24));
+             </remarks>
+             <param name="transaction">a valid SqlTransaction</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+             <returns>a DataTable containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteDataTable(System.Data.SqlClient.SqlTransaction,System.String,System.Object[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a stored procedure via a SqlCommand (that returns a resultset) against the specified 
+             SqlTransaction using the provided parameter values.  This method will query the database to discover the parameters for the 
+             stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+             </summary>
+             <remarks>
+             This method provides no access to output parameters or the stored procedure's return value parameter.
+             
+             e.g.:  
+              DataTable ds = ExecuteDataTable(trans, "GetOrders", 24, 36);
+             </remarks>
+             <param name="transaction">a valid SqlTransaction</param>
+             <param name="spName">the name of the stored procedure</param>
+             <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+             <returns>a DataTable containing the resultset generated by the command</returns>
+        </member>
+        <member name="T:Bhardwaj.DBActions.SqlConnectionOwnership">
+             <summary>
+            Bhardwaj ( 9050660400 ): this enum is used to indicate whether the connection was provided by the caller, or created by SqlHelper, so that
+             we can set the appropriate CommandBehavior when calling ExecuteReader()
+             </summary>
+        </member>
+        <member name="F:Bhardwaj.DBActions.SqlConnectionOwnership.Internal">
+            <summary>Connection is owned and managed by SqlHelper</summary>
+        </member>
+        <member name="F:Bhardwaj.DBActions.SqlConnectionOwnership.External">
+            <summary>Connection is owned and managed by the caller</summary>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[],Bhardwaj.DBActions.SqlConnectionOwnership)">
+             <summary>
+            Bhardwaj ( 9050660400 ): Create and prepare a SqlCommand, and call ExecuteReader with the appropriate CommandBehavior.
+             </summary>
+             <remarks>
+             If we created and opened the connection, we want the connection to be closed when the DataReader is closed.
+             
+             If the caller provided the connection, we want to leave it to them to manage.
+             </remarks>
+             <param name="connection">a valid SqlConnection, on which to execute this command</param>
+             <param name="transaction">a valid SqlTransaction, or 'null'</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <param name="commandParameters">an array of SqlParameters to be associated with the command or 'null' if no parameters are required</param>
+             <param name="connectionOwnership">indicates whether the connection parameter was provided by the caller, or created by SqlHelper</param>
+             <returns>SqlDataReader containing the results of the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteReader(System.String,System.Data.CommandType,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset and takes no parameters) against the database specified in 
+             the connection string. 
+             </summary>
+             <remarks>
+             e.g.:  
+              SqlDataReader dr = ExecuteReader(connString, CommandType.StoredProcedure, "GetOrders");
+             </remarks>
+             <param name="connectionString">a valid connection string for a SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <returns>a SqlDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteReader(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset) against the database specified in the connection string 
+             using the provided parameters.
+             </summary>
+             <remarks>
+             e.g.:  
+              SqlDataReader dr = ExecuteReader(connString, CommandType.StoredProcedure, "GetOrders", new SqlParameter("@prodid", 24));
+             </remarks>
+             <param name="connectionString">a valid connection string for a SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+             <returns>a SqlDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteReader(System.String,System.String,System.Object[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a stored procedure via a SqlCommand (that returns a resultset) against the database specified in 
+             the connection string using the provided parameter values.  This method will query the database to discover the parameters for the 
+             stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+             </summary>
+             <remarks>
+             This method provides no access to output parameters or the stored procedure's return value parameter.
+             
+             e.g.:  
+              SqlDataReader dr = ExecuteReader(connString, "GetOrders", 24, 36);
+             </remarks>
+             <param name="connectionString">a valid connection string for a SqlConnection</param>
+             <param name="spName">the name of the stored procedure</param>
+             <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+             <returns>a SqlDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset and takes no parameters) against the provided SqlConnection. 
+             </summary>
+             <remarks>
+             e.g.:  
+              SqlDataReader dr = ExecuteReader(conn, CommandType.StoredProcedure, "GetOrders");
+             </remarks>
+             <param name="connection">a valid SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <returns>a SqlDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset) against the specified SqlConnection 
+             using the provided parameters.
+             </summary>
+             <remarks>
+             e.g.:  
+              SqlDataReader dr = ExecuteReader(conn, CommandType.StoredProcedure, "GetOrders", new SqlParameter("@prodid", 24));
+             </remarks>
+             <param name="connection">a valid SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+             <returns>a SqlDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteReader(System.Data.SqlClient.SqlConnection,System.String,System.Object[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a stored procedure via a SqlCommand (that returns a resultset) against the specified SqlConnection 
+             using the provided parameter values.  This method will query the database to discover the parameters for the 
+             stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+             </summary>
+             <remarks>
+             This method provides no access to output parameters or the stored procedure's return value parameter.
+             
+             e.g.:  
+              SqlDataReader dr = ExecuteReader(conn, "GetOrders", 24, 36);
+             </remarks>
+             <param name="connection">a valid SqlConnection</param>
+             <param name="spName">the name of the stored procedure</param>
+             <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+             <returns>a SqlDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteReader(System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset and takes no parameters) against the provided SqlTransaction. 
+             </summary>
+             <remarks>
+             e.g.:  
+              SqlDataReader dr = ExecuteReader(trans, CommandType.StoredProcedure, "GetOrders");
+             </remarks>
+             <param name="transaction">a valid SqlTransaction</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <returns>a SqlDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteReader(System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset) against the specified SqlTransaction
+             using the provided parameters.
+             </summary>
+             <remarks>
+             e.g.:  
+               SqlDataReader dr = ExecuteReader(trans, CommandType.StoredProcedure, "GetOrders", new SqlParameter("@prodid", 24));
+             </remarks>
+             <param name="transaction">a valid SqlTransaction</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+             <returns>a SqlDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteReader(System.Data.SqlClient.SqlTransaction,System.String,System.Object[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a stored procedure via a SqlCommand (that returns a resultset) against the specified
+             SqlTransaction using the provided parameter values.  This method will query the database to discover the parameters for the 
+             stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+             </summary>
+             <remarks>
+             This method provides no access to output parameters or the stored procedure's return value parameter.
+             
+             e.g.:  
+              SqlDataReader dr = ExecuteReader(trans, "GetOrders", 24, 36);
+             </remarks>
+             <param name="transaction">a valid SqlTransaction</param>
+             <param name="spName">the name of the stored procedure</param>
+             <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+             <returns>a SqlDataReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteScalar(System.String,System.Data.CommandType,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the database specified in 
+             the connection string. 
+             </summary>
+             <remarks>
+             e.g.:  
+              int orderCount = (int)ExecuteScalar(connString, CommandType.StoredProcedure, "GetOrderCount");
+             </remarks>
+             <param name="connectionString">a valid connection string for a SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <returns>an object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteScalar(System.String,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a 1x1 resultset) against the database specified in the connection string 
+             using the provided parameters.
+             </summary>
+             <remarks>
+             e.g.:  
+              int orderCount = (int)ExecuteScalar(connString, CommandType.StoredProcedure, "GetOrderCount", new SqlParameter("@prodid", 24));
+             </remarks>
+             <param name="connectionString">a valid connection string for a SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+             <returns>an object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteScalar(System.String,System.String,System.Object[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a stored procedure via a SqlCommand (that returns a 1x1 resultset) against the database specified in 
+             the connection string using the provided parameter values.  This method will query the database to discover the parameters for the 
+             stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+             </summary>
+             <remarks>
+             This method provides no access to output parameters or the stored procedure's return value parameter.
+             
+             e.g.:  
+              int orderCount = (int)ExecuteScalar(connString, "GetOrderCount", 24, 36);
+             </remarks>
+             <param name="connectionString">a valid connection string for a SqlConnection</param>
+             <param name="spName">the name of the stored procedure</param>
+             <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+             <returns>an object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the provided SqlConnection. 
+             </summary>
+             <remarks>
+             e.g.:  
+              int orderCount = (int)ExecuteScalar(conn, CommandType.StoredProcedure, "GetOrderCount");
+             </remarks>
+             <param name="connection">a valid SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <returns>an object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a 1x1 resultset) against the specified SqlConnection 
+             using the provided parameters.
+             </summary>
+             <remarks>
+             e.g.:  
+              int orderCount = (int)ExecuteScalar(conn, CommandType.StoredProcedure, "GetOrderCount", new SqlParameter("@prodid", 24));
+             </remarks>
+             <param name="connection">a valid SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+             <returns>an object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteScalar(System.Data.SqlClient.SqlConnection,System.String,System.Object[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a stored procedure via a SqlCommand (that returns a 1x1 resultset) against the specified SqlConnection 
+             using the provided parameter values.  This method will query the database to discover the parameters for the 
+             stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+             </summary>
+             <remarks>
+             This method provides no access to output parameters or the stored procedure's return value parameter.
+             
+             e.g.:  
+              int orderCount = (int)ExecuteScalar(conn, "GetOrderCount", 24, 36);
+             </remarks>
+             <param name="connection">a valid SqlConnection</param>
+             <param name="spName">the name of the stored procedure</param>
+             <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+             <returns>an object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteScalar(System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a 1x1 resultset and takes no parameters) against the provided SqlTransaction. 
+             </summary>
+             <remarks>
+             e.g.:  
+              int orderCount = (int)ExecuteScalar(trans, CommandType.StoredProcedure, "GetOrderCount");
+             </remarks>
+             <param name="transaction">a valid SqlTransaction</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <returns>an object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteScalar(System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a 1x1 resultset) against the specified SqlTransaction
+             using the provided parameters.
+             </summary>
+             <remarks>
+             e.g.:  
+              int orderCount = (int)ExecuteScalar(trans, CommandType.StoredProcedure, "GetOrderCount", new SqlParameter("@prodid", 24));
+             </remarks>
+             <param name="transaction">a valid SqlTransaction</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+             <returns>an object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteScalar(System.Data.SqlClient.SqlTransaction,System.String,System.Object[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a stored procedure via a SqlCommand (that returns a 1x1 resultset) against the specified
+             SqlTransaction using the provided parameter values.  This method will query the database to discover the parameters for the 
+             stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+             </summary>
+             <remarks>
+             This method provides no access to output parameters or the stored procedure's return value parameter.
+             
+             e.g.:  
+              int orderCount = (int)ExecuteScalar(trans, "GetOrderCount", 24, 36);
+             </remarks>
+             <param name="transaction">a valid SqlTransaction</param>
+             <param name="spName">the name of the stored procedure</param>
+             <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+             <returns>an object containing the value in the 1x1 resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteXmlReader(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset and takes no parameters) against the provided SqlConnection. 
+             </summary>
+             <remarks>
+             e.g.:  
+              XmlReader r = ExecuteXmlReader(conn, CommandType.StoredProcedure, "GetOrders");
+             </remarks>
+             <param name="connection">a valid SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command using "FOR XML AUTO"</param>
+             <returns>an XmlReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteXmlReader(System.Data.SqlClient.SqlConnection,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset) against the specified SqlConnection 
+             using the provided parameters.
+             </summary>
+             <remarks>
+             e.g.:  
+              XmlReader r = ExecuteXmlReader(conn, CommandType.StoredProcedure, "GetOrders", new SqlParameter("@prodid", 24));
+             </remarks>
+             <param name="connection">a valid SqlConnection</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command using "FOR XML AUTO"</param>
+             <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+             <returns>an XmlReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteXmlReader(System.Data.SqlClient.SqlConnection,System.String,System.Object[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a stored procedure via a SqlCommand (that returns a resultset) against the specified SqlConnection 
+             using the provided parameter values.  This method will query the database to discover the parameters for the 
+             stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+             </summary>
+             <remarks>
+             This method provides no access to output parameters or the stored procedure's return value parameter.
+             
+             e.g.:  
+              XmlReader r = ExecuteXmlReader(conn, "GetOrders", 24, 36);
+             </remarks>
+             <param name="connection">a valid SqlConnection</param>
+             <param name="spName">the name of the stored procedure using "FOR XML AUTO"</param>
+             <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+             <returns>an XmlReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteXmlReader(System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset and takes no parameters) against the provided SqlTransaction. 
+             </summary>
+             <remarks>
+             e.g.:  
+              XmlReader r = ExecuteXmlReader(trans, CommandType.StoredProcedure, "GetOrders");
+             </remarks>
+             <param name="transaction">a valid SqlTransaction</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command using "FOR XML AUTO"</param>
+             <returns>an XmlReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteXmlReader(System.Data.SqlClient.SqlTransaction,System.Data.CommandType,System.String,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a SqlCommand (that returns a resultset) against the specified SqlTransaction
+             using the provided parameters.
+             </summary>
+             <remarks>
+             e.g.:  
+              XmlReader r = ExecuteXmlReader(trans, CommandType.StoredProcedure, "GetOrders", new SqlParameter("@prodid", 24));
+             </remarks>
+             <param name="transaction">a valid SqlTransaction</param>
+             <param name="commandType">the CommandType (stored procedure, text, etc.)</param>
+             <param name="commandText">the stored procedure name or T-SQL command using "FOR XML AUTO"</param>
+             <param name="commandParameters">an array of SqlParamters used to execute the command</param>
+             <returns>an XmlReader containing the resultset generated by the command</returns>
+        </member>
+        <member name="M:Bhardwaj.DBActions.ExecuteXmlReader(System.Data.SqlClient.SqlTransaction,System.String,System.Object[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): Execute a stored procedure via a SqlCommand (that returns a resultset) against the specified 
+             SqlTransaction using the provided parameter values.  This method will query the database to discover the parameters for the 
+             stored procedure (the first time each stored procedure is called), and assign the values based on parameter order.
+             </summary>
+             <remarks>
+             This method provides no access to output parameters or the stored procedure's return value parameter.
+             
+             e.g.:  
+              XmlReader r = ExecuteXmlReader(trans, "GetOrders", 24, 36);
+             </remarks>
+             <param name="transaction">a valid SqlTransaction</param>
+             <param name="spName">the name of the stored procedure</param>
+             <param name="parameterValues">an array of objects to be assigned as the input values of the stored procedure</param>
+             <returns>a dataset containing the resultset generated by the command</returns>
+        </member>
+        <member name="T:Bhardwaj.SqlHelperParameterCache">
+             <summary>
+            Bhardwaj ( 9050660400 ): SqlHelperParameterCache provides functions to leverage a static cache of procedure parameters, and the
+             ability to discover parameters for stored procedures at run-time.
+             </summary>
+             
+        </member>
+        <member name="M:Bhardwaj.SqlHelperParameterCache.DiscoverSpParameterSet(System.String,System.String,System.Boolean)">
+             <summary>
+            Bhardwaj ( 9050660400 ): resolve at run time the appropriate set of SqlParameters for a stored procedure
+             </summary>
+             <param name="connectionString">a valid connection string for a SqlConnection</param>
+             <param name="spName">the name of the stored procedure</param>
+             <param name="includeReturnValueParameter">whether or not to include their return value parameter</param>
+             <returns></returns>
+        </member>
+        <member name="M:Bhardwaj.SqlHelperParameterCache.CacheParameterSet(System.String,System.String,System.Data.SqlClient.SqlParameter[])">
+             <summary>
+            Bhardwaj ( 9050660400 ): add parameter array to the cache
+             </summary>
+             <param name="connectionString">a valid connection string for a SqlConnection</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <param name="commandParameters">an array of SqlParamters to be cached</param>
+        </member>
+        <member name="M:Bhardwaj.SqlHelperParameterCache.GetCachedParameterSet(System.String,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): retrieve a parameter array from the cache
+             </summary>
+             <param name="connectionString">a valid connection string for a SqlConnection</param>
+             <param name="commandText">the stored procedure name or T-SQL command</param>
+             <returns>an array of SqlParamters</returns>
+        </member>
+        <member name="M:Bhardwaj.SqlHelperParameterCache.GetSpParameterSet(System.String,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): Retrieves the set of SqlParameters appropriate for the stored procedure
+             </summary>
+             <remarks>
+            Bhardwaj ( 9050660400 ): This method will query the database for this information, and then store it in a cache for future requests.
+             </remarks>
+             <param name="connectionString">a valid connection string for a SqlConnection</param>
+             <param name="spName">the name of the stored procedure</param>
+             <returns>an array of SqlParameters</returns>
+        </member>
+        <member name="M:Bhardwaj.SqlHelperParameterCache.GetSpParameterSet(System.String,System.String,System.Boolean)">
+             <summary>
+            Bhardwaj ( 9050660400 ): Retrieves the set of SqlParameters appropriate for the stored procedure
+             </summary>
+             <remarks>
+            Bhardwaj ( 9050660400 ): This method will query the database for this information, and then store it in a cache for future requests.
+             </remarks>
+             <param name="connectionString">a valid connection string for a SqlConnection</param>
+             <param name="spName">the name of the stored procedure</param>
+             <param name="includeReturnValueParameter">a bool value indicating whether the return value parameter should be included in the results</param>
+             <returns>an array of SqlParameters</returns>
+        </member>
+        <member name="T:Bhardwaj.DBConnectString">
+             <summary>
+            Bhardwaj ( 9050660400 ): This class is used for getting connection string from text file
+             </summary>
+        </member>
+        <member name="M:Bhardwaj.DBConnectString.GetConnecString(System.String,System.String)">
+             <summary>
+            Bhardwaj ( 9050660400 ): This method is used for getting connection string from text file with name
+             </summary>
+        </member>
+        <member name="M:Bhardwaj.EncryptionDecryption.EncryptString(System.String,System.String)">
+            <summary>
+            Method which does the encryption using Rijndeal algorithm
+            </summary>
+            <param name="InputText">Data to be encrypted</param>
+            <param name="Password">The string to used for making the key.The same string
+            should be used for making the decrpt key</param>
+            <returns>Encrypted Data</returns>
+        </member>
+        <member name="M:Bhardwaj.EncryptionDecryption.DecryptString(System.String,System.String)">
+            <summary>
+            Method which does the encryption using Rijndeal algorithm.This is for decrypting the data
+            which has orginally being encrypted using the above method
+            </summary>
+            <param name="InputText">The encrypted data which has to be decrypted</param>
+            <param name="Password">The string which has been used for encrypting.The same string
+            should be used for making the decrypt key</param>
+            <returns>Decrypted Data</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Bhardwaj.TripleDESImplementation.#ctor(System.String,System.String)" -->
+        <member name="M:Bhardwaj.TripleDESImplementation.Encrypt(System.String)">
+            Encrypts a text block
+        </member>
+    </members>
+</doc>

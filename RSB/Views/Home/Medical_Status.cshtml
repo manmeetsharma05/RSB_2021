@@ -1,0 +1,117 @@
+﻿@model Rajya_Sanik_Board.Models.Generalform
+
+@{
+    ViewBag.Title = "Medical_Status";
+    Layout = "~/Views/Shared/_RajyaSanikBoard.cshtml";
+}
+
+
+
+    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 center-div">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inner-content-div">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Medical Status</h3>
+                </div>
+
+                @using (Html.BeginForm("Medical_Status", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+
+                    if (ViewBag.Message != null)
+                    {<label>@ViewBag.Message</label> }
+                    <div class="panel-body rsb-form">
+
+                     
+
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <div class="form-group">
+                               <label>Medical Description: </label>
+                                @Html.TextAreaFor(m => m.MedicalCat_Type, new { rows = "3", columns = "61", placeholder = "Medical Description" })
+                                <small class="fg-red" style="color: red;">@Html.ValidationMessageFor(m =>m.MedicalCat_Type)</small>
+
+                            </div>
+                        </div>
+                        
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                            <input type="submit" value="ADD" class="btn btn-primary next-step">
+                        </div>
+                        
+                 
+                    </div>
+              
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cus-grid-tables">
+                
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive" style="padding:15px 0;">
+
+                        <table  class="table-bordered table-striped table-condensed cf" id="t01">
+                            <thead>
+                                @{var counter = 0;}
+                                <th>S.No </th>
+                                <th>Description</th>
+                               <th>Edit</th>
+                                
+                            </thead>
+                            @foreach (var item in ViewBag.medical)
+                            {
+                                counter = counter + 1;
+                                <tr>
+                                       
+                                    <td>@counter </td>
+                                    <td>@item.MedicalCat_Type</td>
+
+                                   <td> @Html.ActionLink("Edit", "Editmed", new { id=item.medical_ID })</td> </tr>
+                                
+                            }
+                           
+                        </table>
+                    </div>
+                  </div>
+                    <style>  
+table#t01 {  
+width: 100%;  
+background-color: #f1f1c1;  
+}  
+  
+table#t01 tr:nth-child(even) {  
+background-color: #eee;  
+}  
+table#t01 tr:nth-child(odd) {  
+background-color: #fff;  
+}  
+table#t01 th {  
+color: #333;  
+} 
+table, th, td {  
+border: 1px solid black;  
+}  
+table, th, td {  
+border: 1px solid black;  
+border-collapse: collapse;  
+}  
+table, th, td {  
+border: 1px solid black;  
+border-collapse: collapse;  
+}  
+th, td {  
+padding: 15px;  
+}  
+</style> 
+            
+                }
+            </div>
+    </div>
+        </div>
+
+
+<script type="text/javascript">
+    $("#btnlogout").click(function (event) {
+        
+        $("#btnlogout").hide();
+        event.preventDefault();
+        var url = '@Url.Action("Logout", "Home")';
+        window.location.href = url;
+
+     });
+</script>
+

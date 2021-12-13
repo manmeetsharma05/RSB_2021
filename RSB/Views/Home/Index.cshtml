@@ -1,0 +1,292 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_RajyaSanikBoard.cshtml";
+}  
+
+<script type="text/javascript">
+    $(document).ready(function () {
+       
+        function searchdbind(districtCode, stateCode) {
+            if (stateCode == "HA") {
+                stateCode = "06";
+
+            }
+            else {
+                stateCode = stateCode;
+            }
+
+            $.ajax({
+                type: "post",
+                url:'@Url.Action("district", "Home")' ,
+                data: { stateId: stateCode },
+                datatype: "json",
+                traditional: true,
+                success: function (data) {
+                    var district = "<select id='DistrictStatus'>";
+
+
+                    for (var i = 0; i < data.length; i++) {
+
+                        if (data[i].Value == districtCode) {
+                            district = district + '<option value=' + data[i].Value + ' selected>' + data[i].Text + '</option>';
+                        }
+                        else {
+                            district = district + '<option value=' + data[i].Value + '>' + data[i].Text + '</option>';
+                        }
+                    }
+                    district = district + '</select>';
+                    $('#DistrictStatus').html(district);
+                }
+            });
+        }
+        $.ajax(
+               {
+
+                   dataType: "json",
+                   type: "POST", //HTTP POST Method  
+                   url: '@Url.Action("Index1", "Home")', // Controller/View   
+                    data: "",
+                    success: function (response) {
+
+                        if (response.user != null || response.user != "") {
+                            $("#btnlogout").show();
+                            if (response.usertype == "70") {
+                                $("#sc").hide();
+                                $("#med").hide();
+                                $("#awd").hide();
+                                $("#rnk").hide();
+                                $("#regcrp").hide();
+                                $("#pens").hide();
+                             //images and links hide 
+                                $("#sc1").hide();
+                                $("#med1").hide();
+                                $("#awd1").hide();
+                                $("#rnk1").hide();
+                                $("#regcrp1").hide();
+                                $("#pens1").hide(); 
+                                $("#help").show();
+                                $("#char").show();
+                                $("#vv").hide();
+                                var state = $("#StateStatus").val();
+                               // $("#DistrictStatus").val(response.dco);
+                                searchdbind(response.dco, state);
+                               
+
+                            }
+                            else if(response.usertype=="72")
+                            {
+                                $("#sc").show();
+                                $("#med").show();
+                                $("#awd").show();
+                                $("#rnk").show();
+                                $("#regcrp").show();
+                                $("#pens").show();
+                                //images and links hide 
+                                $("#sc1").show();
+                                $("#med1").show();
+                                $("#awd1").show();
+                                $("#rnk1").show();
+                                $("#regcrp1").show();
+                                $("#pens1").show();
+                                $("#help").show();
+                                $("#char").show();
+                            }
+                            else {
+                                $("#sc").show();
+                                $("#med").show();
+                                $("#awd").show();
+                                $("#rnk").show();
+                                $("#regcrp").show();
+                                $("#pens").show();
+                               //images and links hide 
+                                $("#sc1").show();
+                                $("#med1").show();
+                                $("#awd1").show();
+                                $("#rnk1").show();
+                                $("#regcrp1").show();
+                                $("#pens1").show();
+                                $("#help").show();
+                                $("#char").show();
+                            }
+                        }
+                        else {
+                            window.location.href = '@Url.Content("~/Home/Login")';
+                        }
+                            
+                  
+                    },
+
+
+
+                });
+    });
+    $("#btnlogout").click(function (event) {
+        
+        $("#btnlogout").hide();
+        event.preventDefault();
+        var url = '@Url.Action("Logout", "Home")';
+        window.location.href = url;
+
+   });
+</script>
+ <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 text-center center-div">	
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 inner-content-div">
+                    <div class="col-lg-12 cus-tab-div-container">
+                                          <section id="Registration">
+  
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 cus-tab-div">
+            <a href="~/Home/RSBGeneralInfrm">
+                <div class="caption cus-sainik-reg">
+                     <h4>Sanik Registration</h4>
+                </div>    
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 cus-tab-div" id="sc1">
+            <a href="~/Home/Schemes">
+              <div class="caption cus-add-schemes">
+               <h4>Add Schemes</h4>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 cus-tab-div" id="med1">
+              <a href="~/Home/Medical_Status">
+                      <div class="caption cus-medical-status">
+                         <h4>Add Medical Status</h4>
+                  </div>
+              </a>
+          </div>
+
+
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 cus-tab-div" id="awd1">
+            <a href="~/Home/Award">
+              <div class="caption cus-add-award">
+                <h4>Add Award</h4>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 cus-tab-div" id="rnk1">
+            <a href="~/Home/Rank">
+              <div class="caption cus-add-rank">
+                <h4>Add Rank</h4>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 cus-tab-div" id="regcrp1">
+            <a href="~/Home/Regcorps">
+              <div class="caption cus-add-reg">
+                <h4>Add Regement/Corps</h4>
+              </div>
+            </a>
+          </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 cus-tab-div" id="pens1">
+            <a href="~/Home/Pension">
+              <div class="caption cus-add-pension">
+                <h4>Add Pension</h4>
+              </div>
+            </a>
+          </div>
+           
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 cus-tab-div" id="pens1">
+              <li class="button-dropdown">
+									<a href="javascript:void(0)" class="dropdown-toggle"> 
+                                        <div class="caption cus-add-reports">
+                                            <h4>Reports</h4><i class="fa fa-chevron-down" aria-hidden="true"></i>
+                                        </div>
+									</a>
+									<ul class="dropdown-menu">
+									  @*<li><a href="#">Summary Report</a></li>
+									  <li><a href="#">Register Report</a></li>*@
+                                        <li> @Html.ActionLink("Summary Report", "Report2")</li>
+                                         
+                                        <li> @Html.ActionLink("Register Report", "DistrictwiseReport")</li>
+					
+									</ul>
+								  </li>
+          </div>
+                                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 cus-tab-div" id="pens1">
+            <a href="~/Home/RSBGeneralInfrm_citizen">
+              <div class="caption cus-add-pension">
+                <h4>Add citizensanik</h4>
+              </div>
+            </a>
+          </div>
+    </section>
+
+                </div>
+
+        </div>
+ @*</div>*@
+ 
+     	<script>
+     	    jQuery(document).ready(function (e) {
+     	        function t(t) {
+     	            e(t).bind("click", function (t) {
+     	                t.preventDefault();
+     	                e(this).parent().fadeOut()
+     	            })
+     	        }
+     	        e(".dropdown-toggle").click(function () {
+     	            var t = e(this).parents(".button-dropdown").children(".dropdown-menu").is(":hidden");
+     	            e(".button-dropdown .dropdown-menu").hide();
+     	            e(".button-dropdown .dropdown-toggle").removeClass("active");
+     	            if (t) {
+     	                e(this).parents(".button-dropdown").children(".dropdown-menu").toggle().parents(".button-dropdown").children(".dropdown-toggle").addClass("active")
+     	            }
+     	        });
+     	        e(document).bind("click", function (t) {
+     	            var n = e(t.target);
+     	            if (!n.parents().hasClass("button-dropdown")) e(".button-dropdown .dropdown-menu").hide();
+     	        });
+     	        e(document).bind("click", function (t) {
+     	            var n = e(t.target);
+     	            if (!n.parents().hasClass("button-dropdown")) e(".button-dropdown .dropdown-toggle").removeClass("active");
+     	        })
+     	    });
+	</script>
+   
+    <script>
+        $(function () {
+            $('a[href*=#]:not([href=#])').click(function () {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 1000);
+                        return false;
+                    }
+                }
+            });
+        });
+
+        $(function () {
+            //navbar affix
+            $('#nav').affix({
+                offset: {
+                    top: $('header').height()
+                }
+            });
+        });
+
+        $('#nav .navbar-nav li>a').click(function () {
+            var link = $(this).attr('href');
+            var posi = $(link).offset().top + 20;
+            $('body,html').animate({ scrollTop: posi }, 700);
+        })
+
+
+        $(document).ready(function () {
+            $("[rel='tooltip']").tooltip();
+
+            $('.thumbnail').hover(
+                function () {
+                    $(this).find('.caption').fadeIn(250);
+                },
+                function () {
+                    $(this).find('.caption').fadeOut(205);
+                }
+            );
+        });
+    </script>

@@ -1,0 +1,182 @@
+﻿@model Rajya_Sanik_Board.Models.Generalform
+
+@{
+    ViewBag.Title = "DistrictwiseReport";
+    Layout = "~/Views/Shared/_Report.cshtml";
+}
+
+
+<div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 cus-dropdown">
+            <label for="retire-date" style="width: 20%;text-align: right;display: block;float: left;margin-right: 5%;width:700px;display:inline-block;color:#DA251C">Register Report </label>
+            
+        </div>
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 w3-container w3-border city">
+    <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12  mobile-pull army-no form-group">
+         
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 cus-dropdown">
+            <label for="retire-date">District </label>
+            @Html.DropDownList("StateList", null, htmlAttributes: new { @id = "StateStatus", @class = "inputform" })
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 cus-field-div">
+            <div class="input-group">
+                <label for="retire-date">Entry Starting Date </label>
+                 
+                <input type="text" id="sdate" name="sdate"  maxlength="10"  data-date="" data-date-format="DD/MM/YYYY">
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 cus-field-div">
+            <div class="input-group">
+                <label for="retire-date">Entry End Date </label>
+                <input type="text" id="edate" name="edate" maxlength="10" data-date="" data-date-format="DD/MM/YYYY">
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+            <input type="button" value="View Report" id="btnSubmit" class="btn btn-primary next-step">
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/moment.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $.ajax(
+                  {
+
+                      dataType: "json",
+                      type: "POST", //HTTP POST Method  
+                      url: '@Url.Action("RSBGeneralInfrm1", "Home")', // Controller/View   
+                      data: "",
+                      success: function (response) {
+
+                          if (response.user != null || response.user != "") {
+                            
+                              if (response.usertype == "72") {
+                                  $("#StateStatus").prop("disabled", true);
+                             
+                              }
+                              else if (response.usertype == "70") {
+                       
+                                  $("#StateStatus").prop("disabled", true);
+                              }
+                              else {
+                                  $("#StateStatus").prop("disabled", false);
+                                
+                              }
+                          }
+                          else {
+                              window.location.href = 'Home/Login';
+                          }
+
+
+                      },
+
+
+
+                  });
+     });
+</script>
+<script>
+
+    $(document).ready(function () {
+        $("#btnhome").show();
+        var dcde = '@Session["dcode"]';
+       
+        if (dcde != "notdcode") {
+
+           
+            $("#StateStatus").val(dcde);
+            $("#StateStatus").prop("disabled", true);
+        }
+        else {
+          
+            $("#StateStatus").prop("disabled", false);
+            
+        }
+       
+       
+       
+        var date_input = $('input[name="sdate"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var options = {
+            dateFormat: 'dd/mm/yy',
+            changeMonth: true,
+            changeYear: true,
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+        date_input.datepicker(options);
+
+        var date_input = $('input[name="edate"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var options = {
+            dateFormat: 'dd/mm/yy',
+            changeMonth: true,
+            changeYear: true,
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        };
+       date_input.datepicker(options);
+    });
+    $("#btnSubmit").click(function () {
+  
+        $.ajax({
+            url: "@Url.Action("DistrictwiseReport1", "Home")",
+            data: {
+                dcode: $("#StateStatus").val(),
+                sdate: $("#sdate").val(),
+                edate: $("#edate").val()
+            },
+            type: "Post",
+            cache: false,
+            async: false,
+            success: function (data) {
+                if (data.res == "a") {
+                    toastr.error('Date is not valid !!');
+                }
+                else {
+
+                    window.location.href = '@Url.Action("ReturnDistrictwiseReport", "Home")';
+                }
+
+            },
+            error: function () {
+
+                alert("Failed! Please try again.");
+            }
+        });
+    });
+    $("#btnlogout").click(function (event) {
+
+        $("#btnlogout").hide();
+        event.preventDefault();
+        var url = '@Url.Action("Logout", "Home")';
+        window.location.href = url;
+    });
+    $("#btnhome").click(function (event) {
+
+       
+        event.preventDefault();
+        var url = '@Url.Action("Index", "Home")';
+        window.location.href = url;
+        $("#btnhome").hide();
+        });
+    $("#sdate").on("change", function () {
+        
+        this.setAttribute(
+            "data-date",
+            moment(this.value,"YYYY-MM-DD")
+            .format(this.getAttribute("data-date-format"))
+            )
+    }).trigger("chnage")
+    $("#edate").on("change", function () {
+       
+        this.setAttribute(
+            "data-date",
+            moment(this.value, "YYYY-MM-DD")
+            .format(this.getAttribute("data-date-format"))
+            )
+    }).trigger("chnage")
+</script>
